@@ -1,0 +1,23 @@
+{
+  "name": "typescript-template",
+  "version": "0.1.0",
+  "description": "code only with typescript",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "template"
+  ],
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "eslint": "7.32.0",
+    "tsconfig": "workspace:*"
+  },
+  "author": "LuoAnbing",
+  "license": "MIT"
+}
