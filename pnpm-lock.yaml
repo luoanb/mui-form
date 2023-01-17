@@ -90,6 +90,16 @@ importers:
   packages/tsconfig:
     specifiers: {}
 
+  packages/typescript-template:
+    specifiers:
+      eslint: 7.32.0
+      eslint-config-custom: workspace:*
+      tsconfig: workspace:*
+    devDependencies:
+      eslint: 7.32.0
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
+
   packages/ui:
     specifiers:
       '@types/react': ^18.0.17
