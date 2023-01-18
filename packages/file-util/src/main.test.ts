@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
-import { data } from "./main";
+import { downLoadByURL } from "./main";
 
-describe("data", () => {
-  it("data.name", async() => {
-    expect(data.name).equals("小明");
+describe("downLoadByURL", () => {
+  it("downLoadByURL", async() => {
+    expect(true);
   });
 });

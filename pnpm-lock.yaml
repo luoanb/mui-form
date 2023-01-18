@@ -70,6 +70,16 @@ importers:
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.4
 
+  packages/csv-util:
+    specifiers:
+      eslint: 7.32.0
+      eslint-config-custom: workspace:*
+      tsconfig: workspace:*
+    devDependencies:
+      eslint: 7.32.0
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
+
   packages/eslint-config-custom:
     specifiers:
       eslint: ^7.23.0
@@ -86,6 +96,20 @@ importers:
       eslint-plugin-react: 7.31.8_eslint@7.32.0
     devDependencies:
       typescript: 4.9.4
+
+  packages/file-util:
+    specifiers:
+      eslint: 7.32.0
+      eslint-config-custom: workspace:*
+      tsconfig: workspace:*
+      vite: ^4.0.4
+      vitest: ^0.27.2
+    devDependencies:
+      eslint: 7.32.0
+      eslint-config-custom: link:../eslint-config-custom
+      tsconfig: link:../tsconfig
+      vite: 4.0.4
+      vitest: 0.27.2
 
   packages/tsconfig:
     specifiers: {}

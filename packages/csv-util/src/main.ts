@@ -11,7 +11,7 @@ export type Iheader =
  * @description data转Cvs参数
  */
 export type data2CvsOptions = {
-  headers: Iheader[];
+  headers?: Iheader[];
   /**
    * 表头展示键
    * @default "label"
@@ -43,12 +43,13 @@ export function data2CsvString(values: IValue[], { headers, headDisplayKey = "la
   };
 
   // 渲染头
+  headers = headers ? headers : Object.keys(values[0]);
   let res = headers.map((item) => getOptionValue(item, headDisplayKey)).join(",") + "\n";
   values.forEach((row) => {
     // 渲染单行
     let line: string[] = [];
-    headers.forEach((header) => {
-      var lable = row.getItemValue(getOptionValue(header, headValueKey));
+    headers?.forEach((header) => {
+      var lable = row[getOptionValue(header, headValueKey)];
       if (typeof lable === "string") {
         // 转译"
         lable.replace('"', '""');
