@@ -2,7 +2,7 @@ export declare type Iheader = string | {
     [prop: string]: any;
 };
 export declare type data2CvsOptions = {
-    headers: Iheader[];
+    headers?: Iheader[];
     headDisplayKey?: string;
     headValueKey?: string;
 };
@@ -13,4 +13,5 @@ export declare function data2CsvString(values: IValue[], { headers, headDisplayK
 export declare function data2Csv(values: IValue[], { headers, headDisplayKey, headValueKey }: data2CvsOptions): Blob;
 export declare function data2CsvWithoutHeaderString(values: IValue[]): string;
 export declare function data2CsvWithoutHeader(values: IValue[]): Blob;
+export declare function CSVString2Data(text: string): any[] | null;
 //# sourceMappingURL=main.d.ts.map

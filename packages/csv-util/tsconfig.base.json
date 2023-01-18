@@ -1,5 +1,5 @@
 {
-  "extends":"./tsconfig.base.json",
+  "extends": "tsconfig/base.json",
   "compilerOptions": {
     "module": "ES2015",
     "noImplicitAny": true,
@@ -8,5 +8,6 @@
     "outDir": "es",
     "sourceMap": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts","**/*.test.ts"]
 }

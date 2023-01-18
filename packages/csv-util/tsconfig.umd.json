@@ -1,12 +1,12 @@
 {
   "extends":"./tsconfig.base.json",
   "compilerOptions": {
-    "module": "ES2015",
+    "module": "UMD",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "outDir": "es",
+    "outDir": "umd",
     "sourceMap": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
 }
