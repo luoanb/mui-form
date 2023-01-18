@@ -6,20 +6,23 @@
   "types": "es/main.d.ts",
   "module": "es/main.js",
   "scripts": {
-    "build:es":"tsc",
-    "build:umd":"tsc --project ./tsconfig.umd.json",
-    "build:commonjs":"tsc --project ./tsconfig.commonjs.json",
-    "build":"pnpm build:es && pnpm build:umd && pnpm build:commonjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:es": "tsc",
+    "build:umd": "tsc --project ./tsconfig.umd.json",
+    "build:commonjs": "tsc --project ./tsconfig.commonjs.json",
+    "build": "pnpm build:es && pnpm build:umd && pnpm build:commonjs",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "keywords": [
     "typescript",
     "template"
   ],
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
     "eslint": "7.32.0",
-    "tsconfig": "workspace:*"
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "vite": "^4.0.4",
+    "vitest": "^0.27.2"
   },
   "author": "LuoAnbing",
   "license": "MIT"
