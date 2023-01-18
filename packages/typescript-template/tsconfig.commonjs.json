@@ -1,11 +1,11 @@
 {
   "extends": "tsconfig/base.json",
   "compilerOptions": {
-    "module": "ES2015",
+    "module": "CommonJS",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "outDir": "es",
+    "outDir": "commonjs",
     "sourceMap": true
   },
   "include": ["src/**/*"],

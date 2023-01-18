@@ -2,8 +2,14 @@
   "name": "typescript-template",
   "version": "0.1.0",
   "description": "code only with typescript",
-  "main": "index.js",
+  "main": "commonjs/main.js",
+  "types": "es/main.d.ts",
+  "module": "es/main.js",
   "scripts": {
+    "build:es":"tsc",
+    "build:umd":"tsc --project ./tsconfig.umd.json",
+    "build:commonjs":"tsc --project ./tsconfig.commonjs.json",
+    "build":"pnpm build:es && pnpm build:umd && pnpm build:commonjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
