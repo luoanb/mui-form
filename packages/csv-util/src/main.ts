@@ -53,8 +53,8 @@ export function data2CsvString(values: IValue[], { headers, headDisplayKey = "la
       if (typeof lable === "string") {
         // 转译"
         lable.replace('"', '""');
-        line.push('"' + lable + '"');
       }
+      line.push('"' + lable + '"');
     });
     res = res.concat(line.join(","), "\n");
   });
@@ -105,29 +105,30 @@ export function data2CsvWithoutHeader(values: IValue[]) {
 }
 
 /**
- * Return array of string values, or NULL if CSV string not well formed.
- * @param {string} text
- * @returns {any[]}
+ *
+ * @param {string}str csv字符串
+ * @param {string?}option.delimiter 列分隔符
+ * @param {string?}option.rowDelimiter 列分隔符
+ * @returns
  */
-export function csvString2Data(text: string) {
-  var re_valid =
-    /^\s*(?:'[^'\\]*(?:\\[\S\s][^'\\]*)*'|"[^"\\]*(?:\\[\S\s][^"\\]*)*"|[^,'"\s\\]*(?:\s+[^,'"\s\\]+)*)\s*(?:,\s*(?:'[^'\\]*(?:\\[\S\s][^'\\]*)*'|"[^"\\]*(?:\\[\S\s][^"\\]*)*"|[^,'"\s\\]*(?:\s+[^,'"\s\\]+)*)\s*)*$/;
-  var re_value = /(?!\s*$)\s*(?:'([^'\\]*(?:\\[\S\s][^'\\]*)*)'|"([^"\\]*(?:\\[\S\s][^"\\]*)*)"|([^,'"\s\\]*(?:\s+[^,'"\s\\]+)*))\s*(?:,|$)/g;
-  // Return NULL if input string is not well formed CSV string.
-  if (!re_valid.test(text)) return null;
-  var a: any[] = []; // Initialize array to receive values.
-  text.replace(
-    re_value, // "Walk" the string using replace with callback.
-    function (m0, m1, m2, m3) {
-      // Remove backslash from \' in single quoted values.
-      if (m1 !== undefined) a.push(m1.replace(/\\'/g, "'"));
-      // Remove backslash from \" in double quoted values.
-      else if (m2 !== undefined) a.push(m2.replace(/\\"/g, '"'));
-      else if (m3 !== undefined) a.push(m3);
-      return ""; // Return empty string.
-    }
-  );
-  // Handle special case of empty last value.
-  if (/,\s*$/.test(text)) a.push("");
-  return a;
+export function csvString2Data(str: string, { delimiter = ",", rowDelimiter = "\n" } = {}) {
+  const headers = str.slice(0, str.indexOf(rowDelimiter)).split(delimiter);
+
+  const rows = str.slice(str.indexOf(rowDelimiter) + 1).split(rowDelimiter);
+
+  const arr = rows
+    .filter((row) => row)
+    .map(function (row) {
+      const values = row.split(delimiter);
+      const el = headers.reduce(function (object, header, index) {
+        let value = values[index];
+        if (/\"?\"/g.test(value)) {
+          value = value.substring(1, value.length - 1);
+        }
+        object[header] = value;
+        return object;
+      }, {} as any);
+      return el;
+    });
+  return arr;
 }
