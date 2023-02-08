@@ -1,7 +1,7 @@
 {
-  "name": "typescript-template",
-  "version": "0.1.0",
-  "description": "code only with typescript",
+  "name": "csv-util",
+  "version": "0.5.0",
+  "description": "Javascript read and write CSV data ",
   "main": "commonjs/main.js",
   "types": "es/main.d.ts",
   "module": "es/main.js",
@@ -14,8 +14,9 @@
     "coverage": "vitest run --coverage"
   },
   "keywords": [
-    "typescript",
-    "template"
+    "csv",
+    "util",
+    "typescript"
   ],
   "devDependencies": {
     "eslint": "7.32.0",

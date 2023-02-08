@@ -20,6 +20,8 @@
   "engines": {
     "node": ">=14.0.0"
   },
+  "author": "luoanbing",
+  "email": "luoanb@163.com",
   "dependencies": {},
   "packageManager": "pnpm@7.14.1"
 }
