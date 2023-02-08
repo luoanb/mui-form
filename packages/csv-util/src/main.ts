@@ -22,6 +22,16 @@ export type data2CvsOptions = {
    * @default "id"
    */
   headValueKey?: string;
+  /**
+   * 列分割符
+   * @default ","
+   */
+  delimiter?: string;
+  /**
+   * 行分隔符
+   * @default "\n"
+   */
+  rowDelimiter?: string;
 };
 
 /**
@@ -37,14 +47,14 @@ export type IValue = {
  * @param {data2CvsOptions} option
  * @returns {string}
  */
-export function data2CsvString(values: IValue[], { headers, headDisplayKey = "label", headValueKey = "id" }: data2CvsOptions = {}) {
+export function data2CsvString(values: IValue[], { headers, headDisplayKey = "label", headValueKey = "id", delimiter = ",", rowDelimiter = "\n" }: data2CvsOptions = {}) {
   const getOptionValue = (option: Iheader, key: string) => {
     return typeof option === "string" ? option : option[key];
   };
 
   // 渲染头
   headers = headers ? headers : Object.keys(values[0]);
-  let res = headers.map((item) => getOptionValue(item, headDisplayKey)).join(",") + "\n";
+  let res = headers.map((item) => getOptionValue(item, headDisplayKey)).join(delimiter) + rowDelimiter;
   values.forEach((row) => {
     // 渲染单行
     let line: string[] = [];
@@ -56,7 +66,7 @@ export function data2CsvString(values: IValue[], { headers, headDisplayKey = "la
       }
       line.push('"' + lable + '"');
     });
-    res = res.concat(line.join(","), "\n");
+    res = res.concat(line.join(delimiter), rowDelimiter);
   });
   return res;
 }
@@ -67,8 +77,8 @@ export function data2CsvString(values: IValue[], { headers, headDisplayKey = "la
  * @param param1
  * @returns {Blob}
  */
-export function data2Csv(values: IValue[], { headers, headDisplayKey = "label", headValueKey = "id" }: data2CvsOptions) {
-  let res = data2CsvString(values, { headers, headDisplayKey, headValueKey });
+export function data2Csv(values: IValue[], { headers, headDisplayKey = "label", headValueKey = "id", delimiter = ",", rowDelimiter = "\n" }: data2CvsOptions) {
+  let res = data2CsvString(values, { headers, headDisplayKey, headValueKey, delimiter, rowDelimiter });
   return new Blob([res], { type: "text/csv" });
 }
 
@@ -87,8 +97,8 @@ export function data2CsvWithoutHeaderString(values: IValue[]) {
         // 转译"
         lable = lable.replace('"', '""');
         lable = lable.replace("'", "''");
-        line.push('"' + lable + '"');
       }
+      line.push('"' + lable + '"');
     });
     res = res.concat(line.join(","), "\n");
   });

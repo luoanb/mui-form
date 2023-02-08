@@ -1,5 +1,5 @@
 {
-  "name": "csv-util",
+  "name": "web-csv-util",
   "version": "0.5.0",
   "description": "Javascript read and write CSV data ",
   "main": "commonjs/main.js",
