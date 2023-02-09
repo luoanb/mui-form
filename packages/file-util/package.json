@@ -1,5 +1,5 @@
 {
-  "name": "file-util",
+  "name": "web-file-util",
   "version": "0.1.0",
   "description": "code only with typescript",
   "main": "commonjs/main.js",

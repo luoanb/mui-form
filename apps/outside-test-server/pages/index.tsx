@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { csvString2Data, data2Csv, data2CsvString } from "web-csv-util";
-import { downLoadByURL } from "file-util";
+import { downLoadByURL } from "web-file-util";
 
 const inter = Inter({ subsets: ["latin"] });
 

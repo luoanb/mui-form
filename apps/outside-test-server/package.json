@@ -1,5 +1,5 @@
 {
-  "name": "next-template",
+  "name": "outside-test-server",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,6 +21,6 @@
     "sass": "^1.58.0",
     "typescript": "4.9.5",
     "web-csv-util": "workspace:^0.5.2",
-    "file-util": "workspace:*"
+    "web-file-util": "workspace:*"
   }
 }
