@@ -25,16 +25,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div
-          onClick={() => {
-            console.log("data：", data);
-            console.log("csvData：", csvData);
-            console.log("newData：", newData);
-          }}
-        >
+        <div>
           <h1>CSV工具测试</h1>
           <br />
-          <p>点击可在开发者工具展示：</p>
+          <button
+            onClick={() => {
+              console.log("data：", data);
+              console.log("csvData：", csvData);
+              console.log("newData：", newData);
+            }}
+          >
+            点击可在开发者工具展示：
+          </button>
+          <br />
           <br />
           <code>data：{JSON.stringify(data)}</code>
           <br />
@@ -43,16 +46,13 @@ export default function Home() {
           <code>newData：{JSON.stringify(newData)}</code>
           <br />
           <br />
-          <div>
-            <button
-              style={{ margin: "0 auto" }}
-              onClick={() => {
-                downLoadByURL(URL.createObjectURL(data2Csv(data, {})), "导出csv示例");
-              }}
-            >
-              点击下载CSV文件
-            </button>
-          </div>
+          <button
+            onClick={() => {
+              downLoadByURL(URL.createObjectURL(data2Csv(data, {})), "导出csv示例");
+            }}
+          >
+            点击下载CSV文件
+          </button>
         </div>
         <div className={styles.description}>
           <p>
