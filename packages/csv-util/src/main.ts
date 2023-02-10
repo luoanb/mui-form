@@ -77,7 +77,7 @@ export function data2CsvString(values: IValue[], { headers, headDisplayKey = "la
  * @param param1
  * @returns {Blob}
  */
-export function data2Csv(values: IValue[], { headers, headDisplayKey = "label", headValueKey = "id", delimiter = ",", rowDelimiter = "\n" }: data2CvsOptions) {
+export function data2Csv(values: IValue[], { headers, headDisplayKey = "label", headValueKey = "id", delimiter = ",", rowDelimiter = "\n" }: data2CvsOptions = {}) {
   let res = data2CsvString(values, { headers, headDisplayKey, headValueKey, delimiter, rowDelimiter });
   return new Blob([res], { type: "text/csv" });
 }
