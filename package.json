@@ -15,13 +15,14 @@
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "engines": {
     "node": ">=14.0.0"
   },
   "author": "luoanbing",
   "email": "luoanb@163.com",
-  "dependencies": {},
   "packageManager": "pnpm@7.14.1"
 }
