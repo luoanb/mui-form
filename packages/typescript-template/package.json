@@ -6,9 +6,9 @@
   "types": "es/main.d.ts",
   "module": "es/main.js",
   "scripts": {
-    "build:es": "tsc",
-    "build:umd": "tsc --project ./tsconfig.umd.json",
-    "build:commonjs": "tsc --project ./tsconfig.commonjs.json",
+    "build:es": "tsc --outDir es",
+    "build:umd": "tsc --module umd --outDir umd",
+    "build:commonjs": "tsc --module commonjs --outDir commonjs",
     "build": "pnpm build:es && pnpm build:umd && pnpm build:commonjs",
     "test": "vitest",
     "coverage": "vitest run --coverage"
