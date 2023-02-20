@@ -4,6 +4,7 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { csvString2Data, data2Csv, data2CsvString } from "web-csv-util";
 import { downLoadByURL } from "web-file-util";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,6 +54,9 @@ export default function Home() {
           >
             点击下载CSV文件
           </button>
+        </div>
+        <div>
+          <Link href={"./rich-editor"}>转到富文本示例</Link>
         </div>
         <div className={styles.description}>
           <p>
