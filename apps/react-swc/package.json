@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "link:..\\..\\node_modules\\react",
     "react-dom": "link:..\\..\\node_modules\\react-dom",
-    "rich-markdown": "^20.21.7"
+    "rich-markdown": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
