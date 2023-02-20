@@ -4,7 +4,7 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState("你好");
+  const [data, setData] = useState("你好");
 
   return (
     <div className="App">
@@ -18,7 +18,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <Editor defaultValue="Hello World" />
+      <Editor value={data} onChange={setData} />
     </div>
   );
 }
