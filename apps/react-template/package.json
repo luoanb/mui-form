@@ -12,6 +12,9 @@
     "hoist": true,
     "strictPeerDependencies": true
   },
+  "dependencies": {
+    "typescript-template": "workspace:*"
+  },
   "devDependencies": {
     "react": "link:..\\..\\node_modules\\react",
     "react-dom": "link:..\\..\\node_modules\\react-dom",

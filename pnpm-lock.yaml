@@ -136,7 +136,10 @@ importers:
       react: link:..\..\node_modules\react
       react-dom: link:..\..\node_modules\react-dom
       typescript: ^4.9.3
+      typescript-template: workspace:*
       vite: ^4.1.0
+    dependencies:
+      typescript-template: link:../../packages/typescript-template
     devDependencies:
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
@@ -380,12 +383,14 @@ importers:
 
   packages/typescript-template:
     specifiers:
+      dotenv: ^16.0.3
       eslint: 7.32.0
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
       vite: ^4.0.4
       vitest: ^0.27.2
     devDependencies:
+      dotenv: 16.0.3
       eslint: 7.32.0
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
@@ -6914,6 +6919,11 @@ packages:
 
   /dotenv-expand/5.1.0:
     resolution: {integrity: sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==}
+    dev: true
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /dotenv/8.6.0:
