@@ -16,6 +16,7 @@
     "@mui/materia": "link:..\\..\\node_modules\\@mui\\materia",
     "@mui/x-data-grid": "link:..\\..\\node_modules\\@mui\\x-data-grid",
     "prop-types": "^15.8.1",
+    "react-hook-form": "^7.30.0",
     "rich-markdown": "workspace:*"
   },
   "devDependencies": {

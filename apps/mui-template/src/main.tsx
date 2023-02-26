@@ -16,3 +16,4 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     </ThemeProvider>
   </React.StrictMode>
 );
+// "@mui/icons-material": "link:..\\..\\node_modules\\@mui\\icons-material",

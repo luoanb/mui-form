@@ -69,6 +69,7 @@ importers:
       prop-types: ^15.8.1
       react: link:..\..\node_modules\react
       react-dom: link:..\..\node_modules\react-dom
+      react-hook-form: ^7.30.0
       rich-markdown: workspace:*
       typescript: ^4.9.3
       vite: ^4.1.4
@@ -80,6 +81,7 @@ importers:
       '@mui/materia': link:../../node_modules/@mui/materia
       '@mui/x-data-grid': link:../../node_modules/@mui/x-data-grid
       prop-types: 15.8.1
+      react-hook-form: 7.43.2_react@node_modules+react
       rich-markdown: link:../../packages/rich-markdown-editor
     devDependencies:
       '@types/react': 18.0.28
@@ -13397,7 +13399,6 @@ packages:
       react: ^16.8.0 || ^17 || ^18
     dependencies:
       react: link:node_modules\react
-    dev: true
 
   /react-inspector/5.1.1_react@18.2.0:
     resolution: {integrity: sha512-GURDaYzoLbW8pMGXwYPDBIv6nqei4kK7LPRZ9q9HCZF54wqXz/dnylBp/kfE9XmekBhHvLDdcYeyIwSrvtOiWg==}
