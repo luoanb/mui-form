@@ -13,6 +13,10 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@mui/icons-material": "^5.4.2",
+    "@mui/lab": "^5.0.0-alpha.83",
+    "@mui/material": "^5.4.2",
+    "@mui/x-data-grid": "^5.8.0",
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",
     "turbo": "latest",

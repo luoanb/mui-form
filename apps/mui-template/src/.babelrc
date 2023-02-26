@@ -1,0 +1,14 @@
+// {
+//   "presets": ["@babel/preset-react"],
+//   "plugins": [
+//     [
+//       "import",
+//       {
+//         "libraryName": "@mui/material",
+//         "libraryDirectory": "",
+//         "camel2DashComponentName": false
+//       },
+//       "@mui/material"
+//     ]
+//   ]
+// }
