@@ -49,7 +49,7 @@ export default function Dashboard({
         >
           {leftComponent}
         </Grid>
-        <Grid>{children}</Grid>
+        <Grid flex={1}>{children}</Grid>
       </Box>
       <Drawer open={openLeft} onClose={() => setOpenLeft(false)}>
         <Box sx={{ height: "100%", width: 280 }}>{leftComponent}</Box>

@@ -1,12 +1,11 @@
 import Nav from "./layout/nav";
 import Dashboard from "./layout/dashboard";
 import Left from "./layout/left";
-import Box from "@mui/material/Box";
 import { useState } from "react";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useTheme } from "@mui/material";
+import { Container, useTheme } from "@mui/material";
 
 function App() {
   const theme = useTheme();
@@ -43,7 +42,9 @@ function App() {
       openLeft={openLeft}
       setOpenLeft={setOpenLeft}
     >
-      内容
+      <Container maxWidth="lg" sx={{ marginTop: theme.spacing(4) }}>
+        <Typography variant="h2">标题</Typography>
+      </Container>
     </Dashboard>
   );
 }
