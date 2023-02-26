@@ -1,5 +1,5 @@
 import Nav from "./layout/nav";
-import Main from "./layout/main";
+import Dashboard from "./layout/dashboard";
 import Left from "./layout/left";
 import Box from "@mui/material/Box";
 import { useState } from "react";
@@ -12,48 +12,39 @@ function App() {
   const theme = useTheme();
   const [openLeft, setOpenLeft] = useState(false);
   return (
-    <Box
-      className="App"
-      sx={{
-        flexGrow: 1,
-        display: "flex",
-        flexDirection: "column",
-        height: "100%",
-        overflow: "hidden",
-      }}
+    <Dashboard
+      leftComponent={<Left />}
+      navComponent={
+        <Nav
+          leftContent={
+            <>
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{
+                  mr: 2,
+                  [theme.breakpoints.up("md")]: {
+                    display: "none",
+                  },
+                  md: { display: "block" },
+                }}
+                onClick={() => setOpenLeft(true)}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" color="inherit" component="div">
+                MUI-Form-Hook
+              </Typography>
+            </>
+          }
+        />
+      }
+      openLeft={openLeft}
+      setOpenLeft={setOpenLeft}
     >
-      <Nav
-        leftContent={
-          <>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{
-                mr: 2,
-                [theme.breakpoints.up("md")]: {
-                  display: "none",
-                },
-                md: { display: "block" },
-              }}
-              onClick={() => setOpenLeft(true)}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" color="inherit" component="div">
-              MUI-Form-Hook
-            </Typography>
-          </>
-        }
-      />
-      <Main
-        openLeft={openLeft}
-        setOpenLeft={setOpenLeft}
-        leftComponent={<Left />}
-      >
-        内容
-      </Main>
-    </Box>
+      内容
+    </Dashboard>
   );
 }
 
