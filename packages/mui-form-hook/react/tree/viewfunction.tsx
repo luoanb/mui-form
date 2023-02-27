@@ -69,25 +69,28 @@ export type TreeProps<T = any> = TreeViewProps &
 /**
  * 将Tree参数注入
  */
-export const TreeProps = createContext<TreeProps & AsyncTreeProps>({})
+export const TreeProps = createContext<Partial<TreeProps & AsyncTreeProps>>({})
 // export const AsyncTreeProps = createContext<AsyncTreeProps>({})
 
 /** 子节点渲染 */
-const RenderTree = ({ nodes }: { nodes: any[] }) => {
-  const { treeItemProps, childrenExpr, keyExpr, displayExpr } = useContext(TreeProps)
-  return (
-    <>
-      {nodes.map?.((node: any) => {
-        return (
-          // key={node[keyExpr]} 设置key 和解构属性会导致异常
-
-          <CustomTreeItem {...treeItemProps} itemData={node} nodeId={node[keyExpr]} label={node[displayExpr]}>
-            {Array.isArray(node[childrenExpr]) ? <RenderTree nodes={node[childrenExpr]} /> : null}
-          </CustomTreeItem>
-        )
-      })}
-    </>
-  )
+const RenderTree = ({ nodes, treeItemProps, childrenExpr, keyExpr, displayExpr }: any) => {
+  // const { treeItemProps, childrenExpr, keyExpr, displayExpr } = useContext(TreeProps)
+  return nodes.map?.((node: any) => {
+    return (
+      // key={node[keyExpr]} 设置key 和解构属性会导致异常
+      <CustomTreeItem {...treeItemProps} itemData={node} nodeId={node[keyExpr]} label={node[displayExpr]}>
+        {Array.isArray(node[childrenExpr])
+          ? RenderTree({
+              nodes: node[childrenExpr],
+              treeItemProps,
+              childrenExpr,
+              keyExpr,
+              displayExpr
+            })
+          : null}
+      </CustomTreeItem>
+    )
+  })
 }
 
 const debounce = createDebounce()
@@ -96,6 +99,7 @@ const debounce = createDebounce()
  * @description 通过createChildren分次从后端获取节点数据
  */
 export const AsyncTree = (props: AsyncTreeProps) => {
+  const { treeItemProps, keyExpr, displayExpr } = props
   const [innerExpanded, setiInnerExpanded] = React.useState<string[]>([])
   const expanded = props.expanded || innerExpanded
   const setExpanded = props.setExpanded || setiInnerExpanded
@@ -103,6 +107,23 @@ export const AsyncTree = (props: AsyncTreeProps) => {
   const { getIsLoadedByKey, addLoadedKey, isLoadedList } = useIsLoaded()
 
   const [data, setData] = React.useState<any[]>([])
+  // 初始化第一层数据
+  React.useEffect(() => {
+    props.createChildren?.().then((res) => setData(res))
+  }, [])
+
+  const loadNodes = React.useCallback(
+    (parentId) => {
+      if (!getIsLoadedByKey(parentId)) {
+        addLoadedKey(parentId)
+        props.createChildren?.(parentId).then((res) => {
+          setData((data) => data.concat(res))
+          setExpanded((ids) => [...ids, parentId])
+        })
+      }
+    },
+    [isLoadedList]
+  )
 
   // plat 转 tree
   const treeData = React.useMemo(
@@ -115,31 +136,8 @@ export const AsyncTree = (props: AsyncTreeProps) => {
       }),
     [data]
   )
-  // 初始化第一层数据
-  React.useEffect(() => {
-    props.createChildren?.().then((res) => setData(res))
-  }, [])
-
-  const loadNodes = React.useCallback(
-    (parentId) => {
-      const parentItem = data.find((item) => item[props.keyExpr] == parentId)
-      // 判断节点是否有子节点
-      if (!parentItem?.[props.hasChildrenExpr || 'hasChildren']) {
-        return
-      }
-      if (!getIsLoadedByKey(parentId)) {
-        addLoadedKey(parentId)
-        props.createChildren?.(parentId).then((res) => {
-          setData((data) => data.concat(res))
-          setExpanded((ids) => [...ids, parentId])
-        })
-      }
-    },
-    [isLoadedList, data]
-  )
-
   return (
-    <div>
+    <div onClick={() => console.log(treeData)}>
       <TreeView
         {...props}
         expanded={expanded}
@@ -154,8 +152,14 @@ export const AsyncTree = (props: AsyncTreeProps) => {
         defaultCollapseIcon={<ExpandMoreIcon />}
         defaultExpandIcon={<ChevronRightIcon />}
       >
-        <TreeProps.Provider value={{ childrenExpr: 'children', ...props }}>
-          <RenderTree nodes={treeData || []} />
+        <TreeProps.Provider value={props}>
+          {RenderTree({
+            nodes: treeData,
+            treeItemProps,
+            childrenExpr: 'children',
+            keyExpr,
+            displayExpr
+          })}
         </TreeProps.Provider>
       </TreeView>
     </div>
@@ -180,7 +184,14 @@ export const Tree = ({ listData: outListData = [], ...statusProps }: TreeProps) 
   return (
     <TreeView {...props} defaultCollapseIcon={<ExpandMoreIcon />} defaultExpandIcon={<ChevronRightIcon />}>
       <TreeProps.Provider value={statusProps as any}>
-        <RenderTree nodes={listData || []} />
+        {RenderTree({
+          nodes: listData,
+          treeItemProps,
+          childrenExpr,
+          keyExpr,
+          displayExpr
+        })}
+        {/* <RenderTree nodes={listData || []} /> */}
       </TreeProps.Provider>
     </TreeView>
   )
