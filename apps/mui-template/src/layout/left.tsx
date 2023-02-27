@@ -3,10 +3,10 @@ import Card from "@mui/material/Card";
 import { Tree } from "mui-form-hook";
 
 const treelist = [
-  { name: "首页", id: "1" },
+  { name: "首页", id: "1", hasChildren: true },
   { name: "应用程序", id: "2" },
   { name: "分析", id: "3" },
-  { name: "文件", id: "4" },
+  { name: "文件", id: "4" }
 ];
 
 export default function Left() {

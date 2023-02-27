@@ -3,20 +3,7 @@
   "version": "0.5.1",
   "description": "An ui library base on MUI for React front-end apps.",
   "types": "./es/react/index.d.ts",
-  "browser": {
-    ".": "./es/react/index.js",
-    "./react": "./es/react/index.js"
-  },
-  "exports": {
-    ".": {
-      "import": "./es/react/index.js",
-      "require": "./lib/react/index.cjs"
-    },
-    "./react": {
-      "import": "./es/react/index.js",
-      "require": "./lib/react/index.cjs"
-    }
-  },
+  "module": "./react/index.tsx",
   "scripts": {
     "start": "pnpm run dev",
     "dev": "rollup --config rollup.config.js --watch",
