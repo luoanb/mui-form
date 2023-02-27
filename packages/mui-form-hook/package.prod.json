@@ -1,0 +1,91 @@
+{
+  "name": "mui-form-hook",
+  "version": "0.1.12",
+  "description": "An ui library for React front-end apps.",
+  "types": "./es/react/index.d.ts",
+  "browser": {
+    ".": "./es/react/index.js",
+    "./react": "./es/react/index.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./es/react/index.js",
+      "require": "./lib/react/index.cjs"
+    },
+    "./react": {
+      "import": "./es/react/index.js",
+      "require": "./lib/react/index.cjs"
+    }
+  },
+  "scripts": {
+    "start": "pnpm run dev",
+    "dev": "rollup --config rollup.config.js --watch",
+    "build": "rollup --config rollup.config.js"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "clsx": "^1.1.1"
+  },
+  "peerDependencies": {
+    "@mui/icons-material": "^5.4.2",
+    "@mui/material": "^5.4.2",
+    "@mui/x-data-grid": "^5.8.0",
+    "@mui/lab": "^5.0.0-alpha.83",
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "react-hook-form": "^7.30.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@emotion/react": {
+      "optional": true
+    },
+    "@emotion/styled": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/node": "^7.14.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.5",
+    "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/runtime": "^7.14.5",
+    "@mui/icons-material": "^5.4.2",
+    "@mui/lab": "^5.0.0-alpha.83",
+    "@mui/material": "^5.4.2",
+    "@mui/x-data-grid": "^5.8.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "@types/lodash-es": "^4.17.5",
+    "postcss": "^8.4.5",
+    "react-hook-form": "^7.30.0",
+    "rollup": "^2.60.2",
+    "rollup-plugin-dts": "^4.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "tsconfig": "workspace:*",
+    "tslib": "^2.3.0",
+    "typescript": "^4.5.2",
+    "@types/react": "^17.0.0 || ^18.0.0"
+  },
+  "keywords": [
+    "form",
+    "mui",
+    "material",
+    "react-hook-form",
+    "typescript",
+    "react",
+    "monorepo"
+  ],
+  "author": "@ztech/luoanbing",
+  "email": "luoanb@163.com",
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+.useDialog{
+  .useDialog-title{
+    padding: 10px 16px;
+    font-size: 16px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .white{
+    background-color: #fff;
+    color: #202424;
+  }
+  .green{
+    background-color: #00948C;
+    color: #fff;
+  }
+  .useDialog-content{
+    padding: 16px;
+  }
+}

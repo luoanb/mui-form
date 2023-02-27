@@ -1,0 +1,12 @@
+{
+  "extends": "tsconfig/base.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": false,
+    "jsx": "react",
+    "lib": ["dom", "es2015"]
+  },
+  "include": ["react", "vue"]
+}

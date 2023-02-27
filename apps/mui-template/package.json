@@ -1,0 +1,33 @@
+{
+  "name": "mui-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "link:..\\..\\node_modules\\@mui\\icons-material",
+    "@mui/lab": "link:..\\..\\node_modules\\@mui\\lab",
+    "@mui/materia": "link:..\\..\\node_modules\\@mui\\materia",
+    "@mui/x-data-grid": "link:..\\..\\node_modules\\@mui\\x-data-grid",
+    "prop-types": "^15.8.1",
+    "react-hook-form": "^7.30.0",
+    "rich-markdown": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "babel-plugin-import": "^1.13.6",
+    "mui-form-hook": "workspace:*",
+    "react": "link:..\\..\\node_modules\\react",
+    "react-dom": "link:..\\..\\node_modules\\react-dom",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.4"
+  }
+}
