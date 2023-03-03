@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { cloneElement } from 'react'
+import { useTree } from './useTree'
 
 type ItemRender = (item: IStack, itemOptions: any) => JSX.Element
 
@@ -19,9 +20,9 @@ export interface IStack {
 
 /**
  * 复制parent节点,并把newChild追加到复制节点的孩子节点里,不会改变原始节点
- * @param parent 
- * @param newChild 
- * @returns 
+ * @param parent
+ * @param newChild
+ * @returns
  */
 export function jsxAppend(parent: JSX.Element, newChild: JSX.Element): JSX.Element {
   return cloneElement(parent, {}, ...React.Children.toArray(parent.props.children), newChild)
@@ -29,9 +30,9 @@ export function jsxAppend(parent: JSX.Element, newChild: JSX.Element): JSX.Eleme
 
 /**
  *  于parent节点出把child追加进入去
- * @param parent 
- * @param child 
- * @returns 
+ * @param parent
+ * @param child
+ * @returns
  */
 export const docAppendJSX = (parent: HTMLDivElement, child: React.ReactNode) => {
   const cc = document.createElement('div')
@@ -70,6 +71,7 @@ function renderTree(listData: any[], itemRender: ItemRender, itemOptions: any) {
   let level = 0
   let index = 0
 
+  // 将一级节点入栈
   listData.forEach((node) => {
     stack.push({ node: node, level, index: index++ })
   })
@@ -80,13 +82,9 @@ function renderTree(listData: any[], itemRender: ItemRender, itemOptions: any) {
 
     node = item?.node
     level = item?.level || 0
+    // 为当前节点创建一个存放子节点的容器
     const childContainer = document.createElement('div')
-    if (!itemOptions.expandedids.includes(item.node.value)) {
-      childContainer.style.display = 'none'
-    } else {
-      childContainer.style.display = 'block'
-    }
-
+    itemOptions.childContainer = childContainer
     const itemNode = itemRender(item, itemOptions)
     const nodeElement = cloneElement(itemNode, {
       ref: (ref) => {
@@ -98,6 +96,7 @@ function renderTree(listData: any[], itemRender: ItemRender, itemOptions: any) {
     })
     item.jsx = nodeElement
 
+    // 将当前节点放入父节点的容器/或根节点
     if (!item.parent) {
       docAppendJSX(root, item.jsx)
     } else {
@@ -127,31 +126,37 @@ function renderTree(listData: any[], itemRender: ItemRender, itemOptions: any) {
 export default function Tree({
   listData,
   itemRender = (item, options) => {
+    // 控制折叠展开
+    const childContainer = options.childContainer
+    if (!options.treeState.expandState.isSelected(item.node.value)) {
+      childContainer.style.display = 'none'
+    } else {
+      childContainer.style.display = 'block'
+    }
     return (
       <div
-        onClick={() => {
-          options.setExpandedids((ids) => [...ids, item.node.value])
-          options.setSelectids((ids) => [...ids, item.node.value])
+        onClick={(e) => {
+          e.stopPropagation()
+          options.treeState.expandState.toggle(item.node.value)
+          options.treeState.singleSelect(item.node.value)
         }}
         key={item.node.value + 'cc'}
         style={{ marginLeft: '16px' }}
       >
-        <span style={{ background: options.selectids.includes(item.node.value) ? '#efefef' : '#fff' }}>{item.node.value}</span>
+        <span style={{ background: options.treeState.selectState.isSelected(item.node.value) ? '#efefef' : '#fff' }}>{item.node.value}</span>
       </div>
     )
   },
   ...props
 }: TreeProps) {
-  const [selectids, setSelectids] = useState([])
-  const [expandedids, setExpandedids] = useState([])
+  const treeState = useTree(listData, { keyExpr: 'value', multiSelect: false })
+  const { selectids, expandedids } = treeState
   return (
     <>
-      <div>expandedids:{expandedids}</div>
+      <div>expandedids:{expandedids.join(",")}</div>
+      <div>selectids:{selectids.join(",")}</div>
       {renderTree(listData, itemRender, {
-        selectids,
-        setSelectids,
-        expandedids,
-        setExpandedids,
+        treeState,
         ...props
       })}
     </>
