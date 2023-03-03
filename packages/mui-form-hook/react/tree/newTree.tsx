@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { cloneElement } from 'react'
 import { useTree } from './useTree'
+import { defaultItemRender } from './itemRender'
 
 type ItemRender = (item: IStack, itemOptions: any) => JSX.Element
 
@@ -123,40 +124,12 @@ function renderTree(listData: any[], itemRender: ItemRender, itemOptions: any) {
   )
 }
 
-export default function Tree({
-  listData,
-  itemRender = (item, options) => {
-    // 控制折叠展开
-    const childContainer = options.childContainer
-    if (!options.treeState.expandState.isSelected(item.node.value)) {
-      childContainer.style.display = 'none'
-    } else {
-      childContainer.style.display = 'block'
-    }
-    return (
-      <div
-        onClick={(e) => {
-          e.stopPropagation()
-          options.treeState.expandState.toggle(item.node.value)
-          options.treeState.singleSelect(item.node.value)
-        }}
-        key={item.node.value + 'cc'}
-        style={{ marginLeft: '16px' }}
-      >
-        <span style={{ background: options.treeState.selectState.isSelected(item.node.value) ? '#efefef' : '#fff' }}>{item.node.value}</span>
-      </div>
-    )
-  },
-  ...props
-}: TreeProps) {
+export default function Tree({ listData, itemRender = defaultItemRender, ...props }: TreeProps) {
   const treeState = useTree(listData, { keyExpr: 'value', multiSelect: false })
-  const { selectids, expandedids } = treeState
   return (
     <>
-      <div>expandedids:{expandedids.join(",")}</div>
-      <div>selectids:{selectids.join(",")}</div>
       {renderTree(listData, itemRender, {
-        treeState,
+        treeState, // 给的多意味着束缚多 意味着可移植性差
         ...props
       })}
     </>
