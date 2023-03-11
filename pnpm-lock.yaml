@@ -17,7 +17,7 @@ importers:
       '@mui/icons-material': 5.11.9_smgofu3xpswo6tnze3x7f66ybq
       '@mui/lab': 5.0.0-alpha.120_fn4ukn7njhq3j6rnouvyofvwm4
       '@mui/material': 5.11.10_biqbaboplfbrettd7655fr4n2y
-      '@mui/x-data-grid': 5.17.25_fn4ukn7njhq3j6rnouvyofvwm4
+      '@mui/x-data-grid': 5.17.25_f2yojwjd3oigjrh5lh2rhizu4a
       eslint-config-custom: link:packages/eslint-config-custom
       prettier: 2.8.4
       react: 18.2.0
@@ -290,8 +290,10 @@ importers:
       '@rollup/plugin-babel': ^5.3.0
       '@rollup/plugin-commonjs': ^21.0.1
       '@rollup/plugin-node-resolve': ^13.1.1
+      '@types/animejs': ^3.1.7
       '@types/lodash-es': ^4.17.5
       '@types/react': ^17.0.0 || ^18.0.0
+      animejs: ^3.2.1
       clsx: ^1.1.1
       lodash-es: ^4.17.21
       postcss: ^8.4.5
@@ -307,6 +309,8 @@ importers:
       typescript: ^4.5.2
       uuid: ^9.0.0
     dependencies:
+      '@types/animejs': 3.1.7
+      animejs: 3.2.1
       clsx: 1.2.1
       lodash-es: 4.17.21
       uuid: 9.0.0
@@ -2950,7 +2954,7 @@ packages:
       react-is: 18.2.0
     dev: true
 
-  /@mui/x-data-grid/5.17.25_fn4ukn7njhq3j6rnouvyofvwm4:
+  /@mui/x-data-grid/5.17.25_f2yojwjd3oigjrh5lh2rhizu4a:
     resolution: {integrity: sha512-d7zbd9JmEqGLaJ5K+11SnHaQKs7Thkg9KJSVftn/3S21rDJi4znt9rS08/CDSl0p3tNaCA+FBEEbYwVCB3eNYQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -2961,6 +2965,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.0
       '@mui/material': 5.11.10_biqbaboplfbrettd7655fr4n2y
+      '@mui/system': 5.11.9_react@18.2.0
       '@mui/utils': 5.11.9_react@18.2.0
       clsx: 1.2.1
       prop-types: 15.8.1
@@ -4630,6 +4635,10 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
+  /@types/animejs/3.1.7:
+    resolution: {integrity: sha512-kFSyjM+fLo3oE9noWEtUvF82ttN8fTrKohiEMIrSzEzEjnsCmtO0rBCUQBlSPEb2w8vfN+v4/Zo0tK21Bgmq4g==}
+    dev: false
+
   /@types/babel__core/7.20.0:
     resolution: {integrity: sha512-+n8dL/9GWblDO0iU6eZAwEIJVr5DWigtle+Q6HLOrh/pdbXOhOtqzq8VPPE2zvNJzSKY4vH/z3iT3tn0A3ypiQ==}
     dependencies:
@@ -5673,6 +5682,10 @@ packages:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
       uri-js: 4.4.1
+
+  /animejs/3.2.1:
+    resolution: {integrity: sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==}
+    dev: false
 
   /ansi-align/3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}

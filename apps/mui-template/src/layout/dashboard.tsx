@@ -3,13 +3,13 @@ import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { useTheme } from "@mui/material/styles";
 import { Box, Drawer } from "@mui/material";
 export interface MainProps extends PropsWithChildren {
-  leftComponent: any;
+  headerComponent: any;
   openLeft: boolean;
   navComponent: any;
   setOpenLeft: (status: boolean) => void;
 }
 export default function Dashboard({
-  leftComponent,
+  headerComponent,
   children,
   openLeft,
   navComponent,
@@ -28,7 +28,7 @@ export default function Dashboard({
         overflow: "hidden",
       }}
     >
-      {navComponent}
+      {headerComponent}
       <Box
         sx={{
           height: 0,
@@ -47,12 +47,12 @@ export default function Dashboard({
             boxShadow: theme.shadows[10],
           }}
         >
-          {leftComponent}
+          {navComponent}
         </Grid>
         <Grid flex={1}>{children}</Grid>
       </Box>
       <Drawer open={openLeft} onClose={() => setOpenLeft(false)}>
-        <Box sx={{ height: "100%", width: 280 }}>{leftComponent}</Box>
+        <Box sx={{ height: "100%", width: 280 }}>{navComponent}</Box>
       </Drawer>
     </Box>
   );

@@ -8,7 +8,7 @@ export type NavProps = Partial<{
   menuitems: any;
 }>;
 
-export default function Nav({
+export default function Header({
   leftContent,
   rightContent,
   menuitems,

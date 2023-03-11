@@ -10,6 +10,8 @@
     "build": "rollup --config rollup.config.js"
   },
   "dependencies": {
+    "@types/animejs": "^3.1.7",
+    "animejs": "^3.2.1",
     "clsx": "^1.1.1",
     "lodash-es": "^4.17.21",
     "uuid": "^9.0.0"

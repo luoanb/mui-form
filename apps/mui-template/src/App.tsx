@@ -1,6 +1,6 @@
-import Nav from "./layout/nav";
+import Header from "./layout/header";
 import Dashboard from "./layout/dashboard";
-import Left from "./layout/left";
+import Nav from "./layout/nav";
 import { useState } from "react";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
@@ -12,9 +12,9 @@ function App() {
   const [openLeft, setOpenLeft] = useState(false);
   return (
     <Dashboard
-      leftComponent={<Left />}
-      navComponent={
-        <Nav
+      navComponent={<Nav />}
+      headerComponent={
+        <Header
           leftContent={
             <>
               <IconButton
