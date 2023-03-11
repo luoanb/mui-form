@@ -1,6 +1,4 @@
-
 import { Box, List, ListItemText } from "@mui/material";
-//
 import { StyledNavItem, StyledNavItemIcon } from "./navItem";
 
 // ----------------------------------------------------------------------
@@ -24,7 +22,7 @@ function NavItem({ item }: any) {
   return (
     <StyledNavItem
       // component={RouterLink}
-      to={path}
+      // to={path}
       sx={{
         "&.active": {
           color: "text.primary",
@@ -34,7 +32,6 @@ function NavItem({ item }: any) {
       }}
     >
       <StyledNavItemIcon>{icon && icon}</StyledNavItemIcon>
-
       <ListItemText disableTypography primary={title} />
 
       {info && info}
