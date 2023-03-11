@@ -28,6 +28,7 @@
     "react": "link:..\\..\\node_modules\\react",
     "react-dom": "link:..\\..\\node_modules\\react-dom",
     "typescript": "^4.9.3",
-    "vite": "^4.1.4"
+    "vite": "^4.1.4",
+    "vite-plugin-svg-icons": "^2.0.1"
   }
 }

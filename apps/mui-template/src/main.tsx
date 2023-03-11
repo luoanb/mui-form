@@ -6,7 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./design";
 import "./index.css";
 import Style from "./style";
-
+import 'virtual:svg-icons-register'
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>

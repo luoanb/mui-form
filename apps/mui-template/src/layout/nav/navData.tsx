@@ -1,14 +1,9 @@
 // component
 
-import SvgColor from "./svgColor";
-
-// ----------------------------------------------------------------------
+import SvgIcon from "../../component/svgIcon";
 
 const icon = (name: string) => (
-  <SvgColor
-    src={`/assets/icons/navbar/${name}.svg`}
-    sx={{ width: 1, height: 1 }}
-  />
+  <SvgIcon name={name} sx={{ width: 1, height: 1 }} />
 );
 
 const navData = [

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "types": [
+      "vite-plugin-svg-icons/client"
+    ]
+  },
+  "composite": true,
+  "include": [
+    "svgconfig.ts"
+  ]
+}
