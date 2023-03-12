@@ -3,10 +3,9 @@ import { initReactI18next } from 'react-i18next';
 import entranslation from './en.json';
 import zhcntranslation from './zh_cn.json';
 
-function getAssetUrl(url: string) {
-  return new URL(url, import.meta.url).href
-}
-const getImgUrl = (name: string) => getAssetUrl(`./icon/${name}.png`);
+const getImgUrl = (name: string) => {
+  return new URL(`./icon/${name}.png`, import.meta.url).href 
+};
 
 export const resources: Resource = {
   en: {

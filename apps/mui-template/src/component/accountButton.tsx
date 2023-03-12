@@ -50,7 +50,7 @@ export default function AccountButton() {
           }}
         >
           <Avatar
-            sx={{ bgcolor: red[500], width: 30, height: 30 }}
+            sx={{ bgcolor: red[500] }}
             aria-label="recipe"
           >
             张

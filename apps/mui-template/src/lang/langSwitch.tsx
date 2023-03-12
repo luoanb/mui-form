@@ -29,10 +29,13 @@ export default function LangSwitch() {
       target={({ open, handleOpen }) => (
         <IconButton
           onClick={handleOpen}
-          sx={{
+          sx={(theme) => ({
             p: 0,
             width: 40,
             height: 40,
+            bgcolor: (theme) => alpha(theme.palette.grey[100], 0.1),
+            transition: "all .3s",
+            ":hover": { background: alpha(theme.palette.grey[300], 0.5) },
             ...(open && {
               "&:before": {
                 zIndex: 1,
@@ -41,16 +44,20 @@ export default function LangSwitch() {
                 height: "100%",
                 borderRadius: "50%",
                 position: "absolute",
-                bgcolor: (theme) => alpha(theme.palette.grey[500], 0.5),
+                bgcolor: (theme) => alpha(theme.palette.grey[100], 0.1),
               },
             }),
-          }}
+          })}
         >
-          <Avatar
-            src={currentImg}
-            sx={{ width: 30, height: 30 }}
-            aria-label="recipe"
-          ></Avatar>
+          <Avatar sx={{ background: "transparent" }} aria-label="recipe">
+            <img
+              src={currentImg}
+              width={24}
+              height={20}
+              style={{ borderRadius: 3 }}
+              alt="Avatar"
+            />
+          </Avatar>
         </IconButton>
       )}
       downContent={({ handleClose }) => (
