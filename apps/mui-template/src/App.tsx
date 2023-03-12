@@ -5,7 +5,47 @@ import { useState } from "react";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Container, useTheme } from "@mui/material";
+import { Box, Container, useTheme } from "@mui/material";
+import AccountButton from "./component/accountButton";
+
+const LeftContent = ({ setOpenLeft }: { setOpenLeft: any }) => (
+  <>
+    <Box
+      sx={(theme) => ({
+        width: 270,
+        [theme.breakpoints.down("md")]: {
+          display: "none",
+        },
+      })}
+    />
+    <IconButton
+      edge="start"
+      color="inherit"
+      aria-label="menu"
+      sx={(theme) => ({
+        mr: 2,
+        [theme.breakpoints.up("md")]: {
+          display: "none",
+        },
+        md: { display: "block" },
+      })}
+      onClick={() => setOpenLeft(true)}
+    >
+      <MenuIcon />
+    </IconButton>
+    <Typography variant="h6" color="inherit" component="div">
+      MUI-Template
+    </Typography>
+  </>
+);
+
+const RightContent = () => {
+  return (
+    <>
+      <AccountButton />
+    </>
+  );
+};
 
 function App() {
   const theme = useTheme();
@@ -15,28 +55,8 @@ function App() {
       navComponent={<Nav />}
       headerComponent={
         <Header
-          leftContent={
-            <>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{
-                  mr: 2,
-                  [theme.breakpoints.up("md")]: {
-                    display: "none",
-                  },
-                  md: { display: "block" },
-                }}
-                onClick={() => setOpenLeft(true)}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography variant="h6" color="inherit" component="div">
-                MUI-Form-Hook
-              </Typography>
-            </>
-          }
+          leftContent={<LeftContent setOpenLeft={setOpenLeft} />}
+          rightContent={<RightContent />}
         />
       }
       openLeft={openLeft}

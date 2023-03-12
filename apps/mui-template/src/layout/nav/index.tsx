@@ -9,7 +9,7 @@ export default function Nav() {
   const theme = useTheme();
   return (
     <div>
-      <Card sx={{ margin: "12px 24px", background: theme.palette.grey[100] }}>
+      <Card sx={{ margin: "12px 24px", background: theme.palette.grey[300] }}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
