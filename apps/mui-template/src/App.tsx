@@ -5,8 +5,9 @@ import { useState } from "react";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Box, Container, useTheme } from "@mui/material";
+import { Box, Container, Stack, useTheme } from "@mui/material";
 import AccountButton from "./component/accountButton";
+import LangSwitch from "./lang/langSwitch";
 
 const LeftContent = ({ setOpenLeft }: { setOpenLeft: any }) => (
   <>
@@ -41,9 +42,10 @@ const LeftContent = ({ setOpenLeft }: { setOpenLeft: any }) => (
 
 const RightContent = () => {
   return (
-    <>
+    <Stack direction="row" spacing={2}>
+      <LangSwitch />
       <AccountButton />
-    </>
+    </Stack>
   );
 };
 

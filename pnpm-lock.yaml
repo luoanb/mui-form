@@ -65,12 +65,15 @@ importers:
       '@types/react-dom': ^18.0.10
       '@vitejs/plugin-react-swc': ^3.0.0
       babel-plugin-import: ^1.13.6
+      i18next: ^22.4.11
       mui-form-hook: workspace:*
       prop-types: ^15.8.1
       react: link:..\..\node_modules\react
       react-dom: link:..\..\node_modules\react-dom
       react-hook-form: ^7.30.0
+      react-i18next: ^12.2.0
       rich-markdown: workspace:*
+      svg-country-flags: ^1.2.10
       typescript: ^4.9.3
       vite: ^4.1.4
       vite-plugin-svg-icons: ^2.0.1
@@ -81,8 +84,10 @@ importers:
       '@mui/lab': link:../../node_modules/@mui/lab
       '@mui/materia': link:../../node_modules/@mui/materia
       '@mui/x-data-grid': link:../../node_modules/@mui/x-data-grid
+      i18next: 22.4.11
       prop-types: 15.8.1
       react-hook-form: 7.43.2_react@node_modules+react
+      react-i18next: 12.2.0_5lnxtj3t4ukwqpmwlfzvhbk6ty
       rich-markdown: link:../../packages/rich-markdown-editor
     devDependencies:
       '@types/react': 18.0.28
@@ -92,6 +97,7 @@ importers:
       mui-form-hook: link:../../packages/mui-form-hook
       react: link:../../node_modules/react
       react-dom: link:../../node_modules/react-dom
+      svg-country-flags: 1.2.10
       typescript: 4.9.5
       vite: 4.1.4
       vite-plugin-svg-icons: 2.0.1_vite@4.1.4
@@ -9726,6 +9732,12 @@ packages:
       terser: 4.8.1
     dev: true
 
+  /html-parse-stringify/3.0.1:
+    resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
+    dependencies:
+      void-elements: 3.1.0
+    dev: false
+
   /html-tags/3.2.0:
     resolution: {integrity: sha512-vy7ClnArOZwCnqZgvv+ddgHgJiAFXe3Ge9ML5/mBctVJoUoYPCdxVucOywjDARn6CVoh3dRSFdPHy2sX80L0Wg==}
     engines: {node: '>=8'}
@@ -9818,6 +9830,12 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
     dev: true
+
+  /i18next/22.4.11:
+    resolution: {integrity: sha512-ShfTzXVMjXdF2iPiT/wbizOrssLh9Ab6VpuVROihLCAu+u25KbZiEYVgsA0W6g0SgjPa/JmGWcUEV/g6cKzEjQ==}
+    dependencies:
+      '@babel/runtime': 7.21.0
+    dev: false
 
   /iconv-lite/0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -13576,6 +13594,26 @@ packages:
     dependencies:
       react: link:node_modules/react
 
+  /react-i18next/12.2.0_5lnxtj3t4ukwqpmwlfzvhbk6ty:
+    resolution: {integrity: sha512-5XeVgSygaGfyFmDd2WcXvINRw2WEC1XviW1LXY/xLOEMzsCFRwKqfnHN+hUjla8ZipbVJR27GCMSuTr0BhBBBQ==}
+    peerDependencies:
+      i18next: '>= 19.0.0'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.21.0
+      html-parse-stringify: 3.0.1
+      i18next: 22.4.11
+      react: link:node_modules/react
+      react-dom: link:node_modules/react-dom
+    dev: false
+
   /react-inspector/5.1.1_react@18.2.0:
     resolution: {integrity: sha512-GURDaYzoLbW8pMGXwYPDBIv6nqei4kK7LPRZ9q9HCZF54wqXz/dnylBp/kfE9XmekBhHvLDdcYeyIwSrvtOiWg==}
     peerDependencies:
@@ -15055,6 +15093,10 @@ packages:
       - supports-color
     dev: true
 
+  /svg-country-flags/1.2.10:
+    resolution: {integrity: sha512-xrqwo0TYf/h2cfPvGpjdSuSguUbri4vNNizBnwzoZnX0xGo3O5nGJMlbYEp7NOYcnPGBm6LE2axqDWSB847bLw==}
+    dev: true
+
   /svgo/2.8.0:
     resolution: {integrity: sha512-+N/Q9kV1+F+UeWYoSiULYo4xYSDQlTgb+ayMobAXPwMnLvop7oxKMo9OzIrX5x3eS4L4f2UHhc9axXwY8DpChg==}
     engines: {node: '>=10.13.0'}
@@ -16126,6 +16168,11 @@ packages:
   /vm-browserify/1.1.2:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
     dev: true
+
+  /void-elements/3.1.0:
+    resolution: {integrity: sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /w3c-hr-time/1.0.2:
     resolution: {integrity: sha512-z8P5DvDNjKDoFIHK7q8r8lackT6l+jo/Ye3HOle7l9nICP9lf1Ci25fy9vHd0JOWewkIFzXIEig3TdKT7JQ5fQ==}

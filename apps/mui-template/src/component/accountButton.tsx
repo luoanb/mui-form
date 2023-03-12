@@ -34,6 +34,8 @@ export default function AccountButton() {
           onClick={handleOpen}
           sx={{
             p: 0,
+            width: 40,
+            height: 40,
             ...(open && {
               "&:before": {
                 zIndex: 1,
@@ -47,7 +49,10 @@ export default function AccountButton() {
             }),
           }}
         >
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          <Avatar
+            sx={{ bgcolor: red[500], width: 30, height: 30 }}
+            aria-label="recipe"
+          >
             张
           </Avatar>
         </IconButton>
