@@ -15,7 +15,6 @@ export default defineConfig({
     esbuildOptions: {
       loader: {
         '.js': 'jsx',
-        '.png': "file"
       },
     }
   },
