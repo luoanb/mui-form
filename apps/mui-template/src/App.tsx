@@ -1,7 +1,7 @@
 import Header from "./layout/header";
 import Dashboard from "./layout/dashboard";
 import Nav from "./layout/nav";
-import { useState } from "react";
+import { ComponentRef, useEffect, useRef, useState } from "react";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -50,10 +50,15 @@ const RightContent = () => {
 };
 
 function App() {
+  const dashref = useRef<ComponentRef<typeof Dashboard>>(null);
   const theme = useTheme();
   const [openLeft, setOpenLeft] = useState(false);
+  useEffect(() => {
+    dashref.current?.log("初始化完成,调用Dashboard的方法,useEffect怎么会调用了两次");
+  }, []);
   return (
     <Dashboard
+      ref={dashref}
       navComponent={<Nav />}
       headerComponent={
         <Header

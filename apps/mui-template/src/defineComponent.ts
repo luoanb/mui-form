@@ -5,6 +5,11 @@ import { forwardRef, useImperativeHandle } from "react";
 export type RBase = {
   element: JSX.Element;
 };
+
+/**
+ * 根据组件类型获取ref类型
+ */
+export type ComponentRef<T extends Component> = Omit<ReturnType<T>, "element">;
 /**
  * 组件
  */
