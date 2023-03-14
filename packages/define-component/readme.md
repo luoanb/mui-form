@@ -1,18 +1,19 @@
-# Define-Component
+# ref-Component
 
 An library to quickly customize the exposed instance value when using ref.
 
 # Download
 
 ```shell
-pnpm install define-component
-npm install define-component
-yarn add define-component
+pnpm install ref-component
+npm install ref-component
+yarn add ref-component
 ```
 
 # Useage
 
 ```tsx
+import { defineComponent, ComponentRef } from 'ref-component'
 // define Component
 const Dashboard = defineComponent(({ name }: { name: string }) => {
   const [person, setPerson] = useState(name)
@@ -22,7 +23,7 @@ const Dashboard = defineComponent(({ name }: { name: string }) => {
   }
 })
 
-// use 
+// use
 const App = () => {
   const dashboardRef = useRef<ComponentRef<typeof Dashboard>>(null)
   useEffect(() => {

@@ -1,6 +1,6 @@
 {
-  "name": "define-component",
-  "version": "1.0.0",
+  "name": "ref-component",
+  "version": "1.0.1",
   "description": "An library to quickly  customize the exposed instance value when using ref.",
   "types": "./dist/index.d.ts",
   "module": "./dist/index.ejs",
