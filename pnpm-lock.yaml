@@ -65,6 +65,7 @@ importers:
       '@types/react-dom': ^18.0.10
       '@vitejs/plugin-react-swc': ^3.0.0
       babel-plugin-import: ^1.13.6
+      define-component: workspace:*
       i18next: ^22.4.11
       mui-form-hook: workspace:*
       prop-types: ^15.8.1
@@ -84,6 +85,7 @@ importers:
       '@mui/lab': link:../../node_modules/@mui/lab
       '@mui/materia': link:../../node_modules/@mui/materia
       '@mui/x-data-grid': link:../../node_modules/@mui/x-data-grid
+      define-component: link:../../packages/define-component
       i18next: 22.4.11
       prop-types: 15.8.1
       react-hook-form: 7.43.2_react@node_modules+react
@@ -248,6 +250,54 @@ importers:
       tsconfig: link:../tsconfig
       vite: 4.1.4
       vitest: 0.27.2
+
+  packages/define-component:
+    specifiers:
+      '@babel/core': ^7.14.5
+      '@babel/node': ^7.14.5
+      '@babel/plugin-proposal-object-rest-spread': ^7.14.5
+      '@babel/plugin-syntax-object-rest-spread': ^7.8.3
+      '@babel/plugin-transform-react-jsx': ^7.14.5
+      '@babel/plugin-transform-runtime': ^7.14.5
+      '@babel/preset-env': ^7.14.5
+      '@babel/preset-react': ^7.14.5
+      '@babel/runtime': ^7.14.5
+      '@rollup/plugin-babel': ^5.3.0
+      '@rollup/plugin-commonjs': ^21.0.1
+      '@rollup/plugin-node-resolve': ^13.1.1
+      '@types/react': ^17.0.0 || ^18.0.0
+      postcss: ^8.4.5
+      react: link:..\..\node_modules\react
+      rollup: ^2.60.2
+      rollup-plugin-dts: ^4.0.0
+      rollup-plugin-postcss: ^4.0.2
+      rollup-plugin-typescript2: ^0.31.1
+      tsconfig: workspace:*
+      tslib: ^2.3.0
+      typescript: ^4.5.2
+    devDependencies:
+      '@babel/core': 7.20.12
+      '@babel/node': 7.20.7_@babel+core@7.20.12
+      '@babel/plugin-proposal-object-rest-spread': 7.20.7_@babel+core@7.20.12
+      '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.20.12
+      '@babel/plugin-transform-react-jsx': 7.20.13_@babel+core@7.20.12
+      '@babel/plugin-transform-runtime': 7.21.0_@babel+core@7.20.12
+      '@babel/preset-env': 7.20.2_@babel+core@7.20.12
+      '@babel/preset-react': 7.18.6_@babel+core@7.20.12
+      '@babel/runtime': 7.21.0
+      '@rollup/plugin-babel': 5.3.1_3dsfpkpoyvuuxyfgdbpn4j4uzm
+      '@rollup/plugin-commonjs': 21.1.0_rollup@2.79.1
+      '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.1
+      '@types/react': 18.0.28
+      postcss: 8.4.21
+      react: link:../../node_modules/react
+      rollup: 2.79.1
+      rollup-plugin-dts: 4.2.3_zptcx3kz3uwp66hzhyyt545weq
+      rollup-plugin-postcss: 4.0.2_postcss@8.4.21
+      rollup-plugin-typescript2: 0.31.2_zptcx3kz3uwp66hzhyyt545weq
+      tsconfig: link:../tsconfig
+      tslib: 2.4.1
+      typescript: 4.9.5
 
   packages/eslint-config-custom:
     specifiers:

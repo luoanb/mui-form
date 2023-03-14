@@ -2,7 +2,7 @@ import { PropsWithChildren, useState } from "react";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { useTheme } from "@mui/material/styles";
 import { Box, Drawer } from "@mui/material";
-import { defineComponent } from "../defineComponent";
+import { defineComponent } from "define-component";
 export interface MainProps extends PropsWithChildren {
   headerComponent: any;
   openLeft: boolean;

@@ -19,7 +19,8 @@
     "prop-types": "^15.8.1",
     "react-hook-form": "^7.30.0",
     "react-i18next": "^12.2.0",
-    "rich-markdown": "workspace:*"
+    "rich-markdown": "workspace:*",
+    "define-component": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
