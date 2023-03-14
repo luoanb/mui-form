@@ -1,27 +1,26 @@
-import { PropsWithChildren, useState } from "react";
+import { createContext, PropsWithChildren, useState } from "react";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { useTheme } from "@mui/material/styles";
-import { Box, Drawer } from "@mui/material";
-import { defineComponent } from "define-component";
+import { Box, Collapse, Drawer } from "@mui/material";
+import { defineComponent } from "ref-component";
+import { DashState, useDashState } from "./useDashState";
 export interface MainProps extends PropsWithChildren {
-  headerComponent: any;
-  openLeft: boolean;
-  navComponent: any;
-  setOpenLeft: (status: boolean) => void;
+  header: any;
+  nav: any;
 }
 
-const Dashboard = defineComponent(
-  ({
-    headerComponent,
-    children,
-    openLeft,
-    navComponent,
-    setOpenLeft,
-  }: MainProps) => {
-    const theme = useTheme();
-    return {
-      log: console.log,
-      element: (
+/**
+ * Dashboard 公用一个状态
+ */
+export const DashboardState = createContext<DashState>(null as any);
+
+const Dashboard = defineComponent(({ header, children, nav }: MainProps) => {
+  const dashState = useDashState();
+  const theme = useTheme();
+  return {
+    log: console.log,
+    element: (
+      <DashboardState.Provider value={dashState}>
         <Box
           className="App"
           sx={{
@@ -32,7 +31,7 @@ const Dashboard = defineComponent(
             overflow: "hidden",
           }}
         >
-          {headerComponent}
+          {header}
           <Box
             sx={{
               height: 0,
@@ -40,28 +39,33 @@ const Dashboard = defineComponent(
               display: "flex",
             }}
           >
-            <Grid
+            <Collapse
               sx={{
                 [theme.breakpoints.down("md")]: {
                   display: "none",
                 },
-                [theme.breakpoints.up("md")]: {
-                  width: 280,
-                },
                 boxShadow: theme.shadows[10],
               }}
+              orientation="horizontal"
+              in={dashState.miniNav}
+              // in={true}
+              collapsedSize={65}
             >
-              {navComponent}
-            </Grid>
+              {nav}
+            </Collapse>
+
             <Grid flex={1}>{children}</Grid>
           </Box>
-          <Drawer open={openLeft} onClose={() => setOpenLeft(false)}>
-            <Box sx={{ height: "100%", width: 280 }}>{navComponent}</Box>
+          <Drawer
+            open={dashState.openNav}
+            onClose={() => dashState.setOpenNav(false)}
+          >
+            <Box sx={{ height: "100%", width: 280 }}>{nav}</Box>
           </Drawer>
         </Box>
-      ),
-    };
-  }
-);
+      </DashboardState.Provider>
+    ),
+  };
+});
 export default Dashboard;
 // export default
