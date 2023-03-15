@@ -83,16 +83,6 @@ export const Design = defineComponent(() => {
                 <BedtimeIcon />
               </SimpleCard>
             </Grid>
-            <Grid
-              xs={4}
-              alignItems="center"
-              justifyContent="center"
-              sx={{ display: "flex" }}
-            >
-              <SimpleCard size={80}>
-                <span>666</span>
-              </SimpleCard>
-            </Grid>
           </Grid>
         </Box>
       </>
