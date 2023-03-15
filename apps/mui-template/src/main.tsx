@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import theme from "./design";
+import { ThemeValueProvider } from "./design";
 import "./index.css";
 import Style from "./style";
 import "virtual:svg-icons-register";
@@ -11,11 +10,11 @@ import "./lang";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <ThemeValueProvider>
       <CssBaseline />
       <Style />
       <App />
-    </ThemeProvider>
+    </ThemeValueProvider>
   </React.StrictMode>
 );
 // "@mui/icons-material": "link:..\\..\\node_modules\\@mui\\icons-material",

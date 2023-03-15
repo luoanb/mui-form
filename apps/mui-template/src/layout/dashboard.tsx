@@ -3,7 +3,10 @@ import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { useTheme } from "@mui/material/styles";
 import { Box, Collapse, Drawer } from "@mui/material";
 import { defineComponent } from "ref-component";
+import SpeedDial from "@mui/material/SpeedDial";
+import BreakfastDiningIcon from "@mui/icons-material/BreakfastDining";
 import { DashState, useDashState } from "./useDashState";
+import { Design } from "../design/design";
 export interface MainProps extends PropsWithChildren {
   header: any;
   nav: any;
@@ -55,6 +58,13 @@ const Dashboard = defineComponent(({ header, children, nav }: MainProps) => {
             </Collapse>
 
             <Grid flex={1}>{children}</Grid>
+            <Collapse
+              in={dashState.openDesign}
+              orientation="horizontal"
+              sx={{ boxShadow: theme.shadows[10] }}
+            >
+              <Design />
+            </Collapse>
           </Box>
           <Drawer
             open={dashState.openNav}
@@ -62,6 +72,13 @@ const Dashboard = defineComponent(({ header, children, nav }: MainProps) => {
           >
             <Box sx={{ height: "100%", width: 280 }}>{nav}</Box>
           </Drawer>
+          <SpeedDial
+            onClick={() => dashState.setOpenDesign((old) => !old)}
+            sx={{ position: "absolute", bottom: 28, right: 28 }}
+            ariaLabel="Theme Design"
+            direction="left"
+            icon={<BreakfastDiningIcon />}
+          ></SpeedDial>
         </Box>
       </DashboardState.Provider>
     ),
