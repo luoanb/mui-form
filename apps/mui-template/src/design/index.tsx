@@ -1,8 +1,6 @@
-import { useTheme } from "@emotion/react";
 import {
   createTheme,
   ThemeProvider,
-  styled,
   ThemeOptions,
 } from "@mui/material/styles";
 import {
@@ -12,11 +10,8 @@ import {
   useContext,
   useState,
 } from "react";
-import customShadows from "./customShadows";
-import palette from "./palette";
-import shadows from "./shadows";
-import typography from "./typography";
-// import { orange } from "@mui/material/colors";
+import { normal } from "./normal";
+import customShadows from "./normal/customShadows";
 
 /**
  * 附加主题变量
@@ -24,35 +19,30 @@ import typography from "./typography";
 type CustomShadow = ReturnType<typeof customShadows>;
 declare module "@mui/material/styles" {
   interface Theme {
-    customShadows: CustomShadow;
+    customShadows?: CustomShadow;
   }
   // allow configuration using `createTheme`
   interface ThemeOptions {
-    customShadows: CustomShadow;
+    customShadows?: CustomShadow;
   }
 }
 
-const themeOptions: ThemeOptions = {
-  palette,
-  shadows: shadows(),
-  typography,
-  shape: { borderRadius: 6 },
-  customShadows: customShadows(),
-};
 
 /**
  * 主题hook
  * @param defaultTheme
  * @returns
  */
-const useThemeValue = (defaultThemeOptions = themeOptions) => {
+const useThemeValue = (defaultThemeOptions = normal()) => {
   const [theme, setTheme] = useState(createTheme(defaultThemeOptions));
+
   const setThemeByOptions = useCallback(
-    (themeOptions: ThemeOptions) => {
+    (themeOptions: Partial<ThemeOptions>) => {
       setTheme(createTheme(themeOptions));
     },
     [setTheme]
   );
+
   return {
     theme,
     setTheme,

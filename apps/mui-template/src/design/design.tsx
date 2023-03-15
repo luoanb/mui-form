@@ -4,14 +4,19 @@ import CardHeader from "@mui/material/CardHeader";
 import { useThemeContext } from ".";
 import Box from "@mui/material/Box";
 import { PropsWithChildren } from "react";
-import { IconButton } from "@mui/material";
-
+import { IconButton, IconButtonProps, styled, Typography } from "@mui/material";
+import Brightness5Icon from "@mui/icons-material/Brightness5";
+import BedtimeIcon from "@mui/icons-material/Bedtime";
 const SimpleCard = ({
   children,
   size = 60,
-}: PropsWithChildren<{ size?: number }>) => {
+  ...props
+}: PropsWithChildren<
+  { size?: number } & Omit<IconButtonProps, "size" | "sx">
+>) => {
   return (
     <IconButton
+      {...props}
       sx={(t) => ({
         borderRadius: t.spacing(2),
         border: `1px ${t.palette.grey[300]} solid`,
@@ -27,32 +32,69 @@ const SimpleCard = ({
   );
 };
 
+const Title = styled(Typography)(
+  ({ theme: t }) => `
+color: ${t.palette.text.secondary};
+padding: 8px 4px;
+`
+);
+
 export const Design = defineComponent(() => {
-  const { theme } = useThemeContext();
+  const { setThemeByOptions } = useThemeContext();
   // debugger
   return {
     element: (
       <>
-        <CardHeader title="主题设计" sx={{ width: 270 }} />
-        <Grid container spacing={2} justifyContent="space-evenly">
-          <Grid xs={6} alignItems="center" justifyContent="center" container>
-            <SimpleCard size={80}>
-              <span>666</span>
-            </SimpleCard>
+        <CardHeader title="主题设计" sx={{ width: 300 }} />
+        <Box sx={{ p: 1 }}>
+          <Title>主题模式</Title>
+          <Grid container spacing={2}>
+            <Grid
+              xs={4}
+              alignItems="center"
+              justifyContent="center"
+              sx={{ display: "flex" }}
+            >
+              <SimpleCard
+                size={80}
+                onClick={() =>
+                  setThemeByOptions({
+                    palette: { mode: "light" },
+                  })
+                }
+              >
+                <Brightness5Icon />
+              </SimpleCard>
+            </Grid>
+            <Grid
+              xs={4}
+              alignItems="center"
+              justifyContent="center"
+              sx={{ display: "flex" }}
+            >
+              <SimpleCard
+                size={80}
+                onClick={() =>
+                  setThemeByOptions({
+                    palette: { mode: "dark" },
+                  })
+                }
+              >
+                <BedtimeIcon />
+              </SimpleCard>
+            </Grid>
+            <Grid
+              xs={4}
+              alignItems="center"
+              justifyContent="center"
+              sx={{ display: "flex" }}
+            >
+              <SimpleCard size={80}>
+                <span>666</span>
+              </SimpleCard>
+            </Grid>
           </Grid>
-          <Grid xs={6} alignItems="center" justifyContent="center" container>
-            <SimpleCard size={80}>
-              <span>666</span>
-            </SimpleCard>
-          </Grid>
-          <Grid xs={6} alignItems="center" justifyContent="center" container>
-            <SimpleCard size={80}>
-              <span>666</span>
-            </SimpleCard>
-          </Grid>
-          
-          
-        </Grid>
+        </Box>
       </>
     ),
   };
