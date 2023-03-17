@@ -1,21 +1,26 @@
 import Typography from "@mui/material/Typography";
-import { createBrowserRouter, RouterProvider, redirect } from "react-router-dom";
-import LoginPage from "./login";
-import RegisterPage from "./register";
+import React, { lazy, useEffect } from "react";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import { BlankLayout, RouterDashboard, RouterEmpty } from "./routerLayout";
+
+const asyncComponent = (url: string) => React.lazy(() => import(url));
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Navigate to="/dashboard/index" replace />
+  },
+  {
+    path: "/auth",
     Component: BlankLayout,
     children: [
       {
         path: "login",
-        Component: LoginPage
+        Component: asyncComponent("./login")
       },
       {
         path: "register",
-        Component: RegisterPage
+        Component: asyncComponent("./register")
       }
     ]
   },
