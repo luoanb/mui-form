@@ -12,6 +12,9 @@ coverage
 .next/
 out/
 build
+es
+commonjs
+umd
 
 # misc
 .DS_Store

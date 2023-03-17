@@ -119,7 +119,7 @@ export function MuiTree({ data, ...treeProps }: MuiTreeProps) {
       defaultExpanded={['3']}
       defaultCollapseIcon={<ArrowDropDownIcon />}
       defaultExpandIcon={<ArrowRightIcon />}
-      defaultEndIcon={<div style={{ width: 24 }} />}
+      defaultEndIcon={<Box style={{ width: 24 }} />}
       sx={{ flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
     >
       {renderTree({ nodes: data, treeProps })}

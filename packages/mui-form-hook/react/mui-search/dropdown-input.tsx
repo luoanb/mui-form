@@ -1,3 +1,4 @@
+import { Box } from '@mui/material'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
 import Fade from '@mui/material/Fade'
 import PopperBase, { PopperPlacementType } from '@mui/material/Popper'
@@ -35,7 +36,7 @@ export type DropDownInputProps = TextFieldProps & {
 const ClickAwayListenerBase: any = ClickAwayListener
 
 /** 输入框下拉弹框 */
-export const DropDownInput = ({ downRander, onFocus, placement, style={}, zIndex = 999, ...props }: DropDownInputProps) => {
+export const DropDownInput = ({ downRander, onFocus, placement, style = {}, zIndex = 999, ...props }: DropDownInputProps) => {
   const [anchorEl, setAnchorEl] = useState<(EventTarget & (HTMLInputElement | HTMLTextAreaElement)) | null>(null)
   const open = !!anchorEl
   const close = () => {
@@ -44,7 +45,7 @@ export const DropDownInput = ({ downRander, onFocus, placement, style={}, zIndex
   // todo const key = props.key 为什么 runtime-dom.d @type/react key属性冲突
   return (
     <ClickAwayListenerBase onClickAway={close}>
-      <div style={{ display: 'inline-flex',...style}}>
+      <div style={{ display: 'inline-flex', ...style }}>
         <TextField
           {...props}
           style={style}
@@ -58,7 +59,7 @@ export const DropDownInput = ({ downRander, onFocus, placement, style={}, zIndex
           {({ TransitionProps }: any) => (
             <Fade {...TransitionProps} timeout={350}>
               {/* 处理延时问题 */}
-              <div style={!open ? { display: 'none' } : undefined}>{downRander({ close, open })}</div>
+              <Box style={{ display: open ? undefined : 'none' }}>{downRander({ close, open })}</Box>
             </Fade>
           )}
         </Popper>
