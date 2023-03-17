@@ -3,7 +3,8 @@ import { red } from "@mui/material/colors";
 import Card from "@mui/material/Card";
 import navData from "./navData";
 import { useContext } from "react";
-import { DashboardState, NavSection, GroupTitle } from "mui-layout";
+import { DashboardState, GroupTitle } from "mui-layout";
+import { MuiTree } from "mui-form-hook";
 
 export default function Nav() {
   const { miniNav, openNav } = useContext(DashboardState);
@@ -30,9 +31,9 @@ export default function Nav() {
         </Card>
       ) : null}
       {show ? <GroupTitle title="基本的" /> : null}
-      <NavSection data={navData} />
+      <MuiTree data={navData} keyExpr="path" displayExpr="title" />
       {show ? <GroupTitle title="商务" /> : null}
-      <NavSection data={navData} />
+      <MuiTree data={navData} keyExpr="path" displayExpr="title" />
     </>
   );
 }
