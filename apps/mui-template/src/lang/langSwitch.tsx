@@ -1,28 +1,15 @@
-import {
-  alpha,
-  Avatar,
-  Box,
-  Divider,
-  IconButton,
-  MenuItem,
-  Stack,
-  Typography,
-} from "@mui/material";
-import { red } from "@mui/material/colors";
+import { alpha, Avatar, Box, Divider, IconButton, MenuItem, Stack, Typography } from "@mui/material";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { resources } from ".";
-import DropDown from "../component/dropDwon";
+import { DropDown } from "mui-form-hook";
 
 const MENU_OPTIONS = resources;
 
 export default function LangSwitch() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const currentImg: any = useMemo(
-    () => MENU_OPTIONS[currentLanguage]?.icon,
-    [currentLanguage]
-  );
+  const currentImg: any = useMemo(() => MENU_OPTIONS[currentLanguage]?.icon, [currentLanguage]);
 
   return (
     <DropDown
@@ -44,19 +31,13 @@ export default function LangSwitch() {
                 height: "100%",
                 borderRadius: "50%",
                 position: "absolute",
-                bgcolor: (theme) => alpha(theme.palette.grey[100], 0.1),
-              },
-            }),
+                bgcolor: (theme) => alpha(theme.palette.grey[100], 0.1)
+              }
+            })
           })}
         >
           <Avatar sx={{ background: "transparent" }} aria-label="recipe">
-            <img
-              src={currentImg}
-              width={24}
-              height={20}
-              style={{ borderRadius: 3 }}
-              alt="Avatar"
-            />
+            <img src={currentImg} width={24} height={20} style={{ borderRadius: 3 }} alt="Avatar" />
           </Avatar>
         </IconButton>
       )}
@@ -73,13 +54,8 @@ export default function LangSwitch() {
                   }, 300);
                 }}
               >
-                <Avatar
-                  sx={{ width: 28, height: 28 }}
-                  src={MENU_OPTIONS[key].icon as any}
-                />
-                <Typography sx={(theme) => ({ ml: theme.spacing(2) })}>
-                  {t(`lang.${key}`)}
-                </Typography>
+                <Avatar sx={{ width: 28, height: 28 }} src={MENU_OPTIONS[key].icon as any} />
+                <Typography sx={(theme) => ({ ml: theme.spacing(2) })}>{t(`lang.${key}`)}</Typography>
               </MenuItem>
             ))}
           </Stack>

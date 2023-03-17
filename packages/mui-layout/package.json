@@ -2,7 +2,7 @@
   "name": "mui-layout",
   "version": "0.5.1",
   "description": "An ui library base on MUI for React front-end apps.",
-  "types": "./es/index.d.ts",
+  "types": "./dist/index.d.ts",
   "module": "./src/index.tsx",
   "scripts": {
     "start": "pnpm run dev",
@@ -14,7 +14,8 @@
     "animejs": "^3.2.1",
     "clsx": "^1.1.1",
     "lodash-es": "^4.17.21",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "ref-component": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",

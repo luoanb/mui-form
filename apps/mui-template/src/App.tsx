@@ -1,5 +1,5 @@
 import Header from "./layout/header";
-import Dashboard from "./layout/dashboard";
+import { Dashboard } from "mui-layout";
 import Nav from "./layout/nav";
 import { ComponentRef, useContext, useEffect, useRef, useState } from "react";
 import Typography from "@mui/material/Typography";
@@ -10,9 +10,7 @@ function App() {
   const dashref = useRef<ComponentRef<typeof Dashboard>>(null);
   const theme = useTheme();
   useEffect(() => {
-    dashref.current?.log(
-      "初始化完成,调用Dashboard的方法,useEffect怎么会调用了两次"
-    );
+    dashref.current?.log("初始化完成,调用Dashboard的方法,useEffect怎么会调用了两次");
   }, []);
   return (
     <Dashboard ref={dashref} nav={<Nav />} header={<Header />}>

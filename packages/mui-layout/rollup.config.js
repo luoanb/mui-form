@@ -55,7 +55,7 @@ export default defineConfig([
       },
       {
         name,
-        file: './dist/index.ejs',
+        file: './dist/index.mjs',
         format: 'es',
       },
       {

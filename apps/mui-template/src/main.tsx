@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeValueProvider } from "./design";
+import { ThemeValueProvider } from "mui-layout";
 import "./index.css";
 import Style from "./style";
 import "virtual:svg-icons-register";

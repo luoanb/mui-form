@@ -1,29 +1,20 @@
-import {
-  alpha,
-  Avatar,
-  Box,
-  Divider,
-  IconButton,
-  MenuItem,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { alpha, Avatar, Box, Divider, IconButton, MenuItem, Stack, Typography } from "@mui/material";
 import { red } from "@mui/material/colors";
-import DropDown from "./dropDwon";
+import { DropDown } from "mui-form-hook";
 
 const MENU_OPTIONS = [
   {
     label: "Home",
-    icon: "eva:home-fill",
+    icon: "eva:home-fill"
   },
   {
     label: "Profile",
-    icon: "eva:person-fill",
+    icon: "eva:person-fill"
   },
   {
     label: "Settings",
-    icon: "eva:settings-2-fill",
-  },
+    icon: "eva:settings-2-fill"
+  }
 ];
 
 export default function AccountButton() {
@@ -44,15 +35,12 @@ export default function AccountButton() {
                 height: "100%",
                 borderRadius: "50%",
                 position: "absolute",
-                bgcolor: (theme) => alpha(theme.palette.grey[500], 0.5),
-              },
-            }),
+                bgcolor: (theme) => alpha(theme.palette.grey[500], 0.5)
+              }
+            })
           }}
         >
-          <Avatar
-            sx={{ bgcolor: red[500] }}
-            aria-label="recipe"
-          >
+          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
             张
           </Avatar>
         </IconButton>

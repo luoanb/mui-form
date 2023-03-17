@@ -1,9 +1,10 @@
-import { Box, List, ListItemText } from "@mui/material";
-import { StyledNavItem, StyledNavItemIcon } from "./navItem";
+import React from 'react'
+import { Box, List, ListItemText } from '@mui/material'
+import { StyledNavItem, StyledNavItemIcon } from './navItem'
 
 // ----------------------------------------------------------------------
 
-export default function NavSection({ data = [], ...other }: any) {
+export function NavSection({ data = [], ...other }: any) {
   return (
     <Box {...other}>
       <List disablePadding sx={{ p: 1 }}>
@@ -12,23 +13,23 @@ export default function NavSection({ data = [], ...other }: any) {
         ))}
       </List>
     </Box>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
-function NavItem({ item }: any) {
-  const { title, path, icon, info } = item;
+export function NavItem({ item }: any) {
+  const { title, path, icon, info } = item
   return (
     <StyledNavItem
       // component={RouterLink}
       // to={path}
       sx={{
-        "&.active": {
-          color: "text.primary",
-          bgcolor: "action.selected",
-          fontWeight: "fontWeightBold",
-        },
+        '&.active': {
+          color: 'text.primary',
+          bgcolor: 'action.selected',
+          fontWeight: 'fontWeightBold'
+        }
       }}
     >
       <StyledNavItemIcon>{icon && icon}</StyledNavItemIcon>
@@ -36,5 +37,5 @@ function NavItem({ item }: any) {
 
       {info && info}
     </StyledNavItem>
-  );
+  )
 }

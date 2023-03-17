@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import { useContext } from "react";
-import { DashboardState } from "./dashboard";
+import { DashboardState } from "mui-layout";
 import useResponsive from "./useResponsive";
 import MenuIcon from "@mui/icons-material/Menu";
 import Typography from "@mui/material/Typography";

@@ -2,10 +2,8 @@ import { Avatar, CardHeader, useTheme } from "@mui/material";
 import { red } from "@mui/material/colors";
 import Card from "@mui/material/Card";
 import navData from "./navData";
-import NavSection from "./navSection";
-import GroupTitle from "./groupTitle";
 import { useContext } from "react";
-import { DashboardState } from "../dashboard";
+import { DashboardState, NavSection, GroupTitle } from "mui-layout";
 
 export default function Nav() {
   const { miniNav, openNav } = useContext(DashboardState);
@@ -18,7 +16,7 @@ export default function Nav() {
           sx={{
             margin: "12px 24px",
             width: 232,
-            background: theme.palette.grey[300],
+            background: theme.palette.grey[300]
           }}
         >
           <CardHeader
