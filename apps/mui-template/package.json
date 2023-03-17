@@ -16,10 +16,12 @@
     "@mui/materia": "link:..\\..\\node_modules\\@mui\\materia",
     "@mui/x-data-grid": "link:..\\..\\node_modules\\@mui\\x-data-grid",
     "i18next": "^22.4.11",
+    "mdi-material-ui": "^7.6.0",
+    "mui-layout": "workspace:*",
     "prop-types": "^15.8.1",
     "react-hook-form": "^7.30.0",
     "react-i18next": "^12.2.0",
-    "mui-layout": "workspace:*",
+    "react-router-dom": "^6.9.0",
     "ref-component": "workspace:*"
   },
   "devDependencies": {

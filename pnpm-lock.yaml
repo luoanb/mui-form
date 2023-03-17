@@ -66,6 +66,7 @@ importers:
       '@vitejs/plugin-react-swc': ^3.0.0
       babel-plugin-import: ^1.13.6
       i18next: ^22.4.11
+      mdi-material-ui: ^7.6.0
       mui-form-hook: workspace:*
       mui-layout: workspace:*
       prop-types: ^15.8.1
@@ -73,6 +74,7 @@ importers:
       react-dom: link:..\..\node_modules\react-dom
       react-hook-form: ^7.30.0
       react-i18next: ^12.2.0
+      react-router-dom: ^6.9.0
       ref-component: workspace:*
       svg-country-flags: ^1.2.10
       typescript: ^4.9.3
@@ -86,10 +88,12 @@ importers:
       '@mui/materia': link:../../node_modules/@mui/materia
       '@mui/x-data-grid': link:../../node_modules/@mui/x-data-grid
       i18next: 22.4.11
+      mdi-material-ui: 7.6.0_react@node_modules+react
       mui-layout: link:../../packages/mui-layout
       prop-types: 15.8.1
       react-hook-form: 7.43.2_react@node_modules+react
       react-i18next: 12.2.0_5lnxtj3t4ukwqpmwlfzvhbk6ty
+      react-router-dom: 6.9.0_bglh42yvbqvbk55odclj6m3qri
       ref-component: link:../../packages/define-component
     devDependencies:
       '@types/react': 18.0.28
@@ -3394,6 +3398,11 @@ packages:
   /@popperjs/core/2.11.6:
     resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
     dev: true
+
+  /@remix-run/router/1.4.0:
+    resolution: {integrity: sha512-BJ9SxXux8zAg991UmT8slpwpsd31K1dHHbD3Ba4VzD+liLQ4WAMSxQp2d2ZPRPfN0jN2NPRowcSSoM7lCaF08Q==}
+    engines: {node: '>=14'}
+    dev: false
 
   /@rollup/plugin-babel/5.3.1_3dsfpkpoyvuuxyfgdbpn4j4uzm:
     resolution: {integrity: sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q==}
@@ -11607,6 +11616,15 @@ packages:
     resolution: {integrity: sha512-jVU0Nr2B9X3MU4tSK7JP1CMkSvOj7X5l/GboG1tKRw52lLF1x2Ju92Ms9tNetCcbfX3hzlM73zYo2NKkWSfF/A==}
     dev: true
 
+  /mdi-material-ui/7.6.0_react@node_modules+react:
+    resolution: {integrity: sha512-daqyXS2tVPB9AulKee4LOwf6llx/eiA969HFx0rOGEC2Cgup/nAmHWnN7yYtndhXpvd2cXwov5kjw40HxjjjZg==}
+    peerDependencies:
+      '@mui/material': ^5.0.0 || ^5.0.0-rc.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: link:node_modules/react
+    dev: false
+
   /mdn-data/2.0.14:
     resolution: {integrity: sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==}
     dev: true
@@ -13886,6 +13904,29 @@ packages:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-router-dom/6.9.0_bglh42yvbqvbk55odclj6m3qri:
+    resolution: {integrity: sha512-/seUAPY01VAuwkGyVBPCn1OXfVbaWGGu4QN9uj0kCPcTyNYgL1ldZpxZUpRU7BLheKQI4Twtl/OW2nHRF1u26Q==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.4.0
+      react: link:node_modules/react
+      react-dom: link:node_modules/react-dom
+      react-router: 6.9.0_react@node_modules+react
+    dev: false
+
+  /react-router/6.9.0_react@node_modules+react:
+    resolution: {integrity: sha512-51lKevGNUHrt6kLuX3e/ihrXoXCa9ixY/nVWRLlob4r/l0f45x3SzBvYJe3ctleLUQQ5fVa4RGgJOTH7D9Umhw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.4.0
+      react: link:node_modules/react
+    dev: false
 
   /react-transition-group/4.4.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
