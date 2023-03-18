@@ -28,22 +28,26 @@ export function InsideItem({
           >
             {item.icon}
           </IconButton>
-          <Popper {...bindPopper(popupState)} transition placement="bottom-end">
-            {({ TransitionProps }) => (
-              <Fade {...TransitionProps} timeout={350}>
-                <Paper>
-                  {item[childrenExpr] ? (
+          {item[childrenExpr] ? (
+            <Popper
+              {...bindPopper(popupState)}
+              transition
+              placement="right-start"
+            >
+              {({ TransitionProps }) => (
+                <Fade {...TransitionProps} timeout={350}>
+                  <Paper sx={{ p: "12px", width: 240 }}>
                     <MuiTree
                       data={item[childrenExpr]}
                       keyExpr={keyExpr}
                       displayExpr={displayExpr}
                       childrenExpr={childrenExpr}
                     />
-                  ) : null}
-                </Paper>
-              </Fade>
-            )}
-          </Popper>
+                  </Paper>
+                </Fade>
+              )}
+            </Popper>
+          ) : null}
         </div>
       )}
     </PopupState>
