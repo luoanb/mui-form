@@ -94,7 +94,7 @@ const renderTree = ({ nodes, treeProps }: { nodes: any[]; treeProps: Partial<Mui
       {nodes.map?.((node: any) => {
         return (
           // key={node[keyExpr]} 设置key 和解构属性会导致异常
-          <TreeItem labelIcon={node[iconExpr]} nodeId={node[keyExpr]} labelText={node[displayExpr]} itemData={node} treeProps={treeProps}>
+          <TreeItem labelIcon={node[iconExpr]} key={node[keyExpr]} nodeId={node[keyExpr]} labelText={node[displayExpr]} itemData={node} treeProps={treeProps}>
             {Array.isArray(node[childrenExpr]) ? renderTree({ nodes: node[childrenExpr], treeProps }) : null}
           </TreeItem>
         )

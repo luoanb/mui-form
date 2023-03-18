@@ -6,11 +6,11 @@ import zhcntranslation from './zh_cn.json';
 export const resources: Resource = {
   en: {
     translation: entranslation,
-    icon: "/icon/gb.png"
+    icon: "./icon/gb.png"
   },
   'zh_cn': {
     translation: zhcntranslation,
-    icon: "/icon/cn.png"
+    icon: "./icon/cn.png"
   }
 };
 

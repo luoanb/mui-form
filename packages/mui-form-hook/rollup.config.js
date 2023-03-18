@@ -45,7 +45,7 @@ export default defineConfig([
     output: [
       {
         name,
-        file: './dist/react/index.js',
+        file: './dist/index.umd.js',
         format: 'umd',
         globals: {
           react: 'React',
@@ -54,12 +54,12 @@ export default defineConfig([
       },
       {
         name,
-        file: './es/react/index.js',
+        file: './dist/index.mjs',
         format: 'es',
       },
       {
         name,
-        file: './lib/react/index.cjs',
+        file: './dist/index.cjs',
         format: 'commonjs',
       }
     ]
