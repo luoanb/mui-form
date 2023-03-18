@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import React from "react";
+import React, { Suspense } from "react";
 import { RouterProvider, Navigate, createHashRouter } from "react-router-dom";
 import { BlankLayout, RouterDashboard, RouterEmpty } from "./routerLayout";
 
@@ -54,5 +54,9 @@ const router = createHashRouter([
 ]);
 
 export const Router = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<div>加载中</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 };

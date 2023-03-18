@@ -104,7 +104,7 @@ const renderTree = ({ data: nodes, TreeItem, childrenExpr = 'children', ...treeP
       {nodes.map?.((node: any) => {
         return (
           // key={node[keyExpr]} 设置key 和解构属性会导致异常
-          <TreeItem {...treeProps} itemData={node}>
+          <TreeItem {...treeProps} itemData={node} key={node[treeProps.keyExpr || 'id']}>
             {Array.isArray(node[childrenExpr]) ? renderTree({ data: node[childrenExpr], TreeItem, ...treeProps }) : null}
           </TreeItem>
         )
