@@ -28,6 +28,7 @@ const navData = [
       {
         icon: icon("ic_disabled"),
         title: "异常页面",
+        path: "error",
         children: [
           {
             title: "Not found",
@@ -41,7 +42,7 @@ const navData = [
           },
           {
             title: "服务器异常",
-            path: "/auth/404",
+            path: "/auth/500",
             icon: icon("ic_disabled"),
           },
         ],

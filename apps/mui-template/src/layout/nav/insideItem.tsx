@@ -28,7 +28,7 @@ export function InsideItem({
           >
             {item.icon}
           </IconButton>
-          <Popper {...bindPopper(popupState)} transition placement="right-end">
+          <Popper {...bindPopper(popupState)} transition placement="bottom-end">
             {({ TransitionProps }) => (
               <Fade {...TransitionProps} timeout={350}>
                 <Paper>

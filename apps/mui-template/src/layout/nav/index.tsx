@@ -65,11 +65,7 @@ export default function Nav() {
           />
         </Card>
       ) : null}
-      {!miniNav ? (
-        <InsideMenu navData={navData} />
-      ) : (
-        <OutMenu navData={navData} />
-      )}
+      {!show ? <InsideMenu navData={navData} /> : <OutMenu navData={navData} />}
     </Box>
   );
 }

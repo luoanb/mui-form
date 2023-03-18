@@ -76,9 +76,9 @@ export interface MuiTreeProps {
 type RenderTreeProps = Omit<MuiTreeProps, 'treeViewProps' | 'children'>
 
 /** 子节点渲染 */
-const renderTree = ({ data: nodes, TreeItem, ...treeProps }: RenderTreeProps) => {
+const renderTree = ({ data: nodes, TreeItem, childrenExpr = 'children', ...treeProps }: RenderTreeProps) => {
   !TreeItem &&
-    (TreeItem = ({ itemData, keyExpr = 'id', customLabelText, treeItemProps, ...itemprops }) => {
+    (TreeItem = ({ itemData, keyExpr = 'id', customLabelText, treeItemProps, children, ...itemprops }) => {
       !customLabelText &&
         (customLabelText = ({ itemData, displayExpr = 'name', iconExpr = 'icon' }) => {
           return (
@@ -93,7 +93,11 @@ const renderTree = ({ data: nodes, TreeItem, ...treeProps }: RenderTreeProps) =>
           )
         })
       const label = customLabelText({ itemData, ...itemprops })
-      return <StyledTreeItemRoot {...treeItemProps} nodeId={itemData[keyExpr]} label={label} />
+      return (
+        <StyledTreeItemRoot {...treeItemProps} nodeId={itemData[keyExpr]} label={label}>
+          {children}
+        </StyledTreeItemRoot>
+      )
     })
   return (
     <>
@@ -101,7 +105,7 @@ const renderTree = ({ data: nodes, TreeItem, ...treeProps }: RenderTreeProps) =>
         return (
           // key={node[keyExpr]} 设置key 和解构属性会导致异常
           <TreeItem {...treeProps} itemData={node}>
-            {Array.isArray(node[treeProps.childrenExpr]) ? renderTree({ data: node[treeProps.childrenExpr], TreeItem, ...treeProps }) : null}
+            {Array.isArray(node[childrenExpr]) ? renderTree({ data: node[childrenExpr], TreeItem, ...treeProps }) : null}
           </TreeItem>
         )
       })}
