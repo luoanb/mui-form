@@ -16,6 +16,7 @@
     "@mui/materia": "link:..\\..\\node_modules\\@mui\\materia",
     "@mui/x-data-grid": "link:..\\..\\node_modules\\@mui\\x-data-grid",
     "i18next": "^22.4.11",
+    "material-ui-popup-state": "^5.0.5",
     "mdi-material-ui": "^7.6.0",
     "mui-layout": "workspace:*",
     "prop-types": "^15.8.1",

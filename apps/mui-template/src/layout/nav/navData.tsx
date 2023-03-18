@@ -8,34 +8,45 @@ const icon = (name: string) => (
 
 const navData = [
   {
-    title: "dashboard",
-    path: "/dashboard/app",
-    icon: icon("ic_analytics"),
-  },
-  {
-    title: "user",
-    path: "/dashboard/user",
-    icon: icon("ic_user"),
-  },
-  {
-    title: "product",
-    path: "/dashboard/products",
-    icon: icon("ic_cart"),
-  },
-  {
-    title: "blog",
-    path: "/dashboard/blog",
-    icon: icon("ic_blog"),
-  },
-  {
-    title: "login",
-    path: "/login",
-    icon: icon("ic_lock"),
-  },
-  {
-    title: "Not found",
-    path: "/404",
-    icon: icon("ic_disabled"),
+    title: "基础工具",
+    children: [
+      {
+        title: "dashboard",
+        path: "/dashboard/index",
+        icon: icon("ic_analytics"),
+      },
+      {
+        title: "register",
+        path: "/auth/register",
+        icon: icon("ic_lock"),
+      },
+      {
+        title: "login",
+        path: "/auth/login",
+        icon: icon("ic_lock"),
+      },
+      {
+        icon: icon("ic_disabled"),
+        title: "异常页面",
+        children: [
+          {
+            title: "Not found",
+            path: "/auth/404",
+            icon: icon("ic_disabled"),
+          },
+          {
+            title: "没有权限",
+            path: "/auth/401",
+            icon: icon("ic_disabled"),
+          },
+          {
+            title: "服务器异常",
+            path: "/auth/404",
+            icon: icon("ic_disabled"),
+          },
+        ],
+      },
+    ],
   },
 ];
 

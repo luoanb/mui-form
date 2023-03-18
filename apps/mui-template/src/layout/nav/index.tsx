@@ -2,9 +2,44 @@ import { Avatar, Box, CardHeader, useTheme } from "@mui/material";
 import { red } from "@mui/material/colors";
 import Card from "@mui/material/Card";
 import navData from "./navData";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { DashboardState, GroupTitle } from "mui-layout";
 import { MuiTree } from "mui-form-hook";
+import { InsideItem } from "./insideItem";
+
+const OutMenu = ({ navData }: { navData: any[] }) => {
+  return (
+    <>
+      {navData.map((item) => (
+        <>
+          <GroupTitle title={item.title} />
+          {item.children ? (
+            <MuiTree data={item.children} keyExpr="path" displayExpr="title" />
+          ) : null}
+        </>
+      ))}
+    </>
+  );
+};
+
+const InsideMenu = ({ navData }: { navData: any[] }) => {
+  // const listData = Array.prototype.flat.call(navData, 1);
+  const listData = useMemo(() => {
+    return navData.reduce((pre: any[], cur, i) => pre.concat(cur.children), []);
+  }, [navData]);
+  return (
+    <>
+      {listData.map((item, index) => (
+        <InsideItem
+          item={item}
+          keyExpr="path"
+          key={index}
+          displayExpr="title"
+        />
+      ))}
+    </>
+  );
+};
 
 export default function Nav() {
   const { miniNav, openNav } = useContext(DashboardState);
@@ -30,10 +65,11 @@ export default function Nav() {
           />
         </Card>
       ) : null}
-      {show ? <GroupTitle title="基本的" /> : null}
-      <MuiTree data={navData} keyExpr="path" displayExpr="title" />
-      {show ? <GroupTitle title="商务" /> : null}
-      <MuiTree data={navData} keyExpr="path" displayExpr="title" />
+      {!miniNav ? (
+        <InsideMenu navData={navData} />
+      ) : (
+        <OutMenu navData={navData} />
+      )}
     </Box>
   );
 }

@@ -10,6 +10,7 @@ const router = createHashRouter([
     path: "/",
     element: <Navigate to="/dashboard/index" replace />,
   },
+
   {
     path: "/auth",
     Component: BlankLayout,
@@ -22,6 +23,18 @@ const router = createHashRouter([
         path: "register",
         Component: asyncComponent("./register"),
       },
+      {
+        path: "404",
+        Component: asyncComponent("./404"),
+      },
+      {
+        path: "401",
+        Component: asyncComponent("./401"),
+      },
+      {
+        path: "500",
+        Component: asyncComponent("./500"),
+      },
     ],
   },
   {
@@ -33,6 +46,10 @@ const router = createHashRouter([
         element: <Typography variant="h2">标题</Typography>,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Navigate to="/auth/404" replace />,
   },
 ]);
 

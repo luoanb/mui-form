@@ -54,7 +54,7 @@ const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
 }))
 
 export interface MuiTreeProps {
-  treeItemProps?: TreeItemProps
+  treeItemProps?: Partial<TreeItemProps>
   treeViewProps?: TreeViewProps
   data: any[]
   childrenExpr?: string
