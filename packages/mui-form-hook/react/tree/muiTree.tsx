@@ -1,18 +1,11 @@
 import * as React from 'react'
 import { styled } from '@mui/material/styles'
 import Box from '@mui/material/Box'
-import TreeView from '@mui/lab/TreeView'
+import TreeView, { TreeViewProps } from '@mui/lab/TreeView'
 import TreeItem, { TreeItemProps, treeItemClasses } from '@mui/lab/TreeItem'
 import Typography from '@mui/material/Typography'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
-
-declare module 'react' {
-  interface CSSProperties {
-    '--tree-view-color'?: string
-    '--tree-view-bg-color'?: string
-  }
-}
 
 type StyledTreeItemProps = TreeItemProps & {
   bgColor?: string
@@ -60,42 +53,55 @@ const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
   }
 }))
 
-function StyledTreeItem(props: StyledTreeItemProps) {
-  const { bgColor, color, labelIcon: LabelIcon, labelInfo, labelText, treeProps, itemData, ...other } = props
-  return (
-    <StyledTreeItemRoot
-      label={
-        <Box sx={{ display: 'flex', alignItems: 'center', p: 0.5, pr: 0 }}>
-          <Box color="inherit" sx={{ mr: 1 }}>
-            {LabelIcon}
-          </Box>
-          <Typography variant="body2" sx={{ fontWeight: 'inherit', flexGrow: 1 }}>
-            {labelText}
-          </Typography>
-          <Typography variant="caption" color="inherit">
-            {labelInfo}
-          </Typography>
-        </Box>
-      }
-      sx={(t) => ({
-        '--tree-view-color': color || '#fff',
-        '--tree-view-bg-color': bgColor || t.palette.primary.light
-      })}
-      {...other}
-    />
-  )
+export interface MuiTreeProps {
+  treeItemProps?: TreeItemProps
+  treeViewProps?: TreeViewProps
+  data: any[]
+  childrenExpr?: string
+  keyExpr?: string
+  iconExpr?: string
+  displayExpr?: string
+  TreeItem?: (
+    props: Omit<MuiTreeProps, 'data' | 'treeViewProps' | 'TreeItem'> & {
+      itemData: any
+    } & Partial<TreeItemProps>
+  ) => JSX.Element
+  customLabelText?: (
+    props: Omit<MuiTreeProps, 'data' | 'treeViewProps' | 'TreeItem' | 'customLabelText'> & {
+      itemData: any
+    }
+  ) => JSX.Element
 }
 
+type RenderTreeProps = Omit<MuiTreeProps, 'treeViewProps' | 'children'>
+
 /** 子节点渲染 */
-const renderTree = ({ nodes, treeProps }: { nodes: any[]; treeProps: Partial<MuiTreeProps> }) => {
-  const { childrenExpr = 'children', keyExpr = 'id', iconExpr = 'icon', displayExpr = 'name', TreeItem = StyledTreeItem } = treeProps
+const renderTree = ({ data: nodes, TreeItem, ...treeProps }: RenderTreeProps) => {
+  !TreeItem &&
+    (TreeItem = ({ itemData, keyExpr = 'id', customLabelText, treeItemProps, ...itemprops }) => {
+      !customLabelText &&
+        (customLabelText = ({ itemData, displayExpr = 'name', iconExpr = 'icon' }) => {
+          return (
+            <Box sx={{ display: 'flex', alignItems: 'center', p: 0.5, pr: 0 }}>
+              <Box color="inherit" sx={{ mr: 1 }}>
+                {itemData[iconExpr]}
+              </Box>
+              <Typography variant="body2" sx={{ fontWeight: 'inherit', flexGrow: 1 }}>
+                {itemData[displayExpr]}
+              </Typography>
+            </Box>
+          )
+        })
+      const label = customLabelText({ itemData, ...itemprops })
+      return <StyledTreeItemRoot {...treeItemProps} nodeId={itemData[keyExpr]} label={label} />
+    })
   return (
     <>
       {nodes.map?.((node: any) => {
         return (
           // key={node[keyExpr]} 设置key 和解构属性会导致异常
-          <TreeItem labelIcon={node[iconExpr]} key={node[keyExpr]} nodeId={node[keyExpr]} labelText={node[displayExpr]} itemData={node} treeProps={treeProps}>
-            {Array.isArray(node[childrenExpr]) ? renderTree({ nodes: node[childrenExpr], treeProps }) : null}
+          <TreeItem {...treeProps} itemData={node}>
+            {Array.isArray(node[treeProps.childrenExpr]) ? renderTree({ data: node[treeProps.childrenExpr], TreeItem, ...treeProps }) : null}
           </TreeItem>
         )
       })}
@@ -103,26 +109,19 @@ const renderTree = ({ nodes, treeProps }: { nodes: any[]; treeProps: Partial<Mui
   )
 }
 
-export interface MuiTreeProps {
-  data: any[]
-  childrenExpr?: string
-  keyExpr?: string
-  iconExpr?: string
-  displayExpr?: string
-  TreeItem?: () => JSX.Element
-}
-
-export function MuiTree({ data, ...treeProps }: MuiTreeProps) {
+export function MuiTree({
+  treeViewProps: {
+    defaultCollapseIcon = <ArrowDropDownIcon />,
+    defaultExpandIcon = <ArrowRightIcon />,
+    defaultEndIcon = <Box style={{ width: 24 }} />,
+    sx = { flexGrow: 1, maxWidth: 400, overflowY: 'auto' },
+    ...treeViewProps
+  } = {},
+  ...MuiTreeProps
+}: MuiTreeProps) {
   return (
-    <TreeView
-      aria-label="gmail"
-      defaultExpanded={['3']}
-      defaultCollapseIcon={<ArrowDropDownIcon />}
-      defaultExpandIcon={<ArrowRightIcon />}
-      defaultEndIcon={<Box style={{ width: 24 }} />}
-      sx={{ flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
-    >
-      {renderTree({ nodes: data, treeProps })}
+    <TreeView {...treeViewProps} defaultCollapseIcon={defaultCollapseIcon} defaultExpandIcon={defaultExpandIcon} defaultEndIcon={defaultEndIcon} sx={sx}>
+      {renderTree(MuiTreeProps)}
     </TreeView>
   )
 }

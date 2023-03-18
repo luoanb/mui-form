@@ -1,4 +1,4 @@
-import { Avatar, CardHeader, useTheme } from "@mui/material";
+import { Avatar, Box, CardHeader, useTheme } from "@mui/material";
 import { red } from "@mui/material/colors";
 import Card from "@mui/material/Card";
 import navData from "./navData";
@@ -11,13 +11,13 @@ export default function Nav() {
   const theme = useTheme();
   const show = miniNav || openNav;
   return (
-    <>
+    <Box sx={{ mr: "12px" }}>
       {show ? (
         <Card
           sx={{
-            margin: "12px 24px",
+            margin: "12px 12px 12px 24px",
             width: 232,
-            background: theme.palette.grey[300]
+            background: theme.palette.grey[300],
           }}
         >
           <CardHeader
@@ -34,6 +34,6 @@ export default function Nav() {
       <MuiTree data={navData} keyExpr="path" displayExpr="title" />
       {show ? <GroupTitle title="商务" /> : null}
       <MuiTree data={navData} keyExpr="path" displayExpr="title" />
-    </>
+    </Box>
   );
 }
