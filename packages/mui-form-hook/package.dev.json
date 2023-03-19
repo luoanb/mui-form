@@ -1,17 +1,21 @@
 {
   "name": "mui-form-hook",
-  "version": "0.5.1",
+  "version": "0.6.2",
   "description": "An ui library base on MUI for React front-end apps.",
-  "types": "./es/react/index.d.ts",
-  "module": "./react/index.tsx",
+  "types": "./dist/react/index.d.ts",
+  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
   "scripts": {
     "start": "pnpm run dev",
     "dev": "rollup --config rollup.config.js --watch",
     "build": "rollup --config rollup.config.js"
   },
   "dependencies": {
+    "@types/animejs": "^3.1.7",
+    "animejs": "^3.2.1",
     "clsx": "^1.1.1",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "uuid": "^9.0.0"
   },
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
@@ -31,12 +35,6 @@
     }
   },
   "devDependencies": {
-    "react": "link:..\\..\\node_modules\\react",
-    "react-dom": "link:..\\..\\node_modules\\react-dom",
-    "@mui/icons-material": "link:..\\..\\node_modules\\@mui\\icons-material",
-    "@mui/lab": "link:..\\..\\node_modules\\@mui\\lab",
-    "@mui/materia": "link:..\\..\\node_modules\\@mui\\materia",
-    "@mui/x-data-grid": "link:..\\..\\node_modules\\@mui\\x-data-grid",
     "@babel/core": "^7.14.5",
     "@babel/node": "^7.14.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.14.5",
@@ -46,12 +44,18 @@
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
     "@babel/runtime": "^7.14.5",
+    "@mui/icons-material": "link:..\\..\\node_modules\\@mui\\icons-material",
+    "@mui/lab": "link:..\\..\\node_modules\\@mui\\lab",
+    "@mui/materia": "link:..\\..\\node_modules\\@mui\\materia",
+    "@mui/x-data-grid": "link:..\\..\\node_modules\\@mui\\x-data-grid",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.1",
     "@types/lodash-es": "^4.17.5",
     "@types/react": "^17.0.0 || ^18.0.0",
     "postcss": "^8.4.5",
+    "react": "link:..\\..\\node_modules\\react",
+    "react-dom": "link:..\\..\\node_modules\\react-dom",
     "react-hook-form": "^7.30.0",
     "rollup": "^2.60.2",
     "rollup-plugin-dts": "^4.0.0",
