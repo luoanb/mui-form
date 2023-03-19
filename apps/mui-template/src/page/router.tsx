@@ -2,7 +2,12 @@ import React, { Suspense } from "react";
 import { RouterProvider, Navigate, createHashRouter } from "react-router-dom";
 import { BlankLayout, RouterDashboard, RouterEmpty } from "./routerLayout";
 
-const asyncComponent = (url: string) => React.lazy(() => import(url));
+const Login = React.lazy(() => import("./login"));
+const Register = React.lazy(() => import("./register"));
+const Error404 = React.lazy(() => import("./404"));
+const Error401 = React.lazy(() => import("./401"));
+const Error500 = React.lazy(() => import("./500"));
+const Dashboard = React.lazy(() => import("./index"));
 
 export const router = createHashRouter([
   {
@@ -16,23 +21,23 @@ export const router = createHashRouter([
     children: [
       {
         path: "login",
-        Component: asyncComponent("./login"),
+        Component: Login,
       },
       {
         path: "register",
-        Component: asyncComponent("./register"),
+        Component: Register,
       },
       {
         path: "404",
-        Component: asyncComponent("./404"),
+        Component: Error404,
       },
       {
         path: "401",
-        Component: asyncComponent("./401"),
+        Component: Error401,
       },
       {
         path: "500",
-        Component: asyncComponent("./500"),
+        Component: Error500,
       },
     ],
   },
@@ -42,7 +47,7 @@ export const router = createHashRouter([
     children: [
       {
         path: "index",
-        Component: asyncComponent("./index"),
+        Component: Dashboard,
         // element: <Typography variant="h2">标题</Typography>,
       },
     ],

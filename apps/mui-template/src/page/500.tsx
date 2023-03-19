@@ -61,7 +61,7 @@ const Error500 = () => {
         <Img
           height="487"
           alt="error-illustration"
-          src="/images/pages/500.png"
+          src="./images/pages/500.png"
         />
         <Link href="/">
           <Button component="a" variant="contained" sx={{ px: 5.5 }}>
@@ -70,7 +70,7 @@ const Error500 = () => {
         </Link>
       </Box>
       <FooterIllustrations
-        image={<TreeIllustration alt="tree" src="/images/pages/tree-3.png" />}
+        image={<TreeIllustration alt="tree" src="./images/pages/tree-3.png" />}
       />
     </Box>
   );

@@ -54,7 +54,7 @@ const Error401 = () => {
         <Img
           height="487"
           alt="error-illustration"
-          src="/images/pages/401.png"
+          src="./images/pages/401.png"
         />
         <Link href="/">
           <Button component="a" variant="contained" sx={{ px: 5.5 }}>
