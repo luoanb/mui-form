@@ -1,5 +1,5 @@
 {
-  "name": "mui-layout",
+  "name": "mui-layout-component",
   "version": "0.5.1",
   "description": "An ui library base on MUI for React front-end apps.",
   "types": "./dist/index.d.ts",
