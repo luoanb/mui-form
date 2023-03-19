@@ -1,6 +1,7 @@
 // component
 
 import SvgIcon from "../../component/svgIcon";
+import LensIcon from "@mui/icons-material/Lens";
 
 const icon = (name: string) => (
   <SvgIcon name={name} sx={{ width: 1, height: 1 }} />
@@ -37,20 +38,44 @@ const navData = [
           {
             id: "5",
             title: "Not found",
+            icon: (
+              <LensIcon
+                sx={(t) => ({
+                  width: "12px",
+                  height: "12px",
+                  color: t.palette.text.disabled,
+                })}
+              />
+            ),
             path: "/auth/404",
-            // icon: icon("ic_disabled"),
           },
           {
             id: "6",
             title: "没有权限",
+            icon: (
+              <LensIcon
+                sx={(t) => ({
+                  width: "12px",
+                  height: "12px",
+                  color: t.palette.text.disabled,
+                })}
+              />
+            ),
             path: "/auth/401",
-            // icon: icon("ic_disabled"),
           },
           {
             id: "7",
             title: "服务器异常",
+            icon: (
+              <LensIcon
+                sx={(t) => ({
+                  width: "12px",
+                  height: "12px",
+                  color: t.palette.text.disabled,
+                })}
+              />
+            ),
             path: "/auth/500",
-            // icon: icon("ic_disabled"),
           },
         ],
       },

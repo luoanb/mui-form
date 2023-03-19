@@ -45,6 +45,7 @@ export const Dashboard = defineComponent(({ header, children, nav }: MainProps) 
                 [theme.breakpoints.down('md')]: {
                   display: 'none'
                 },
+                overflowY: 'auto',
                 boxShadow: theme.shadows[10]
               })}
               orientation="horizontal"
@@ -55,7 +56,9 @@ export const Dashboard = defineComponent(({ header, children, nav }: MainProps) 
               {nav}
             </Collapse>
 
-            <Grid flex={1}>{children}</Grid>
+            <Grid sx={{ overflowY: 'auto' }} flex={1}>
+              {children}
+            </Grid>
             <Collapse in={dashState.openDesign} orientation="horizontal" sx={(theme) => ({ boxShadow: theme.shadows[10] })}>
               <Design />
             </Collapse>

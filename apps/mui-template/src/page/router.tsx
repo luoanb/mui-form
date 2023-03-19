@@ -1,4 +1,3 @@
-import Typography from "@mui/material/Typography";
 import React, { Suspense } from "react";
 import { RouterProvider, Navigate, createHashRouter } from "react-router-dom";
 import { BlankLayout, RouterDashboard, RouterEmpty } from "./routerLayout";
@@ -18,7 +17,6 @@ export const router = createHashRouter([
       {
         path: "login",
         Component: asyncComponent("./login"),
-        
       },
       {
         path: "register",
@@ -44,7 +42,8 @@ export const router = createHashRouter([
     children: [
       {
         path: "index",
-        element: <Typography variant="h2">标题</Typography>,
+        Component: asyncComponent("./index"),
+        // element: <Typography variant="h2">标题</Typography>,
       },
     ],
   },

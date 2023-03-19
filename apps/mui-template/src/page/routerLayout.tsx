@@ -13,7 +13,7 @@ import Nav from "../layout/nav";
 export const RouterDashboard = () => {
   return (
     <Dashboard nav={<Nav />} header={<Header />}>
-      <Container maxWidth="lg" sx={(theme) => ({ marginTop: theme.spacing(4) })}>
+      <Container maxWidth="lg" sx={(theme) => ({ pt: theme.spacing(4) })}>
         <Outlet />
       </Container>
     </Dashboard>
@@ -34,7 +34,7 @@ const BlankLayoutWrapper = styled(Box)<BoxProps>(({ theme }) => ({
     minHeight: "100vh",
     alignItems: "center",
     justifyContent: "center",
-    padding: theme.spacing(5)
+    padding: theme.spacing(5),
   },
 
   // For V2 Blank layout pages
@@ -42,14 +42,17 @@ const BlankLayoutWrapper = styled(Box)<BoxProps>(({ theme }) => ({
     display: "flex",
     minHeight: "100vh",
     overflowX: "hidden",
-    position: "relative"
-  }
+    position: "relative",
+  },
 }));
 
 export const BlankLayout = () => {
   return (
     <BlankLayoutWrapper className="layout-wrapper">
-      <Box className="app-content" sx={{ minHeight: "100vh", overflowX: "hidden", position: "relative" }}>
+      <Box
+        className="app-content"
+        sx={{ minHeight: "100vh", overflowX: "hidden", position: "relative" }}
+      >
         <Outlet />
       </Box>
     </BlankLayoutWrapper>
