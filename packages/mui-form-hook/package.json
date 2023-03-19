@@ -1,6 +1,6 @@
 {
   "name": "mui-form-hook",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "An ui library base on MUI for React front-end apps.",
   "types": "./dist/react/index.d.ts",
   "module": "./dist/index.mjs",

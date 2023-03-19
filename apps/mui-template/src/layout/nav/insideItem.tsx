@@ -7,7 +7,7 @@ import { Paper, Tooltip, Typography } from "@mui/material";
 import { customLabelText } from ".";
 import { Link } from "../../component/nextLink";
 import { DashboardState, GroupTitle } from "mui-layout-component";
-const Popper = React.lazy(() => import("@mui/material/Popper"));
+import Popper from "@mui/material/Popper"
 
 interface InsideItemProps {
   item: any;
