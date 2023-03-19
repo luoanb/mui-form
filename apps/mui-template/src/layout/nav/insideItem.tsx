@@ -1,4 +1,4 @@
-import Popper from "@mui/material/Popper";
+import React, { useContext } from "react";
 import PopupState, { bindHover, bindPopper } from "material-ui-popup-state";
 import Fade from "@mui/material/Fade";
 import IconButton from "@mui/material/IconButton";
@@ -7,7 +7,7 @@ import { Paper, Tooltip, Typography } from "@mui/material";
 import { customLabelText } from ".";
 import { Link } from "../../component/nextLink";
 import { DashboardState, GroupTitle } from "mui-layout-component";
-import { useContext } from "react";
+const Popper = React.lazy(() => import("@mui/material/Popper"));
 
 interface InsideItemProps {
   item: any;

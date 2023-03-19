@@ -1,13 +1,12 @@
+import React, { useState } from 'react'
 import { Box } from '@mui/material'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
 import Fade from '@mui/material/Fade'
-import PopperBase, { PopperPlacementType } from '@mui/material/Popper'
 import TextField, { TextFieldProps } from '@mui/material/TextField'
-import React from 'react'
-import { useState } from 'react'
+import { PopperPlacementType } from '@mui/material/Popper'
 
-// 类型异常
-const Popper: any = PopperBase
+// 类型异常 导入样式异常
+const Popper = React.lazy(() => import('@mui/material/Popper'))
 /** 下拉框组件入参 */
 export type DowndownRanderProps = {
   /** 关闭函数 */
