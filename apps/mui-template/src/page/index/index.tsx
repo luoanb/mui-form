@@ -30,7 +30,7 @@ export type ThemeColor =
 const Dashboard = () => {
   return (
     <ApexChartWrapper>
-      <Grid container spacing={6}>
+      <Grid container spacing={3}>
         <Grid item xs={12} md={4}>
           <Trophy />
         </Grid>
@@ -44,7 +44,7 @@ const Dashboard = () => {
           <TotalEarning />
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
-          <Grid container spacing={6}>
+          <Grid container spacing={3}>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
                 stats="$25.6k"

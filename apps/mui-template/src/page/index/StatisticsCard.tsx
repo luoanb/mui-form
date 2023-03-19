@@ -107,7 +107,7 @@ const StatisticsCard = () => {
           }
         }}
       />
-      <CardContent sx={{ pt: theme => `${theme.spacing(3)} !important` }}>
+      <CardContent sx={{ pt: theme => `${theme.spacing(5)} !important` }}>
         <Grid container spacing={[5, 0]}>
           {renderStats()}
         </Grid>
