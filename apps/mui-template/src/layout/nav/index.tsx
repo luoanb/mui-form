@@ -7,12 +7,7 @@ import { DashboardState, GroupTitle } from "mui-layout";
 import { MuiTree } from "mui-form-hook";
 import { InsideItem } from "./insideItem";
 import { Link } from "../../component/nextLink";
-import {
-  useMatches,
-  useNavigation,
-  useParams,
-  useRoutes,
-} from "react-router-dom";
+import { useMatches } from "react-router-dom";
 
 export const customLabelText = ({
   itemData,
@@ -119,7 +114,7 @@ export default function Nav() {
           sx={{
             margin: "12px 12px 12px 24px",
             width: 232,
-            background: theme.palette.grey[300],
+            background: theme.palette.background.paper,
           }}
         >
           <CardHeader

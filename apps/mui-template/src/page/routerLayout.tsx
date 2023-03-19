@@ -9,10 +9,11 @@ import Box, { BoxProps } from "@mui/material/Box";
 
 import Header from "../layout/header";
 import Nav from "../layout/nav";
+import { Design } from "../design/design";
 
 export const RouterDashboard = () => {
   return (
-    <Dashboard nav={<Nav />} header={<Header />}>
+    <Dashboard nav={<Nav />} header={<Header />} design={<Design />}>
       <Container maxWidth="lg" sx={(theme) => ({ pt: theme.spacing(4) })}>
         <Outlet />
       </Container>

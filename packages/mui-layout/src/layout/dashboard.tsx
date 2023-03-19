@@ -9,6 +9,7 @@ import { Design } from '../design/design'
 export interface MainProps extends PropsWithChildren {
   header: any
   nav: any
+  design?: any
 }
 
 /**
@@ -16,7 +17,7 @@ export interface MainProps extends PropsWithChildren {
  */
 export const DashboardState = createContext<DashState>(null as any)
 
-export const Dashboard = defineComponent(({ header, children, nav }: MainProps) => {
+export const Dashboard = defineComponent(({ header, children, nav, design = <Design /> }: MainProps) => {
   const dashState = useDashState()
   return {
     log: console.log,
@@ -60,7 +61,7 @@ export const Dashboard = defineComponent(({ header, children, nav }: MainProps) 
               {children}
             </Grid>
             <Collapse in={dashState.openDesign} orientation="horizontal" sx={(theme) => ({ boxShadow: theme.shadows[10] })}>
-              <Design />
+              {design}
             </Collapse>
           </Box>
           <Drawer open={dashState.openNav} onClose={() => dashState.setOpenNav(false)}>

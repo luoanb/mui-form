@@ -12,17 +12,24 @@ import LangSwitch from "../lang/langSwitch";
 import AccountButton from "../component/accountButton";
 
 export default function Header() {
-  const { miniNav } = useContext(DashboardState);
-  const { setOpenNav, setMiniNav } = useContext(DashboardState);
+  const { miniNav, setOpenNav, setMiniNav } = useContext(DashboardState);
   return (
     <Box sx={{ width: "100%" }}>
       <AppBar position="static" sx={(t) => ({ pl: 0 })}>
         <Toolbar sx={{ pl: "0 !important" }}>
-          <Stack direction="row" spacing={2} sx={{ width: "100%" }} justifyContent="center">
-            <Collapse orientation="horizontal" in={!(useResponsive("down", "md") || !miniNav)}>
+          <Stack
+            direction="row"
+            spacing={2}
+            sx={{ width: "100%" }}
+            justifyContent="center"
+          >
+            <Collapse
+              orientation="horizontal"
+              in={!(useResponsive("down", "md") || !miniNav)}
+            >
               <Box
                 sx={{
-                  width: 260
+                  width: 260,
                 }}
               ></Box>
             </Collapse>
@@ -32,7 +39,7 @@ export default function Header() {
                 color="inherit"
                 aria-label="menu"
                 sx={(theme) => ({
-                  mr: 2
+                  mr: 2,
                 })}
                 onClick={() => setOpenNav(true)}
               >
@@ -44,7 +51,7 @@ export default function Header() {
                 color="inherit"
                 aria-label="menu"
                 sx={(theme) => ({
-                  mr: 2
+                  mr: 2,
                 })}
                 onClick={() => setMiniNav((old) => !old)}
               >

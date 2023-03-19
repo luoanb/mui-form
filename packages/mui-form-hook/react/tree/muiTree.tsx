@@ -24,10 +24,10 @@ const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
   color: theme.palette.text.secondary,
   [`& .${treeItemClasses.content}`]: {
     position: 'relative',
-    height: theme.spacing(5),
+    height: '40px',
     color: theme.palette.text.secondary,
-    borderTopRightRadius: theme.spacing(2.5),
-    borderBottomRightRadius: theme.spacing(2.5),
+    borderTopRightRadius: '20px',
+    borderBottomRightRadius: '20px',
     paddingRight: theme.spacing(1),
     // fontWeight: theme.typography.fontWeightMedium,
     '&.Mui-expanded': {
