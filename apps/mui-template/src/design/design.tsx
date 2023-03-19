@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import { defineComponent } from "ref-component";
 import CardHeader from "@mui/material/CardHeader";
-import { useThemeContext } from "mui-layout";
+import { getDefaultThemeOptions, useThemeContext } from "mui-layout";
 import Box from "@mui/material/Box";
 import { PropsWithChildren } from "react";
 import { IconButton, IconButtonProps, styled, Typography } from "@mui/material";
@@ -49,6 +49,22 @@ export const Design = defineComponent(() => {
       <>
         <CardHeader title="主题设计" sx={{ width: 300 }} />
         <Box sx={{ p: 1 }}>
+          <Title>正常</Title>
+          <Grid container spacing={2}>
+            <Grid
+              xs={4}
+              alignItems="center"
+              justifyContent="center"
+              sx={{ display: "flex" }}
+            >
+              <SimpleCard
+                size={80}
+                onClick={() => setThemeByOptions(getDefaultThemeOptions())}
+              >
+                <Brightness5Icon />
+              </SimpleCard>
+            </Grid>
+          </Grid>
           <Title>默认</Title>
           <Grid container spacing={2}>
             <Grid
