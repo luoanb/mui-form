@@ -19,41 +19,26 @@ export const customLabelText = ({
   displayExpr = "name",
   iconExpr = "icon",
 }: any) => {
-  return !itemData.path ? (
+  return (
     <Box
-      style={{
+      to={itemData.path}
+      component={Link}
+      sx={(t) => ({
         display: "flex",
         alignItems: "center",
         padding: 0.5,
         paddingRight: 0,
+        color: t.palette.text.primary,
         textDecoration: "none",
-      }}
+      })}
     >
-      <Box color="inherit" sx={{ mr: 1 }}>
+      <Box color="inherit" sx={{ width: 40, hight: 40 }}>
         {itemData[iconExpr]}
       </Box>
       <Typography variant="body2" sx={{ fontWeight: "inherit", flexGrow: 1 }}>
         {itemData[displayExpr]}
       </Typography>
     </Box>
-  ) : (
-    <Link
-      href={itemData.path}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        padding: 0.5,
-        paddingRight: 0,
-        textDecoration: "none",
-      }}
-    >
-      <Box color="inherit" sx={{ mr: 1 }}>
-        {itemData[iconExpr]}
-      </Box>
-      <Typography variant="body2" sx={{ fontWeight: "inherit", flexGrow: 1 }}>
-        {itemData[displayExpr]}
-      </Typography>
-    </Link>
   );
 };
 
