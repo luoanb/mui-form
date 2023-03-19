@@ -3,7 +3,8 @@
   "version": "0.5.1",
   "description": "An ui library base on MUI for React front-end apps.",
   "types": "./dist/index.d.ts",
-  "module": "./src/index.tsx",
+  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
   "scripts": {
     "start": "pnpm run dev",
     "dev": "rollup --config rollup.config.js --watch",

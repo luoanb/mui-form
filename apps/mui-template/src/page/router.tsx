@@ -5,7 +5,7 @@ import { BlankLayout, RouterDashboard, RouterEmpty } from "./routerLayout";
 
 const asyncComponent = (url: string) => React.lazy(() => import(url));
 
-const router = createHashRouter([
+export const router = createHashRouter([
   {
     path: "/",
     element: <Navigate to="/dashboard/index" replace />,
@@ -18,6 +18,7 @@ const router = createHashRouter([
       {
         path: "login",
         Component: asyncComponent("./login"),
+        
       },
       {
         path: "register",
