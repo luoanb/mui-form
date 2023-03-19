@@ -3,7 +3,7 @@ import { red } from "@mui/material/colors";
 import Card from "@mui/material/Card";
 import navData from "./navData";
 import { SetStateAction, useContext, useEffect, useMemo } from "react";
-import { DashboardState, GroupTitle } from "mui-layout";
+import { DashboardState, GroupTitle } from "mui-layout-component";
 import { MuiTree } from "mui-form-hook";
 import { InsideItem } from "./insideItem";
 import { Link } from "../../component/nextLink";

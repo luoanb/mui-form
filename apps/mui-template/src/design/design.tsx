@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import { defineComponent } from "ref-component";
 import CardHeader from "@mui/material/CardHeader";
-import { getDefaultThemeOptions, useThemeContext } from "mui-layout";
+import { getDefaultThemeOptions, useThemeContext } from "mui-layout-component";
 import Box from "@mui/material/Box";
 import { PropsWithChildren } from "react";
 import { IconButton, IconButtonProps, styled, Typography } from "@mui/material";

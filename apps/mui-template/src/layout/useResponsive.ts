@@ -1,1 +1,1 @@
-export { useResponsive } from "mui-layout";
+export { useResponsive } from "mui-layout-component";

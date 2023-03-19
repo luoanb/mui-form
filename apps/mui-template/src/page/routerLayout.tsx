@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 
 import { Container, Typography } from "@mui/material";
-import { Dashboard } from "mui-layout";
+import { Dashboard } from "mui-layout-component";
 import { Outlet } from "react-router-dom";
 
 import { styled } from "@mui/material/styles";
