@@ -44,6 +44,13 @@ export const customLabelText = ({
 
 const OutMenu = ({ navData }: { navData: any[] }) => {
   const { selectid } = useContext(DashboardState);
+  const treeViewProps = useMemo(
+    () => ({
+      sx: { ml: "12px" },
+      selected: [selectid],
+    }),
+    [selectid]
+  );
   return (
     <>
       {navData.map((item) => (
@@ -51,13 +58,7 @@ const OutMenu = ({ navData }: { navData: any[] }) => {
           <GroupTitle title={item.title} />
           {item.children ? (
             <MuiTree
-              treeViewProps={{
-                sx: { ml: "12px" },
-                selected: [selectid],
-                // onNodeSelect: (e: any, v: string[]) => {
-                //   setSelectid(v[0]);
-                // },
-              }}
+              treeViewProps={treeViewProps}
               data={item.children}
               keyExpr="id"
               displayExpr="title"

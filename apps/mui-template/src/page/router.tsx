@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { RouterProvider, Navigate, createHashRouter } from "react-router-dom";
 import { BlankLayout, RouterDashboard, RouterEmpty } from "./routerLayout";
+import Box from "@mui/material/Box";
 
 const Login = React.lazy(() => import("./login"));
 const Register = React.lazy(() => import("./register"));
@@ -47,8 +48,19 @@ export const router = createHashRouter([
     children: [
       {
         path: "index",
-        Component: Dashboard,
-        // element: <Typography variant="h2">标题</Typography>,
+        element: (
+          <Suspense fallback={<Box>页面加载中</Box>}>
+            <Dashboard />
+          </Suspense>
+        ),
+      },
+      {
+        path: "500",
+        element: (
+          <Suspense fallback={<Box>页面加载中</Box>}>
+            <Error500 />
+          </Suspense>
+        ),
       },
     ],
   },
