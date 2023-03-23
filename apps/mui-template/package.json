@@ -13,7 +13,7 @@
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "link:..\\..\\node_modules\\@mui\\icons-material",
     "@mui/lab": "link:..\\..\\node_modules\\@mui\\lab",
-    "@mui/materia": "link:..\\..\\node_modules\\@mui\\materia",
+    "@mui/material": "link:..\\..\\node_modules\\@mui\\materia",
     "@mui/utils": "^5.11.13",
     "@mui/x-data-grid": "link:..\\..\\node_modules\\@mui\\x-data-grid",
     "i18next": "^22.4.11",
