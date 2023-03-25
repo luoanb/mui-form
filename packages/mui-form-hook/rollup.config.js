@@ -1,18 +1,18 @@
-import { defineConfig } from 'rollup';
-import commonjs from '@rollup/plugin-commonjs';
+import { defineConfig } from 'rollup'
+import commonjs from '@rollup/plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
-import { nodeResolve as resolve } from '@rollup/plugin-node-resolve';
-import typescript from 'rollup-plugin-typescript2';
-import { babel } from '@rollup/plugin-babel';
-import { name } from './package.json';
-import dts from "rollup-plugin-dts";
+import { nodeResolve as resolve } from '@rollup/plugin-node-resolve'
+import typescript from 'rollup-plugin-typescript2'
+import { babel } from '@rollup/plugin-babel'
+import { name } from './package.json'
+import dts from 'rollup-plugin-dts'
 
 export default defineConfig([
   {
     input: './react/index.tsx',
     external: (source, importer, isResolved) => {
-      const externalList = ['react', 'react-dom', "react-hook-form", "@mui/icons-material", "@mui/material", "@mui/x-data-grid", "@mui/lab"]
-      return externalList.map(name => source.indexOf(name)).includes(0)
+      const externalList = ['react', 'react-dom', 'react-hook-form', '@mui/icons-material', '@mui/material', '@mui/x-data-grid', '@mui/lab']
+      return externalList.map((name) => source.indexOf(name)).includes(0)
     },
     plugins: [
       typescript(),
@@ -35,12 +35,12 @@ export default defineConfig([
               corejs: false,
               helpers: false,
               regenerator: false,
-              useESModules: false,
-            },
-          ],
-        ],
+              useESModules: false
+            }
+          ]
+        ]
       }),
-      commonjs(),
+      commonjs()
     ],
     output: [
       {
@@ -55,12 +55,12 @@ export default defineConfig([
       {
         name,
         file: './dist/index.mjs',
-        format: 'es',
+        format: 'es'
       },
       {
         name,
         file: './dist/index.cjs',
-        format: 'commonjs',
+        format: 'commonjs'
       }
     ]
   },
@@ -69,24 +69,9 @@ export default defineConfig([
     output: [
       {
         name,
-        file: './dist/react/index.d.ts',
-        format: 'umd',
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM'
-        }
-      },
-      {
-        name,
-        file: './es/react/index.d.ts',
-        format: 'es',
-      },
-      {
-        name,
-        file: './lib/react/index.d.ts',
-        format: 'commonjs',
+        file: './dist/index.d.ts'
       }
     ],
     plugins: [dts()]
-  },
+  }
 ])
