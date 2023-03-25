@@ -44,12 +44,12 @@
     }
   },
   "devDependencies": {
-    "react": "link:..\\..\\node_modules\\react",
-    "react-dom": "link:..\\..\\node_modules\\react-dom",
-    "@mui/icons-material": "link:..\\..\\node_modules\\@mui\\icons-material",
-    "@mui/lab": "link:..\\..\\node_modules\\@mui\\lab",
-    "@mui/material": "link:..\\..\\node_modules\\@mui\\materia",
-    "@mui/x-data-grid": "link:..\\..\\node_modules\\@mui\\x-data-grid",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@mui/icons-material": "^5.4.2",
+    "@mui/lab": "^5.0.0-alpha.83",
+    "@mui/material": "^5.4.2",
+    "@mui/x-data-grid": "^5.8.0",
     "@babel/core": "^7.14.5",
     "@babel/node": "^7.14.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.14.5",
