@@ -15,8 +15,8 @@
     "animejs": "^3.2.1",
     "clsx": "^1.1.1",
     "lodash-es": "^4.17.21",
-    "uuid": "^9.0.0",
-    "ref-component": "workspace:*"
+    "ref-component": "workspace:*",
+    "uuid": "^9.0.0"
   },
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
@@ -53,6 +53,7 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.1",
     "@types/lodash-es": "^4.17.5",
+    "@types/node": "^17.0.12",
     "@types/react": "^17.0.0 || ^18.0.0",
     "postcss": "^8.4.5",
     "react": "link:..\\..\\node_modules\\react",

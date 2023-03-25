@@ -1,14 +1,14 @@
 {
-  "name": "web-file-util",
+  "name": "mono-bin",
   "version": "0.1.0",
   "description": "code only with typescript",
   "main": "commonjs/main.js",
   "types": "es/main.d.ts",
   "module": "es/main.js",
   "scripts": {
-    "build:es": "tsc",
-    "build:umd": "tsc --project ./tsconfig.umd.json",
-    "build:commonjs": "tsc --project ./tsconfig.commonjs.json",
+    "build:es": "tsc --outDir es",
+    "build:umd": "tsc --module umd --outDir umd",
+    "build:commonjs": "tsc --module commonjs --outDir commonjs",
     "build": "pnpm build:es && pnpm build:umd && pnpm build:commonjs",
     "test": "vitest",
     "coverage": "vitest run --coverage"
@@ -18,7 +18,7 @@
     "template"
   ],
   "devDependencies": {
-    "@types/node": "^17.0.12",
+    "@types/node": "^17.0.45",
     "eslint": "7.32.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",

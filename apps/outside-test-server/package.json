@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
-    "@types/node": "^17.0.12",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
     "eslint": "8.33.0",
@@ -25,5 +24,8 @@
     "typescript": "4.9.5",
     "web-csv-util": "workspace:^0.5.2",
     "web-file-util": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.45"
   }
 }
