@@ -10,11 +10,13 @@ coverage
 
 # next.js
 .next/
+dist/
 out/
-build
+build/
 es
 commonjs
 umd
+
 
 # misc
 .DS_Store
