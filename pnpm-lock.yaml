@@ -370,6 +370,7 @@ importers:
       '@rollup/plugin-json': ^6.0.0
       '@rollup/plugin-node-resolve': ^15.0.1
       '@types/node': ^18.15.9
+      '@types/yamljs': ^0.2.31
       core-js: ^2.6.12
       eslint: 7.32.0
       rollup: ^3.20.2
@@ -382,6 +383,7 @@ importers:
       typescript: ^5.0.2
       vite: ^4.1.4
       vitest: ^0.27.2
+      yamljs: ^0.3.0
     dependencies:
       '@babel/runtime': 7.21.0
       '@types/node': 18.15.9
@@ -395,6 +397,7 @@ importers:
       '@rollup/plugin-commonjs': 24.1.0-0_rollup@3.20.2
       '@rollup/plugin-json': 6.0.0_rollup@3.20.2
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.20.2
+      '@types/yamljs': 0.2.31
       eslint: 7.32.0
       rollup: 3.20.2
       rollup-plugin-cleanup: 3.2.1_rollup@3.20.2
@@ -406,6 +409,7 @@ importers:
       typescript: 5.0.2
       vite: 4.1.4_@types+node@18.15.9
       vitest: 0.27.2
+      yamljs: 0.3.0
 
   packages/mui-form-hook:
     specifiers:
@@ -6421,13 +6425,13 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.21.1
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
     dev: true
 
   /@types/eslint/8.21.1:
     resolution: {integrity: sha512-rc9K8ZpVjNcLs8Fp0dkozd5Pt2Apk1glO4Vgz8ix1u6yFByxfqo5Yavpy65o+93TAe24jr7v+eSBtFLvOQtCRQ==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
     dev: true
 
@@ -6799,6 +6803,10 @@ packages:
       '@types/webpack-sources': 3.2.0
       anymatch: 3.1.3
       source-map: 0.6.1
+    dev: true
+
+  /@types/yamljs/0.2.31:
+    resolution: {integrity: sha512-QcJ5ZczaXAqbVD3o8mw/mEBhRvO5UAdTtbvgwL/OgoWubvNBh6/MxLBAigtcgIFaq3shon9m3POIxQaLQt4fxQ==}
     dev: true
 
   /@types/yargs-parser/21.0.0:
@@ -8148,11 +8156,11 @@ packages:
     resolution: {integrity: sha512-jWi7abTbYwajOytWCQc37VulmWiRae5RyTpaCyDcS5/lMdtwSz5lOpDE67srw/HYe35f1z3fDQw+3txg7gNtWw==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
     dependencies:
-      bytes: 3.1.2
+      bytes: mirrors.tencent.com/bytes/3.1.2
       content-type: 1.0.5
       debug: 2.6.9
       depd: 2.0.0
-      destroy: 1.2.0
+      destroy: mirrors.tencent.com/destroy/1.2.0
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       on-finished: 2.4.1
@@ -8338,16 +8346,6 @@ packages:
 
   /builtin-status-codes/3.0.0:
     resolution: {integrity: sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=}
-    dev: true
-
-  /bytes/3.0.0:
-    resolution: {integrity: sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=}
-    engines: {node: '>= 0.8'}
-    dev: true
-
-  /bytes/3.1.2:
-    resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==}
-    engines: {node: '>= 0.8'}
     dev: true
 
   /c8/7.13.0:
@@ -8821,7 +8819,7 @@ packages:
     engines: {node: '>= 0.8.0'}
     dependencies:
       accepts: 1.3.8
-      bytes: 3.0.0
+      bytes: mirrors.tencent.com/bytes/3.0.0
       compressible: 2.0.18
       debug: 2.6.9
       on-headers: 1.0.2
@@ -9404,11 +9402,6 @@ packages:
       minimalistic-assert: 1.0.1
     dev: true
 
-  /destroy/1.2.0:
-    resolution: {integrity: sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==}
-    engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
-    dev: true
-
   /detab/2.0.4:
     resolution: {integrity: sha512-8zdsQA5bIkoRECvCrNKPla84lyoR7DSAyf7p0YgXzBO9PDJx8KntPUay7NS6yp+KdxdVtiE5SpHKtbp2ZQyA9g==}
     dependencies:
@@ -9581,10 +9574,6 @@ packages:
       inherits: 2.0.4
       readable-stream: 2.3.7
       stream-shift: 1.0.1
-    dev: true
-
-  /ee-first/1.1.1:
-    resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: true
 
   /electron-to-chromium/1.4.284:
@@ -10686,10 +10675,10 @@ packages:
       encodeurl: 1.0.2
       escape-html: 1.0.3
       etag: 1.8.1
-      finalhandler: 1.2.0
-      fresh: 0.5.2
+      finalhandler: mirrors.tencent.com/finalhandler/1.2.0
+      fresh: mirrors.tencent.com/fresh/0.5.2
       http-errors: 2.0.0
-      merge-descriptors: 1.0.1
+      merge-descriptors: mirrors.tencent.com/merge-descriptors/1.0.1
       methods: 1.1.2
       on-finished: 2.4.1
       parseurl: 1.3.3
@@ -10698,12 +10687,12 @@ packages:
       qs: 6.11.0
       range-parser: 1.2.1
       safe-buffer: 5.2.1
-      send: 0.18.0
-      serve-static: 1.15.0
-      setprototypeof: 1.2.0
+      send: mirrors.tencent.com/send/0.18.0
+      serve-static: mirrors.tencent.com/serve-static/1.15.0
+      setprototypeof: mirrors.tencent.com/setprototypeof/1.2.0
       statuses: 2.0.1
       type-is: 1.6.18
-      utils-merge: 1.0.1
+      utils-merge: mirrors.tencent.com/utils-merge/1.0.1
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
@@ -10849,21 +10838,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       to-regex-range: 5.0.1
-
-  /finalhandler/1.2.0:
-    resolution: {integrity: sha512-5uXcUVftlQMFnWC9qu/svkWv3GTd2PfUhK/3PLkYNAe7FbqJMt3515HaxE6eRL74GdsriiwujiawdaB1BpEISg==}
-    engines: {node: '>= 0.8'}
-    dependencies:
-      debug: 2.6.9
-      encodeurl: 1.0.2
-      escape-html: 1.0.3
-      on-finished: 2.4.1
-      parseurl: 1.3.3
-      statuses: 2.0.1
-      unpipe: 1.0.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
 
   /find-cache-dir/2.1.0:
     resolution: {integrity: sha512-Tq6PixE0w/VMFfCgbONnkiQIVol/JJL7nRMi20fqzA4NRs9AfeqMGeRdPi3wIhYkxjeBaWh2rxwapn5Tu3IqOQ==}
@@ -11022,21 +10996,11 @@ packages:
       mime-types: 2.1.35
     dev: true
 
-  /forwarded/0.2.0:
-    resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
-    engines: {node: '>= 0.6'}
-    dev: true
-
   /fragment-cache/0.2.1:
     resolution: {integrity: sha1-QpD60n8T6Jvn8zeZxrxaCr//DRk=}
     engines: {node: '>=0.10.0'}
     dependencies:
       map-cache: 0.2.2
-    dev: true
-
-  /fresh/0.5.2:
-    resolution: {integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=}
-    engines: {node: '>= 0.6'}
     dev: true
 
   /from/0.1.7:
@@ -11668,9 +11632,9 @@ packages:
     dependencies:
       depd: 2.0.0
       inherits: 2.0.4
-      setprototypeof: 1.2.0
+      setprototypeof: mirrors.tencent.com/setprototypeof/1.2.0
       statuses: 2.0.1
-      toidentifier: 1.0.1
+      toidentifier: mirrors.tencent.com/toidentifier/1.0.1
     dev: true
 
   /http-proxy-agent/4.0.1:
@@ -11825,11 +11789,11 @@ packages:
       wrappy: 1.0.2
 
   /inherits/2.0.1:
-    resolution: {integrity: sha1-sX0I0ya0Qj5Wjv9xn5GwscvfafE=}
+    resolution: {integrity: sha512-8nWq2nLTAwd02jTqJExUYFSD/fKq6VH9Y/oG2accc/kdI0V98Bag8d5a4gi3XHz73rDWa2PvTtvcWYquKqSENA==}
     dev: true
 
   /inherits/2.0.3:
-    resolution: {integrity: sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=}
+    resolution: {integrity: sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw==}
     dev: true
 
   /inherits/2.0.4:
@@ -13342,11 +13306,6 @@ packages:
   /mdurl/1.0.1:
     resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=}
 
-  /media-typer/0.3.0:
-    resolution: {integrity: sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=}
-    engines: {node: '>= 0.6'}
-    dev: true
-
   /memfs/3.4.13:
     resolution: {integrity: sha512-omTM41g3Skpvx5dSYeZIbXKcXoAVc/AoMNwn9TKx++L/gaen/+4TTttmu8ZSch5vfVJ8uJvGbroTsIlslRg6lg==}
     engines: {node: '>= 4.0.0'}
@@ -13391,10 +13350,6 @@ packages:
       trim-newlines: 1.0.0
     dev: true
     optional: true
-
-  /merge-descriptors/1.0.1:
-    resolution: {integrity: sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=}
-    dev: true
 
   /merge-options/1.0.1:
     resolution: {integrity: sha512-iuPV41VWKWBIOpBsjoxjDZw8/GbSfZ2mk7N1453bwMrfzdrIk7EzBd+8UVR6rkw67th7xnk9Dytl3J+lHPdxvg==}
@@ -14041,7 +13996,7 @@ packages:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
     dependencies:
-      ee-first: 1.1.1
+      ee-first: mirrors.tencent.com/ee-first/1.1.1
     dev: true
 
   /on-headers/1.0.2:
@@ -15334,7 +15289,7 @@ packages:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
     dependencies:
-      forwarded: 0.2.0
+      forwarded: mirrors.tencent.com/forwarded/0.2.0
       ipaddr.js: 1.9.1
     dev: true
 
@@ -15457,7 +15412,7 @@ packages:
     resolution: {integrity: sha512-qqJBtEyVgS0ZmPGdCFPWJ3FreoqvG4MVQln/kCgF7Olq95IbOp0/BWyMwbdtn4VTvkM8Y7khCQ2Xgk/tcrCXig==}
     engines: {node: '>= 0.8'}
     dependencies:
-      bytes: 3.1.2
+      bytes: mirrors.tencent.com/bytes/3.1.2
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
@@ -16423,27 +16378,6 @@ packages:
     dependencies:
       lru-cache: 6.0.0
 
-  /send/0.18.0:
-    resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
-    engines: {node: '>= 0.8.0'}
-    dependencies:
-      debug: 2.6.9
-      depd: 2.0.0
-      destroy: 1.2.0
-      encodeurl: 1.0.2
-      escape-html: 1.0.3
-      etag: 1.8.1
-      fresh: 0.5.2
-      http-errors: 2.0.0
-      mime: 1.6.0
-      ms: 2.1.3
-      on-finished: 2.4.1
-      range-parser: 1.2.1
-      statuses: 2.0.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /serialize-javascript/4.0.0:
     resolution: {integrity: sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==}
     dependencies:
@@ -16467,22 +16401,10 @@ packages:
     engines: {node: '>= 0.8.0'}
     dependencies:
       etag: 1.8.1
-      fresh: 0.5.2
+      fresh: mirrors.tencent.com/fresh/0.5.2
       ms: 2.1.1
       parseurl: 1.3.3
       safe-buffer: 5.1.1
-    dev: true
-
-  /serve-static/1.15.0:
-    resolution: {integrity: sha512-XGuRDNjXUijsUL0vl6nSD7cwURuzEgglbOaFuZM9g3kwDXOWVTck0jLzjPzGD+TazWbboZYu52/9/XPdUgne9g==}
-    engines: {node: '>= 0.8.0'}
-    dependencies:
-      encodeurl: 1.0.2
-      escape-html: 1.0.3
-      parseurl: 1.3.3
-      send: 0.18.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /set-blocking/2.0.0:
@@ -16501,10 +16423,6 @@ packages:
 
   /setimmediate/1.0.5:
     resolution: {integrity: sha1-KQy7Iy4waULX1+qbg3Mqt4VvgoU=}
-    dev: true
-
-  /setprototypeof/1.2.0:
-    resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: true
 
   /sha.js/2.4.11:
@@ -17439,11 +17357,6 @@ packages:
     resolution: {integrity: sha1-bkWxJj8gF/oKzH2J14sVuL932jI=}
     dev: false
 
-  /toidentifier/1.0.1:
-    resolution: {integrity: sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==}
-    engines: {node: '>=0.6'}
-    dev: true
-
   /tough-cookie/4.1.2:
     resolution: {integrity: sha512-G9fqXWoYFZgTc2z8Q5zaHy/vJMjm+WV0AkAeHxVCQiEB1b+dGvWzFW6QV07cY5jQ5gRkeid2qIkzkxUnmoQZUQ==}
     engines: {node: '>=6'}
@@ -17683,7 +17596,7 @@ packages:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
     engines: {node: '>= 0.6'}
     dependencies:
-      media-typer: 0.3.0
+      media-typer: mirrors.tencent.com/media-typer/0.3.0
       mime-types: 2.1.35
     dev: true
 
@@ -18005,11 +17918,6 @@ packages:
 
   /utila/0.4.0:
     resolution: {integrity: sha1-ihagXURWV6Oupe7MWxKk+lN5dyw=}
-    dev: true
-
-  /utils-merge/1.0.1:
-    resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
-    engines: {node: '>= 0.4.0'}
     dev: true
 
   /uuid-browser/3.1.0:
@@ -18710,6 +18618,14 @@ packages:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
 
+  /yamljs/0.3.0:
+    resolution: {integrity: sha512-C/FsVVhht4iPQYXOInoxUM/1ELSf9EsgKH34FofQOp6hwCPrW4vG4w5++TED3xRUo8gD7l0P1J1dLlDYzODsTQ==}
+    hasBin: true
+    dependencies:
+      argparse: 1.0.10
+      glob: 7.2.3
+    dev: true
+
   /yargs-parser/18.1.3:
     resolution: {integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==}
     engines: {node: '>=6'}
@@ -18759,4 +18675,132 @@ packages:
 
   /zwitch/1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
+    dev: true
+
+  mirrors.tencent.com/bytes/3.0.0:
+    resolution: {integrity: sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/bytes/-/bytes-3.0.0.tgz}
+    name: bytes
+    version: 3.0.0
+    engines: {node: '>= 0.8'}
+    dev: true
+
+  mirrors.tencent.com/bytes/3.1.2:
+    resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/bytes/-/bytes-3.1.2.tgz}
+    name: bytes
+    version: 3.1.2
+    engines: {node: '>= 0.8'}
+    dev: true
+
+  mirrors.tencent.com/destroy/1.2.0:
+    resolution: {integrity: sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/destroy/-/destroy-1.2.0.tgz}
+    name: destroy
+    version: 1.2.0
+    engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
+    dev: true
+
+  mirrors.tencent.com/ee-first/1.1.1:
+    resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/ee-first/-/ee-first-1.1.1.tgz}
+    name: ee-first
+    version: 1.1.1
+    dev: true
+
+  mirrors.tencent.com/finalhandler/1.2.0:
+    resolution: {integrity: sha512-5uXcUVftlQMFnWC9qu/svkWv3GTd2PfUhK/3PLkYNAe7FbqJMt3515HaxE6eRL74GdsriiwujiawdaB1BpEISg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/finalhandler/-/finalhandler-1.2.0.tgz}
+    name: finalhandler
+    version: 1.2.0
+    engines: {node: '>= 0.8'}
+    dependencies:
+      debug: 2.6.9
+      encodeurl: 1.0.2
+      escape-html: 1.0.3
+      on-finished: 2.4.1
+      parseurl: 1.3.3
+      statuses: 2.0.1
+      unpipe: 1.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  mirrors.tencent.com/forwarded/0.2.0:
+    resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/forwarded/-/forwarded-0.2.0.tgz}
+    name: forwarded
+    version: 0.2.0
+    engines: {node: '>= 0.6'}
+    dev: true
+
+  mirrors.tencent.com/fresh/0.5.2:
+    resolution: {integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/fresh/-/fresh-0.5.2.tgz}
+    name: fresh
+    version: 0.5.2
+    engines: {node: '>= 0.6'}
+    dev: true
+
+  mirrors.tencent.com/media-typer/0.3.0:
+    resolution: {integrity: sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/media-typer/-/media-typer-0.3.0.tgz}
+    name: media-typer
+    version: 0.3.0
+    engines: {node: '>= 0.6'}
+    dev: true
+
+  mirrors.tencent.com/merge-descriptors/1.0.1:
+    resolution: {integrity: sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/merge-descriptors/-/merge-descriptors-1.0.1.tgz}
+    name: merge-descriptors
+    version: 1.0.1
+    dev: true
+
+  mirrors.tencent.com/send/0.18.0:
+    resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/send/-/send-0.18.0.tgz}
+    name: send
+    version: 0.18.0
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      debug: 2.6.9
+      depd: 2.0.0
+      destroy: mirrors.tencent.com/destroy/1.2.0
+      encodeurl: 1.0.2
+      escape-html: 1.0.3
+      etag: 1.8.1
+      fresh: mirrors.tencent.com/fresh/0.5.2
+      http-errors: 2.0.0
+      mime: 1.6.0
+      ms: 2.1.3
+      on-finished: 2.4.1
+      range-parser: 1.2.1
+      statuses: 2.0.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  mirrors.tencent.com/serve-static/1.15.0:
+    resolution: {integrity: sha512-XGuRDNjXUijsUL0vl6nSD7cwURuzEgglbOaFuZM9g3kwDXOWVTck0jLzjPzGD+TazWbboZYu52/9/XPdUgne9g==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/serve-static/-/serve-static-1.15.0.tgz}
+    name: serve-static
+    version: 1.15.0
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      encodeurl: 1.0.2
+      escape-html: 1.0.3
+      parseurl: 1.3.3
+      send: mirrors.tencent.com/send/0.18.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  mirrors.tencent.com/setprototypeof/1.2.0:
+    resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/setprototypeof/-/setprototypeof-1.2.0.tgz}
+    name: setprototypeof
+    version: 1.2.0
+    dev: true
+
+  mirrors.tencent.com/toidentifier/1.0.1:
+    resolution: {integrity: sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/toidentifier/-/toidentifier-1.0.1.tgz}
+    name: toidentifier
+    version: 1.0.1
+    engines: {node: '>=0.6'}
+    dev: true
+
+  mirrors.tencent.com/utils-merge/1.0.1:
+    resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/utils-merge/-/utils-merge-1.0.1.tgz}
+    name: utils-merge
+    version: 1.0.1
+    engines: {node: '>= 0.4.0'}
     dev: true
