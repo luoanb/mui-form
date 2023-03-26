@@ -18,10 +18,12 @@
     "@mui/material": "^5.4.2",
     "@mui/x-data-grid": "^5.8.0",
     "eslint-config-custom": "workspace:*",
+    "mono-bin": "workspace:*",
     "prettier": "latest",
-    "turbo": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "shelljs": "^0.8.5",
+    "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"

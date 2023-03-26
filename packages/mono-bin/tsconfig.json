@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ES2015",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "lib": ["ES2015","DOM"],
+    "sourceMap": true
+  },
+  "include": ["src/**/*"]
+}

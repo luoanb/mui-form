@@ -1,9 +1,8 @@
 {
   "name": "mui-layout-component",
-  "version": "0.5.2",
+  "version": "0.5.4",
   "description": "An ui library base on MUI for React front-end apps.",
   "types": "./dist/index.d.ts",
-  "module": "./dist/index.mjs",
   "main": "./dist/index.cjs",
   "scripts": {
     "start": "pnpm run dev",
@@ -15,8 +14,8 @@
     "animejs": "^3.2.1",
     "clsx": "^1.1.1",
     "lodash-es": "^4.17.21",
-    "uuid": "^9.0.0",
-    "ref-component": "workspace:*"
+    "ref-component": "workspace:*",
+    "uuid": "^9.0.0"
   },
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
@@ -53,6 +52,7 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.1",
     "@types/lodash-es": "^4.17.5",
+    "@types/node": "^17.0.12",
     "@types/react": "^17.0.0 || ^18.0.0",
     "postcss": "^8.4.5",
     "react": "^18.2.0",
