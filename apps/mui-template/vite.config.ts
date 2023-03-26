@@ -11,11 +11,17 @@ export default defineConfig({
     include: [/src\/.*\.[tj]sx?$/, /src\/.*\.png?$/],
   },
   optimizeDeps: {
-    include: ['/src'],
-    esbuildOptions: {
-      loader: {
-        '.js': 'jsx',
-      },
-    }
+    include: [
+      "mui-form-hook",
+      "mui-layout-component",
+      "ref-component",
+      // "react",
+    ],
+    // include: ['/src'],
+    // esbuildOptions: {
+    //   loader: {
+    //     '.js': 'jsx',
+    //   },
+    // }
   },
 })

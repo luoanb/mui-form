@@ -6,7 +6,7 @@ import { MuiTree } from "mui-form-hook";
 import { Paper, Tooltip, Typography } from "@mui/material";
 import { customLabelText } from ".";
 import { Link } from "../../component/nextLink";
-import { DashboardState, GroupTitle } from "mui-layout";
+import { DashboardState, GroupTitle } from "mui-layout-component";
 import { useContext } from "react";
 
 interface InsideItemProps {

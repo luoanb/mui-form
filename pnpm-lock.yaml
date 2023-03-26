@@ -75,7 +75,7 @@ importers:
       material-ui-popup-state: ^5.0.5
       mdi-material-ui: ^7.6.0
       mui-form-hook: workspace:*
-      mui-layout: workspace:*
+      mui-layout-component: workspace:*
       prop-types: ^15.8.1
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -98,7 +98,7 @@ importers:
       i18next: 22.4.11
       material-ui-popup-state: 5.0.5_xqeqsl5kvjjtyxwyi3jhw3yuli
       mdi-material-ui: 7.6.0_smgofu3xpswo6tnze3x7f66ybq
-      mui-layout: link:../../packages/mui-layout
+      mui-layout-component: link:../../packages/mui-layout
       prop-types: 15.8.1
       react-hook-form: 7.43.2_react@18.2.0
       react-i18next: 12.2.0_nuvg7z3l7c7q3mgp6kac62miay
