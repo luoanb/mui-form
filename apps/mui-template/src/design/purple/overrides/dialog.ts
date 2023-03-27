@@ -1,8 +1,7 @@
 // ** MUI Imports
 import { Theme } from '@mui/material/styles'
+import { hexToRGBA } from 'mui-layout-component'
 
-// ** Util Import
-import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 const Dialog = (theme: Theme) => {
   return {
