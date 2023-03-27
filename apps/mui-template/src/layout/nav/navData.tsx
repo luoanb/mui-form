@@ -29,6 +29,12 @@ const navData = [
         icon: icon("ic_analytics"),
       },
       {
+        id: "1-1",
+        title: "DataExport",
+        path: "/dashboard/DataExport",
+        icon: icon("ic_analytics"),
+      },
+      {
         id: "2",
         title: "register",
         path: "/auth/register",

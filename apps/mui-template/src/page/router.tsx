@@ -9,6 +9,7 @@ const Error404 = React.lazy(() => import("./404"));
 const Error401 = React.lazy(() => import("./401"));
 const Error500 = React.lazy(() => import("./500"));
 const Dashboard = React.lazy(() => import("./index"));
+const DataExport = React.lazy(() => import("./dataExport"));
 
 export const router = createHashRouter([
   {
@@ -51,6 +52,14 @@ export const router = createHashRouter([
         element: (
           <Suspense fallback={<Box>页面加载中</Box>}>
             <Dashboard />
+          </Suspense>
+        ),
+      },
+      {
+        path: "DataExport",
+        element: (
+          <Suspense fallback={<Box>页面加载中</Box>}>
+            <DataExport />
           </Suspense>
         ),
       },

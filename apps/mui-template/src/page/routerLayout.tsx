@@ -12,7 +12,10 @@ import { Design } from "../design/design";
 export const RouterDashboard = () => {
   return (
     <Dashboard nav={<Nav />} header={<Header />} design={<Design />}>
-      <Container maxWidth="lg" sx={(theme) => ({ pt: theme.spacing(4) })}>
+      <Container
+        maxWidth="lg"
+        sx={(theme) => ({ p: theme.spacing(4), height: "100%" })}
+      >
         <Outlet />
       </Container>
     </Dashboard>
