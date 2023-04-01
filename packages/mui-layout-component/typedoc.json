@@ -1,0 +1,8 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPointStrategy": "resolve",
+  "entryPoints": ["./src/index.tsx"],
+  "readme": "./readme.md",
+  "name": "mui-layout-component",
+  "tsconfig": "./tsconfig.json"
+}

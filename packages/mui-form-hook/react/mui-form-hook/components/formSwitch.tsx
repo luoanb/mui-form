@@ -2,10 +2,13 @@ import React from 'react'
 import { Switch, SwitchProps, FormControlLabel, FormControlLabelProps } from '@mui/material'
 import { IFormComponentProps } from '../type'
 
-/** 开关入参
- * @implements SwitchProps
- * @implements IFormComponentPropsBase
- * @param labelProps FormControlLabelProps
+
+/**
+ * BaseFormSwitch Props
+ * @date 2023/4/1 - 17:02:59
+ *
+ * @export
+ * @typedef {BaseFormSwitchProps}
  */
 export type BaseFormSwitchProps = IFormComponentProps<
   SwitchProps & {
@@ -15,9 +18,13 @@ export type BaseFormSwitchProps = IFormComponentProps<
   null
 >
 
-/** 开关
- * @implements Switch FormControlLabel
- * @param prop BaseFormSwitchProps
+
+/**
+ * 开关 implementat by MUI.FormControlLabel and MUI.Switch
+ * @date 2023/4/1 - 17:01:09
+ * @formBase
+ * @param {BaseFormSwitchProps} { value, labelProps, onChange, ...prop }
+ * @returns {*}
  */
 export const BaseFormSwitch = ({ value, labelProps, onChange, ...prop }: BaseFormSwitchProps) => {
   return (

@@ -9,8 +9,8 @@
   "tagDefinitions": [
     // Define a custom tag and specify how it should be parsed
     {
-      "tagName": "@export",
-      "syntaxKind": "block",
+      "tagName": "@formBase",
+      "syntaxKind": "modifier",
       "allowMultiple": true
     }
   ],
@@ -18,6 +18,6 @@
   "supportForTags": {
     // Indicate that the custom tag is supported by your tooling.  (Without this, warnings may
     // be reported saying that the tag is unsupported.)
-    "@export": true
+    "@formBase": true
   }
 }

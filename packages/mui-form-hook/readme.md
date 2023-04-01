@@ -1,7 +1,7 @@
 # MUI Form Hook
 
 * 基于[MUI](https://mui.com/)组件库上层封装，为了使MUI更易用，更符合国内使用习惯
-* MUI相关基础库都未打包，所以使用mui-form-hook时，同时需要下载MUI基础包，具体[参见如下](./readme.md#peerdependencies)
+* MUI相关基础库都未打包，所以使用mui-form-hook时，同时需要下载MUI基础包
 
 # PeerDependencies
 
@@ -95,8 +95,6 @@ export const Test = () => {
 }
 ```
 
-# 更新记录
-1.新增AsyncTree组件，可以分次从后端获取tree的数据
 
 
 # API 接口参数介绍
@@ -135,18 +133,6 @@ export type IFormComponentPropsBase<TValue = any, TItem = null> = {
 };
 ```
 
-### BaseFormSearch 搜索(可用于表单)
-
-### BaseSelect 选择框
-
-### MuiFormSearch 搜索(受控)
-
-### BaseFormCheckbox 复选框
-
-### BaseFormSwitch 开关
-
-### Region 地区选择
-
 ## FormComponent 表单组件
 
 - 表单组件由 **useFormComponent 方法** 方法返回；
@@ -178,47 +164,14 @@ export type IFormComponentPropsBase<TValue = any, TItem = null> = {
 
 - 表单组件内部已经托管属性: error,helperText,value,onChange,control；这些属性无须重新赋值，但开发者显示赋值将覆盖托管值
 
-### FormText
-
-请参考@mui/material/TextField
-
-### FormSelect
-
-请参考 BaseSelect
-
-### FormSearch
-
-请参考 MuiFormSearch
-
-### FormCheckbox
-
-请参考 BaseFormCheckbox
-
-### FormSwitch
-
-请参考 BaseFormSwitch
-
-### FormRegion
-
-请参考 Region
-
-## OtherComponent 其他组件
-
-一些基础组件
-
-### DropDownInput 输入下拉基础组件
-
-### MuiDataGrid DataGrid
-
-### MuiSearch 搜索(非受控)
-
-### Tree 树
-### AsyncTree 异步树
-
 # Develop 开发
 
 ## 准备工作
-* 将 package.dev.json 内容复制到 package.json
+* 在需要开发的库下执行 
+  ```shell
+  # 这使得更新会实时同步上层引用模块
+  pnpm dev
+  ```
 * 这使得组件库mui-form-hook的更新会实时同步到工作空间的其他仓库，而无需build打包。
 * 发布前需要将将 package.prod.json 内容复制到 package.json
 

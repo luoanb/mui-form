@@ -4,6 +4,18 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 // ----------------------------------------------------------------------
 
+
+/**
+ * 媒体查询工具
+ * @date 2023/4/1 - 17:31:02
+ *
+ * @export
+ * @template T
+ * @param {T} query
+ * @param {(number | Breakpoint)} start
+ * @param {?(number | Breakpoint)} [end]
+ * @returns {*}
+ */
 export function useResponsive<T extends "up" | "down" | "between">(query: T, start: number | Breakpoint, end?: number | Breakpoint) {
   const theme:any = useTheme();
 
@@ -30,19 +42,4 @@ export function useResponsive<T extends "up" | "down" | "between">(query: T, sta
   return mediaOnly;
 }
 export default useResponsive
-// // ----------------------------------------------------------------------
 
-// export function useWidth() {
-//   const theme = useTheme();
-
-//   const keys = [...theme.breakpoints.keys].reverse();
-
-//   return (
-//     keys.reduce((output, key) => {
-//       // eslint-disable-next-line react-hooks/rules-of-hooks
-//       const matches = useMediaQuery(theme.breakpoints.up(key));
-
-//       return !output && matches ? key : output;
-//     }, null) || 'xs'
-//   );
-// }

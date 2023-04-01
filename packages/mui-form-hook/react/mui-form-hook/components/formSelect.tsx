@@ -11,6 +11,17 @@ import { IFormComponentProps } from '../type'
 //     onItemClick?: (e, item: TItem) => void
 //   }
 
+/**
+ * 选择器入口参数
+ * @date 2023/4/1 - 16:58:33
+ *
+ * @export
+ * @typedef {BaseSelectProps}
+ * @template TItem typeof select item
+ * @template TValue typeof select value
+ * @template K 
+ * @template K2
+ */
 export type BaseSelectProps<
   TItem extends { [props: string]: any } = { [props: string]: any },
   TValue = any,
@@ -28,7 +39,30 @@ export type BaseSelectProps<
   TItem
 >
 
-/** 选择器基础封装 */
+
+/**
+ * 选择器基础封装
+ * @date 2023/4/1 - 16:57:58
+ * @formBase
+ * @template T typeof item
+ * @template V typeof value
+ * @param {BaseSelectProps<T, V>} {
+  data = [],
+  label,
+  fullWidth,
+  size,
+  keyExpr = 'id',
+  error,
+  displayExpr = 'name',
+  helperText,
+  style,
+  onChange,
+  onItemChange,
+  onItemClick,
+  ...props
+}
+ * @returns {*}
+ */
 export const BaseSelect = <T extends { [props: string]: any } = { [props: string]: any }, V = any>({
   data = [],
   label,

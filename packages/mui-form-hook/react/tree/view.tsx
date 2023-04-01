@@ -95,6 +95,14 @@ const debounce = createDebounce()
  * @description 异步树
  * @description 通过createChildren分次从后端获取节点数据
  */
+
+/**
+ * @description 异步树
+ * @description 通过createChildren分次从后端获取节点数据
+ * @date 2023/4/1 - 17:23:26
+ * @param {AsyncTreeProps} props
+ * @returns {*}
+ */
 export const AsyncTree = (props: AsyncTreeProps) => {
   const [innerExpanded, setiInnerExpanded] = React.useState<string[]>([])
   const expanded = props.expanded || innerExpanded
@@ -162,7 +170,14 @@ export const AsyncTree = (props: AsyncTreeProps) => {
   )
 }
 
-/** 本地数据 Tree */
+
+/**
+ * Tree 
+ * @date 2023/4/1 - 17:24:17
+ *
+ * @param {TreeProps} { listData: outListData = [], ...statusProps }
+ * @returns {*}
+ */
 export const Tree = ({ listData: outListData = [], ...statusProps }: TreeProps) => {
   const { treeItemProps, dataStructure = 'tree', childrenExpr = 'children', keyExpr = 'id', displayExpr = 'name', ...props } = statusProps
   const listData = React.useMemo(

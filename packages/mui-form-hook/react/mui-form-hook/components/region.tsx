@@ -20,6 +20,14 @@ const defaultSelectProps = {
     marginRight: 2
   }
 }
+
+/**
+ * Region Props
+ * @date 2023/4/1 - 17:05:44
+ *
+ * @export
+ * @typedef {RegionProps}
+ */
 export type RegionProps = IFormComponentProps<
   {
     /** 控制省输入框样式 */
@@ -74,8 +82,27 @@ const getDefaultRegionValue = () =>
     postalCode: ''
   } as RegionValue)
 
-/** 地区选择
- * @param props RegionProps
+
+/**
+ * 地区选择 Area selection
+ * @date 2023/4/1 - 17:04:00
+ * @formBase
+ *
+ * @param {RegionProps} {
+  // value,
+  // onChange,
+  isUseInputValue = false,
+  enableStreet = true,
+  enablePostalCode = true,
+  error,
+  helperText,
+  getRegionData,
+  keyExpr = 'RegionCode',
+  displayExpr = 'RegionName',
+  dataType = 'key',
+  ...props
+}
+ * @returns {*}
  */
 export const Region = ({
   // value,

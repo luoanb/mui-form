@@ -32,6 +32,19 @@ const defaultPaperProps: any = {
   }
 }
 
+
+/**
+ * DropDown 当DropDown触发指定事件时, 展开或关闭Popover
+ * @date 2023/4/1 - 17:25:51
+ *
+ * @export
+ * @param {DropDownProps} {
+  target: Target,
+  downContent: DownContent,
+  downPageProps: { anchorOrigin = defaultanchorOrigin, transformOrigin = defaulttransformOrigin, PaperProps = defaultPaperProps, ...downPageProps } = {}
+}
+ * @returns {*}
+ */
 export function DropDown({
   target: Target,
   downContent: DownContent,

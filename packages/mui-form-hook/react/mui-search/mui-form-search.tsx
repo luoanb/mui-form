@@ -20,7 +20,24 @@ export interface MuiFormSearchProps<T = any> extends MuiSearchProps<T & IDataIte
   onValueChange: (value: T) => void
 }
 
-/** 用于表单中的搜索组件 */
+
+/**
+ * 用于表单中的搜索组件
+ * @date 2023/4/1 - 17:20:58
+ * @formBase
+ * @param {MuiFormSearchProps} {
+  value,
+  keyExpr = 'id',
+  displayExpr = 'name',
+  // inputValue,
+  // onInputChange,
+  onValueChange,
+  getDataList,
+  onRowClick,
+  ...props
+}
+ * @returns {*}
+ */
 export const MuiFormSearch = ({
   value,
   keyExpr = 'id',

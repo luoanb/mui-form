@@ -4,8 +4,33 @@ import { IFormComponentProps } from '../type'
 
 // todo typescript坑 withControllerFields 不能实现外部组件的必填属性 必填属性需要提前提供默认实现
 
+/**
+ * Description placeholder
+ * @date 2023/4/1 - 16:54:02
+ *
+ * @export
+ * @typedef {IBaseFormSearchProps}
+ * @template TV
+ * @template TI
+ */
 export type IBaseFormSearchProps<TV = any, TI = any> = IFormComponentProps<MuiFormSearchProps<TV>, TV, TI>
 
+
+/**
+ * Description placeholder
+ * @date 2023/4/1 - 16:54:24
+ * @formBase
+ * @template TV
+ * @template TI
+ * @param {IBaseFormSearchProps<TV, TI>} {
+  onItemChange,
+  onRowClick,
+  columns = [],
+  getDataList = async () => [],
+  ...props
+}
+ * @returns {*}
+ */
 export const BaseFormSearch = <TV extends any = any, TI = any>({
   onItemChange,
   onRowClick,

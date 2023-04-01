@@ -2,5 +2,9 @@
   "$schema": "https://typedoc.org/schema.json",
   "out": "docs",
   "entryPointStrategy": "packages",
-  "entryPoints": ["packages/mui-form-hook"]
+  "entryPoints": [
+    "packages/mui-form-hook",
+    "packages/define-component",
+    "packages/mui-layout"
+  ]
 }

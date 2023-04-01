@@ -9,7 +9,19 @@ export * from "./type"
 export * from './tools'
 export * from "./components"
 
-/** 组件集成 react-hook-form 和 mui组件  */
+
+/**
+ * @description Implement by react-hook-form and Mui , for quick definition form.
+ * @description 基于 react-hook-form 和 Mui 实现,可用于快速定义表单
+ * @description It inherits and extends react-hook-form.
+ * @description 它继承并拓展了react-hook-form
+ * @date 2023/4/1 - 17:06:57
+ *
+ * @template TForm
+ * @template TContext
+ * @param {?UseFormProps<TForm, TContext>} [props]
+ * @returns {*}
+ */
 export const useFormComponent = <TForm extends FieldValues = FieldValues, TContext = any>(props?: UseFormProps<TForm, TContext>) => {
   const formProps = useForm<TForm, TContext>(props)
   const FormText = withControllerFields(TextField, { formProps })

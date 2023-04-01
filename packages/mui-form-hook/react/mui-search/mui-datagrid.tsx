@@ -1,7 +1,14 @@
 import React from 'react'
 import { DataGrid, DataGridProps } from '@mui/x-data-grid'
 
-/** 优化样式的DataGrid */
+
+/**
+ * 优化样式后的DataGrid
+ * @date 2023/4/1 - 17:20:14
+ *
+ * @param {DataGridProps} props
+ * @returns {*}
+ */
 export const MuiDataGrid = (props: DataGridProps) => {
   return (
     <DataGrid

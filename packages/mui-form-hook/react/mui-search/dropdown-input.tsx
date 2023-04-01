@@ -5,7 +5,14 @@ import Fade from '@mui/material/Fade'
 import TextField, { TextFieldProps } from '@mui/material/TextField'
 import Popper, { PopperPlacementType } from '@mui/material/Popper'
 
-/** 下拉框组件入参 */
+
+/**
+ * DowndownRanderProps
+ * @date 2023/4/1 - 17:19:03
+ *
+ * @export
+ * @typedef {DowndownRanderProps}
+ */
 export type DowndownRanderProps = {
   /** 关闭函数 */
   close: () => void
@@ -32,7 +39,14 @@ export type DropDownInputProps = TextFieldProps & {
 
 const ClickAwayListenerBase: any = ClickAwayListener
 
-/** 输入框下拉弹框 */
+
+/**
+ * 输入框下拉弹框
+ * @date 2023/4/1 - 17:19:37
+ *
+ * @param {DropDownInputProps} { downRander, onFocus, placement, style = {}, zIndex = 999, ...props }
+ * @returns {*}
+ */
 export const DropDownInput = ({ downRander, onFocus, placement, style = {}, zIndex = 999, ...props }: DropDownInputProps) => {
   const [anchorEl, setAnchorEl] = useState<(EventTarget & (HTMLInputElement | HTMLTextAreaElement)) | null>(null)
   const open = !!anchorEl

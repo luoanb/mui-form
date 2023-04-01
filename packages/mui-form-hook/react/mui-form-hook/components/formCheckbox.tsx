@@ -2,10 +2,12 @@ import React from 'react'
 import { Checkbox, CheckboxProps, FormControlLabel, FormControlLabelProps } from '@mui/material'
 import { IFormComponentProps } from '../type'
 
-/** 复选框入参
- * @implements CheckboxProps
- * @implements IFormComponentPropsBase
- * @param labelProps FormControlLabelProps
+/**
+ * BaseFormCheckbox Component Props; extends CheckboxProps and IFormComponentProps
+ * @date 2023/4/1 - 16:49:21
+ *
+ * @export
+ * @typedef {BaseFormCheckboxProps}
  */
 export type BaseFormCheckboxProps = IFormComponentProps<
   CheckboxProps & {
@@ -15,9 +17,12 @@ export type BaseFormCheckboxProps = IFormComponentProps<
   null
 >
 
-/** 复选框
- * @implements Checkbox FormControlLabel
- * @param prop BaseFormCheckboxProps
+/**
+ * BaseFormCheckbox extends MUI.FormControlLabel
+ * @date 2023/4/1 - 16:48:06
+ * @formBase
+ * @param {BaseFormCheckboxProps} { value, label, labelProps, onChange, ...prop }
+ * @returns {*}
  */
 export const BaseFormCheckbox = ({ value, label, labelProps, onChange, ...prop }: BaseFormCheckboxProps) => {
   return (

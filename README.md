@@ -1,73 +1,23 @@
-# Turborepo starter
+# MUI-Form
 
-This is an official pnpm starter turborepo.
+它提供了基于 MUI 组件库的各种组件资源，使得开发人员可以更加快速、方便地搭建基于 MUI 的管理系统。这个解决方案具有完善的功能和灵活的可配置性，可以帮助开发人员快速创建一个高效、易用、美观的后台管理系统，从而提高开发效率和用户体验。
 
-## What's inside?
+It provides various component resources based on the MUI component library, making it easier and faster for developers to build management systems based on MUI. This solution has complete functionality and flexible configurability, which helps developers create efficient, user-friendly, and visually appealing back-end management systems, thus improving development efficiency and user experience.
 
-This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/apps:
+# Packages
 
-### Apps and Packages
+| 名称                    | 说明                                         | npm                  |
+| :---------------------- | :------------------------------------------- | -------------------- |
+| mui-template            | 基于 Vite 和 MUI 构建的后台管理模板          |
+| next-template           | 基于 Next 模板                               |
+| mui-form-hook           | 基于 MUI 和 React-hook-form 的二次封装库     | mui-form-hook        |
+| mui-layout-component    | 基于 MUI 和 mui-form-hook 的后台管理布局组件 | mui-layout-component |
+| ref-component           | React 快速定义 ref 方法的库                  | ref-component        |
+| typescript-lib-template | typescript lib 模板                          |                      |
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+# 技术简介
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-pnpm dlx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-pnpm dlx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- 仓库以 turborepo 脚手架搭建
+- 项目以 typescript 开发
+- mui-form-hook,ref-component,mui-layout-component 使用 typedoc 作为文档管理工具
+- 使用 pnpm 作为包管理工具

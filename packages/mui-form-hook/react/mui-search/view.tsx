@@ -43,7 +43,7 @@ const options: Partial<DataGridProps> = {
   rowHeight: 40
 }
 
-export const downRander = ({ close, columns, rows, onRowClick, width, height }: any) => {
+const downRander = ({ close, columns, rows, onRowClick, width, height }: any) => {
   return (
     <div style={{ width, height }}>
       <MuiDataGrid
@@ -61,7 +61,25 @@ export const downRander = ({ close, columns, rows, onRowClick, width, height }: 
 
 const debounce = createDebounce()
 
-/** 用于搜索 不支持回显 */
+
+/**
+ * 输入下拉 不支持回显
+ * @date 2023/4/1 - 17:21:53
+ *
+ * @template T
+ * @param {MuiSearchProps<T>} {
+  columns,
+  onRowClick,
+  getDataList,
+  inputValue,
+  onInputChange,
+  placement,
+  dataGridWidth = 500,
+  dataGridHeight = 250,
+  ...props
+}
+ * @returns {*}
+ */
 export const MuiSearch = <T extends IDataItem>({
   columns,
   onRowClick,

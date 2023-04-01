@@ -1,0 +1,8 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPointStrategy": "resolve",
+  "entryPoints": ["./react/index.tsx"],
+  "readme": "./readme.md",
+  "name": "mui-form-hook",
+  "tsconfig": "./tsconfig.json"
+}

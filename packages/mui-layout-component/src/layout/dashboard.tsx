@@ -17,6 +17,14 @@ export interface MainProps extends PropsWithChildren {
  */
 export const DashboardState = createContext<DashState>(null as any)
 
+
+/**
+ * Dashboard 
+ * @date 2023/4/1 - 17:28:41
+ * @param MainProps
+ *
+ * @type {*}
+ */
 export const Dashboard = defineComponent(({ header, children, nav, design = <Design /> }: MainProps) => {
   const dashState = useDashState()
   return {
