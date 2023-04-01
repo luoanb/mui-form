@@ -1,0 +1,6 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "out": "docs",
+  "entryPointStrategy": "packages",
+  "entryPoints": ["packages/mui-form-hook"]
+}
