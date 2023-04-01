@@ -1,5 +1,5 @@
 {
-  "name": "web-file",
+  "name": "mui-form",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:doc": "typedoc",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
