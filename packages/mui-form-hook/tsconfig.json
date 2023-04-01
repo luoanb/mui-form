@@ -5,6 +5,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "strict": false,
+    "declaration": true,
+    "sourceMap": true,
+    "declarationMap": true,
     "jsx": "react",
     "lib": ["dom", "es2016"]
   },

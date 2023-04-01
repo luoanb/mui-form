@@ -1,18 +1,19 @@
+import * as React from 'react'
 declare namespace React {
   interface CSSProperties {
     // Add a missing property
-    WebkitRocketLauncher?: string;
+    WebkitRocketLauncher?: string
 
     // Add a CSS Custom Property
-    '--theme-color'?: 'black' | 'white';
+    '--theme-color'?: 'black' | 'white'
 
     // Allow namespaced CSS Custom Properties
-    [index: `--theme-${string}`]: any;
-    
+    [index: `--theme-${string}`]: any
+
     // Allow any CSS Custom Properties
-    [index: `--${string}`]: any;
+    [index: `--${string}`]: any
 
     // ...or allow any other property
-    [index: string]: any;
+    [index: string]: any
   }
 }

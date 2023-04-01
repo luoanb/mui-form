@@ -3,7 +3,6 @@ import React, { useContext } from 'react'
 import TreeItem, { TreeItemProps, useTreeItem, TreeItemContentProps } from '@mui/lab/TreeItem'
 import { Typography } from '@mui/material'
 import { TreeProps } from './view'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 
 interface CustomTreeItemProps extends TreeItemProps {
