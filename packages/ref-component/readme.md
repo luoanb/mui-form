@@ -1,5 +1,7 @@
 # ref-Component
 
+[完整文档（FULL DOC）](https://luoanb.github.io/mui-form/modules/ref_component.html)
+
 An library to quickly customize the exposed instance value when using ref.
 
 # Download

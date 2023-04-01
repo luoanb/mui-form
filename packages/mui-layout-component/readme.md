@@ -1,5 +1,7 @@
 # Mui Layout Component
 
+[完整文档（FULL DOC）](https://luoanb.github.io/mui-form/modules/mui_layout_component.html)
+
 - 基于[MUI](https://mui.com/)组件库上层封装，为了使 MUI 更易用，更符合国内使用习惯
 - MUI 相关基础库都未打包，所以使用 mui-form-hook 时，同时需要下载 MUI 基础包，具体[参见如下](./readme.md#peerdependencies)
 
