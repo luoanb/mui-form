@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Editor from "rich-markdown";
+// import Editor from "rich-markdown";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 
@@ -18,7 +18,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <Editor value={data} onChange={setData} />
+      {/* <Editor value={data} onChange={setData} /> */}
     </div>
   );
 }
