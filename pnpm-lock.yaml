@@ -94,7 +94,6 @@ importers:
     dependencies:
       '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
       '@emotion/styled': 11.10.6_oouaibmszuch5k64ms7uxp2aia
-      '@faker-js/faker': 7.6.0
       '@mui/icons-material': 5.11.9_ylmaxqh5wvme7ymgn4ys5vax6u
       '@mui/lab': 5.0.0-alpha.120_2xjz24fcfpl7kgsqfa5xscfeo4
       '@mui/material': 5.11.10_xqeqsl5kvjjtyxwyi3jhw3yuli
@@ -111,6 +110,7 @@ importers:
       ref-component: link:../../packages/ref-component
       xlsx: '@cdn.sheetjs.com/xlsx-0.19.2/xlsx-0.19.2.tgz'
     devDependencies:
+      '@faker-js/faker': 7.6.0
       '@types/node': 17.0.45
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
@@ -3485,7 +3485,7 @@ packages:
   /@faker-js/faker/7.6.0:
     resolution: {integrity: sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==}
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
-    dev: false
+    dev: true
 
   /@humanwhocodes/config-array/0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}

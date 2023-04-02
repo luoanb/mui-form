@@ -7,5 +7,14 @@
   "lang": {
     "zh_cn": "中文简体",
     "en": "英式英文"
+  },
+  "nav": {
+    "base": "基础页面",
+    "dashboard": "主页",
+    "DataExport": "数据导出",
+    "register": "注册",
+    "login": "登录",
+    "500inDashboard": "在系统内的500",
+    "errorPage": "异常页面"
   }
 }

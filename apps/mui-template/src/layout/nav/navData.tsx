@@ -36,68 +36,71 @@ const sx: SxProps<Theme> = (t) => ({
   width: 24,
   height: 24,
 });
-const navData = [
-  {
-    id: "0",
-    title: "基础工具",
-    children: [
-      {
-        id: "1",
-        title: "dashboard",
-        path: "/dashboard/index",
-        icon: <BarChart sx={sx} />,
-      },
-      {
-        id: "1-1",
-        title: "DataExport",
-        path: "/dashboard/DataExport",
-        icon: <DatabaseArrowRightOutline sx={sx} />,
-      },
-      {
-        id: "2",
-        title: "register",
-        path: "/auth/register",
-        icon: <HowToReg sx={sx} />,
-      },
-      {
-        id: "3",
-        title: "login",
-        path: "/auth/login",
-        icon: <Login sx={sx} />,
-      },
-      {
-        id: "4",
-        icon: <ErrorIcon sx={sx} />,
-        title: "异常页面",
-        children: [
-          {
-            id: "5",
-            title: "Not found",
-            icon: <ChildIcon />,
-            path: "/auth/404",
-          },
-          {
-            id: "6",
-            title: "没有权限",
-            icon: <ChildIcon />,
-            path: "/auth/401",
-          },
-          {
-            id: "7",
-            title: "服务器异常",
-            icon: <ChildIcon />,
-            path: "/auth/500",
-          },
-          {
-            id: "8",
-            title: "服务器异常2",
-            icon: <ChildIcon />,
-            path: "/dashboard/500",
-          },
-        ],
-      },
-    ],
-  },
-];
+const getNavData = (t: any) => {
+  const getNavT = (name: string) => t(`nav.${name}`);
+  return [
+    {
+      id: "0",
+      title: getNavT("base"),
+      children: [
+        {
+          id: "1",
+          title: getNavT("dashboard"),
+          path: "/dashboard/index",
+          icon: <BarChart sx={sx} />,
+        },
+        {
+          id: "1-1",
+          title: getNavT("DataExport"),
+          path: "/dashboard/DataExport",
+          icon: <DatabaseArrowRightOutline sx={sx} />,
+        },
+        {
+          id: "2",
+          title: getNavT("register"),
+          path: "/auth/register",
+          icon: <HowToReg sx={sx} />,
+        },
+        {
+          id: "3",
+          title: getNavT("login"),
+          path: "/auth/login",
+          icon: <Login sx={sx} />,
+        },
+        {
+          id: "4",
+          icon: <ErrorIcon sx={sx} />,
+          title: getNavT("errorPage"),
+          children: [
+            {
+              id: "5",
+              title: "404",
+              icon: <ChildIcon />,
+              path: "/auth/404",
+            },
+            {
+              id: "6",
+              title: "401",
+              icon: <ChildIcon />,
+              path: "/auth/401",
+            },
+            {
+              id: "7",
+              title: "500",
+              icon: <ChildIcon />,
+              path: "/auth/500",
+            },
+            {
+              id: "8",
+              title: getNavT("500inDashboard"),
+              icon: <ChildIcon />,
+              path: "/dashboard/500",
+            },
+          ],
+        },
+      ],
+    },
+  ];
+};
 
-export default navData;
+export default getNavData;

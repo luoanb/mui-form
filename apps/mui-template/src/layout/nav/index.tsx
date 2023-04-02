@@ -1,13 +1,14 @@
 import { Avatar, Box, CardHeader, Typography, useTheme } from "@mui/material";
 import { red } from "@mui/material/colors";
 import Card from "@mui/material/Card";
-import navData from "./navData";
+import getNavData from "./navData";
 import { SetStateAction, useContext, useEffect, useMemo } from "react";
 import { DashboardState, GroupTitle } from "mui-layout-component";
 import { MuiTree } from "mui-form-hook";
 import { InsideItem } from "./insideItem";
 import { Link } from "../../component/nextLink";
 import { useMatches } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const customLabelText = ({
   itemData,
@@ -89,7 +90,6 @@ const flatData = (treeData: any[]) => {
     return pre;
   }, [] as any[]);
 };
-const flatVavData = flatData(navData);
 
 export default function Nav() {
   const { miniNav, openNav, setSelectid, selectid } =
@@ -105,8 +105,9 @@ export default function Nav() {
       setSelectid(id);
     }
   }, [routerState]);
-  // router.state
-
+  const { t } = useTranslation();
+  const navData = useMemo(() => getNavData(t), [t]);
+  const flatVavData = flatData(navData);
   return (
     <Box sx={{ mr: "12px" }}>
       {show ? (

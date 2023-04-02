@@ -7,5 +7,14 @@
   "lang": {
     "zh_cn": "Chinese",
     "en": "English"
+  },
+  "nav": {
+    "base": "Base Page",
+    "dashboard": "dashboard",
+    "DataExport": "DataExport",
+    "register": "register",
+    "login": "login",
+    "500inDashboard": "500 in Dashboard",
+    "errorPage": "Error Page"
   }
 }
