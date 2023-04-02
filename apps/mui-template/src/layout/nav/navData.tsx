@@ -2,6 +2,12 @@
 
 import SvgIcon from "../../component/svgIcon";
 import LensIcon from "@mui/icons-material/Lens";
+import DatabaseArrowRightOutline from "mdi-material-ui/DatabaseArrowRightOutline";
+import BarChart from "@mui/icons-material/BarChart";
+import Login from "@mui/icons-material/Login";
+import HowToReg from "@mui/icons-material/HowToReg";
+import ErrorIcon from "@mui/icons-material/Error";
+import { SxProps, Theme } from "@mui/material/styles";
 
 const ChildIcon = () => (
   <LensIcon
@@ -14,9 +20,22 @@ const ChildIcon = () => (
 );
 
 const icon = (name: string) => (
-  <SvgIcon name={name} sx={{ width: 1, height: 1 }} />
+  <SvgIcon
+    name={name}
+    sx={(t) => ({
+      color: t.palette.text.disabled,
+      "& use": {
+        fill: t.palette.text.disabled,
+      },
+    })}
+  />
 );
 
+const sx: SxProps<Theme> = (t) => ({
+  color: t.palette.text.secondary,
+  width: 24,
+  height: 24,
+});
 const navData = [
   {
     id: "0",
@@ -26,29 +45,29 @@ const navData = [
         id: "1",
         title: "dashboard",
         path: "/dashboard/index",
-        icon: icon("ic_analytics"),
+        icon: <BarChart sx={sx} />,
       },
       {
         id: "1-1",
         title: "DataExport",
         path: "/dashboard/DataExport",
-        icon: icon("ic_analytics"),
+        icon: <DatabaseArrowRightOutline sx={sx} />,
       },
       {
         id: "2",
         title: "register",
         path: "/auth/register",
-        icon: icon("ic_lock"),
+        icon: <HowToReg sx={sx} />,
       },
       {
         id: "3",
         title: "login",
         path: "/auth/login",
-        icon: icon("ic_lock"),
+        icon: <Login sx={sx} />,
       },
       {
         id: "4",
-        icon: icon("ic_disabled"),
+        icon: <ErrorIcon sx={sx} />,
         title: "异常页面",
         children: [
           {

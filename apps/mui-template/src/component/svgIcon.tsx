@@ -1,3 +1,5 @@
+import Box, { BoxProps } from "@mui/material/Box";
+
 export interface SvgIconProps {
   name: string;
   prefix?: string;
@@ -13,18 +15,18 @@ export default function SvgIcon({
   width = 24,
   height = 24,
   ...props
-}: SvgIconProps) {
+}: BoxProps<"svg", SvgIconProps>) {
   const symbolId = `#${prefix}-${name}`;
-
   return (
-    <svg
+    <Box
       {...props}
+      component="svg"
       width={width}
       height={height}
       aria-hidden="true"
-      fontSize="14px"
+      fontSize="medium"
     >
       <use href={symbolId} fill={color} />
-    </svg>
+    </Box>
   );
 }
