@@ -61,11 +61,13 @@ importers:
 
   apps/lit-template:
     specifiers:
+      '@lit-labs/router': ^0.1.1
       '@material/web': 1.0.0-pre.5
       lit: ^2.6.1
       typescript: ^4.9.3
       vite: ^4.2.0
     dependencies:
+      '@lit-labs/router': 0.1.1
       '@material/web': 1.0.0-pre.5
       lit: 2.7.0
     devDependencies:
@@ -3778,6 +3780,12 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+
+  /@lit-labs/router/0.1.1:
+    resolution: {integrity: sha512-B2WYOXmI1vXAZKKkfGWDhe/Ki8W7ZsopFx7uD9ZvdaEFbFjxzqcmBGoK5v2RX1jceG1lmDfdHvCGyXxiy1zqYg==}
+    dependencies:
+      lit: 2.7.0
+    dev: false
 
   /@lit-labs/ssr-dom-shim/1.1.0:
     resolution: {integrity: sha512-92uQ5ARf7UXYrzaFcAX3T2rTvaS9Z1//ukV+DqjACM4c8s0ZBQd7ayJU5Dh2AFLD/Ayuyz4uMmxQec8q3U4Ong==}
