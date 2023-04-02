@@ -6,7 +6,7 @@
     "displayName": "mui-form-hook",
     "tsconfig": "./tsconfig.json"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An ui library base on MUI for React front-end apps.",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
@@ -91,6 +91,10 @@
   ],
   "pnpm": {
     "installPeers": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luoanb/mui-form.git"
   },
   "author": "luoanbing",
   "email": "luoanb@163.com",
