@@ -254,7 +254,7 @@ export const PureLightTheme: ThemeOptions = {
   //   boxShadow: colors.shadows.cardSm,
   //   textColor: colors.secondary.main
   // },
-  spacing: 9,
+  spacing: 8,
   palette: {
     common: {
       black: colors.alpha.black[100],
@@ -953,7 +953,8 @@ export const PureLightTheme: ThemeOptions = {
       styleOverrides: {
         root: {
           minHeight: "0 !important",
-          padding: "0 !important",
+          padding: "6px !important",
+          marginLeft: "-20px",
         },
       },
     },
