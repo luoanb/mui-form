@@ -6,6 +6,9 @@ import svgPlugin from "./svgconfig";
 export default defineConfig({
   plugins: [react(), svgPlugin],
   base: "./",
+  server: {
+    port: 80,
+  },
   build: {
     commonjsOptions: {
       include: [
