@@ -22,9 +22,6 @@ importers:
       mono-bin:
         specifier: workspace:*
         version: link:packages/mono-bin
-      prettier:
-        specifier: latest
-        version: 3.0.0-alpha.7-for-vscode
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -9136,12 +9133,6 @@ packages:
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
-
-  /prettier@3.0.0-alpha.7-for-vscode:
-    resolution: {integrity: sha512-z4XpacIqSq2DUxHK0lR6HhNqG4Ml8ExghDyuNVnBdR5yToxWinyOOsuxAN/x7b+ltfUPm5gtRfecedR0zjzbbA==}
-    engines: {node: '>=14'}
-    hasBin: true
-    dev: true
 
   /progress@2.0.3:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}

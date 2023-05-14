@@ -7,10 +7,10 @@ module.exports = {
       rootDir: ["apps/*/"],
     },
   },
-  overrides:{
-    excludedFiles:[
-      ".eslintrc.js",
-      "dist/*.js",
-    ]
-  }
+  // overrides:{
+  //   excludedFiles:[
+  //     ".eslintrc.js",
+  //     "dist/*.js",
+  //   ]
+  // }
 };
