@@ -11,8 +11,8 @@ const useThemeValue = (defaultThemeOptions = normal()) => {
   const [theme, setTheme] = useState(createTheme(defaultThemeOptions))
 
   const setThemeByOptions = useCallback(
-    (themeOptions: Partial<ThemeOptions>) => {
-      setTheme(createTheme(themeOptions))
+    (themeOptions: Partial<ThemeOptions>, ...other: Object[]) => {
+      setTheme(createTheme(themeOptions, ...other))
     },
     [setTheme]
   )
