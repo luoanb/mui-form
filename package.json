@@ -10,6 +10,8 @@
     "build": "turbo run build",
     "build:doc": "typedoc",
     "dev": "turbo run dev --parallel",
+    "cha": "changeset",
+    "pub": "changeset version & changeset publish",
     "lint": "turbo run lint"
   },
   "devDependencies": {
@@ -23,10 +25,14 @@
     "react-dom": "^18.2.0",
     "shelljs": "^0.8.5",
     "turbo": "latest",
+    "@changesets/cli": "^2.26.2",
     "typedoc": "0.24.0-beta.2"
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "registry": "http://10.10.107.68:11002"
   },
   "author": "luoanbing",
   "email": "luoanb@163.com",
